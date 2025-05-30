@@ -1,0 +1,11 @@
+ .container {
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    gap: 8px;
+ }
+
+ .btn {
+    padding: 22px 20px;
+    width: 100%;
+ }

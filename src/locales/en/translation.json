@@ -1,0 +1,18 @@
+{
+   "header": {
+      "info": "Profile"
+   },
+   "leftMenu":{
+      "title": "Cases",
+      "subtitle": "My cases",
+      "cases":{
+         "title": "Case"
+      }
+   },
+   "rightMemu": {
+      "title": "Profile"
+   },
+   "openCases":{
+      "title": "Open cases"
+   }
+}
