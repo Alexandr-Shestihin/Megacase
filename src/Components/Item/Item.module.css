@@ -1,0 +1,30 @@
+ .itemContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+ }
+
+ .itemContainer * {
+    width: auto;
+ }
+
+ .name {
+    position: relative;
+    padding-left: 11px;
+ }
+
+ .name::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 2.5px);
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background: #FF6D00;
+    border-radius: 50%;
+ }
+
+ .value {
+    color: var(--color-2);
+    font-size: var(--font-size-15)
+ }

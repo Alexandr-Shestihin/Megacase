@@ -1,0 +1,246 @@
+/* Сброс полей и отступов по умолчанию для body */
+body {
+   margin: 0;
+   padding: 0;
+   line-height: 1;
+   /* Улучшает читаемость текста */
+   background: #1B1E22;
+   color: #FFFFFF;
+}
+
+/* Сброс стилей для box-sizing (важно для предсказуемой компоновки) */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+/* Сброс стилей для ссылок */
+a {
+   text-decoration: none;
+   /* Убирает подчеркивание по умолчанию */
+   color: inherit;
+   /* Наследует цвет текста от родительского элемента */
+}
+
+/* Сброс стилей для списков */
+ul,
+ol {
+   list-style: none;
+   /* Убирает маркеры/номера списков */
+   padding: 0;
+   margin: 0;
+}
+
+/* Сброс стилей для заголовков */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+   font-size: inherit;
+   /* Наследует размер шрифта от родительского элемента */
+   font-weight: inherit;
+   /* Наследует жирность шрифта от родительского элемента */
+}
+
+/* Сброс стилей для форм */
+input,
+textarea,
+select,
+button {
+   font: inherit;
+   /* Наследует шрифт от родительского элемента */
+   border: none;
+   /* Убирает рамку по умолчанию */
+   outline: none;
+   /* Убирает обводку при фокусе по умолчанию */
+}
+
+button {
+   cursor: pointer;
+   background: none;
+   padding: 0;
+}
+
+/* Сброс стилей для изображений */
+img,
+.img {
+   display: block;
+   /* Убирает нежелательные отступы снизу */
+   max-width: 100%;
+   width: 100%;
+   /* Делает изображения адаптивными */
+   height: auto;
+   margin: 0;
+}
+
+* {
+   transition: all ease-in-out .2s;
+   font-size: 16px;
+   font-family: "Roboto Condensed", sans-serif;
+   font-weight: 400;
+   color: var(--color-1);
+}
+
+.App {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+.ContantContainer {
+   display: flex;
+   justify-content: space-between;
+}
+
+.wrapper {
+   flex: 1 0 auto;
+   margin: 0 20px;
+   height: 100vh;
+}
+
+.pageTitle {
+   font-weight: 700;
+}
+
+.pageSubtitle {
+   font-weight: 600;
+   text-transform: uppercase;
+}
+
+/* Шаблонные стили */
+
+:root {
+   --main-main: #23272B;
+   --main-main-hover: #35393d;
+   --main-main-active: #FF6D00;
+
+   --main-second: #7C4DFF;
+   --main-second-hover: #8a64f3;
+   --main-second-active: #aa8ef7;
+
+   --main-third: #FF6D00;
+   --main-third-hover: #f78a38;
+   --main-third-active: #ee9b5c;
+
+   /* text/svg color */
+   --color-1: #EDEDED;
+   --color-2: #9E9E9E;
+
+   /* bg-color */
+   --bg-1: #2F3338;
+   --bg-2: #272B2F;
+
+   /* border-radius */
+   --border-r20: 20px;
+   --border-r14: 14px;
+
+   /* font-weight */
+   --font-weight-500: 500px;
+   --font-weight-400: 400px;
+
+   /* line-height */
+   /* --line-height-32: 32px;
+   --line-height-24: 24px;
+   --line-height-20: 20px;
+   --line-height-16: 16px; */
+
+   /* font-size */
+   --font-size-20: 20px;
+   --font-size-16: 16px;
+   --font-size-15: 15px;
+}
+
+/* Отступы */
+.mt22 {
+   margin-top: 22px;
+}
+
+.mt12 {
+   margin-top: 12px;
+}
+
+.mt8 {
+   margin-top: 8px;
+}
+
+/* Кнопки */
+
+/* usually */
+.btn-1 {
+   border-radius: var(--border-r20);
+   background: var(--main-main);
+   color: var(--color-2);
+   cursor: pointer;
+}
+
+.btn-1>img {
+   width: 25px;
+}
+
+.btn-1:hover {
+   background: var(--main-main-hover);
+}
+
+.btn-1:active,
+.btn-1.active {
+   color: var(--color-1);
+   background: var(--main-main-active);
+}
+
+.btn-1:active img,
+.btn-1.active img {
+   fill: var(--color-1);
+}
+
+.btn-text img {
+   margin-right: 10px;
+}
+
+/* violet */
+.btn-2 {
+   border-radius: var(--border-r20);
+   background: var(--main-second);
+   color: var(--color-1);
+   cursor: pointer;
+}
+
+.btn-2:hover {
+   background: var(--main-second-hover);
+}
+
+.btn-2:active,
+.btn-2.active {
+   background: var(--main-second-active);
+}
+
+/* orange */
+.btn-3 {
+   border-radius: var(--border-r20);
+   background: var(--main-third);
+   color: var(--color-1);
+   cursor: pointer;
+}
+
+.btn-3:hover {
+   background: var(--main-third-hover);
+}
+
+.btn-3:active,
+.btn-3.active {
+   background: var(--main-third-active);
+}
+
+@media screen and (max-width: 720px) {
+   .btn-1 {
+      border-radius: 12px;
+   }
+
+   .btn-1 img {
+      width: 18px;
+   }
+}

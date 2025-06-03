@@ -1,0 +1,73 @@
+.container {
+   min-width: 100%;
+   display: flex;
+   justify-content: space-between;
+   padding: 26px;
+   border-radius: var(--border-r20);
+   background: var(--main-main);
+}
+
+.container * {
+   width: 33.333%;
+}
+
+.left {
+   padding-right: 36px;
+}
+
+.right {
+   padding-left: 36px;
+}
+
+.middle {
+   position: relative;
+}
+
+.middle:after,
+.middle:before {
+   position: absolute;
+   top: -26px;
+   content: '';
+   width: 1px;
+   height: calc(100% + 52px);
+   background: var(--bg-1);
+
+}
+
+.middle:before {
+   right: 0;
+}
+
+/* Внутренний контент блоков */
+.statisticsBlock {
+   width: 100%;
+   display: flex;
+   background: var(--bg-2);
+   overflow: hidden;
+   height: 146px;
+   border-radius: var(--border-r20);
+}
+
+.photoBlock {
+   width: 36%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: var(--bg-1);
+   gap: 26px;
+}
+
+.photoBlock img {
+   width: 78px;
+}
+
+.dataBlock {
+   width: 64%;
+   background: var(--bg-2);
+   padding: 12px 15px;
+   display: flex;
+   flex-direction: column;
+   gap: 9px;
+}

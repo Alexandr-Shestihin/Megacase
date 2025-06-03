@@ -5,5 +5,40 @@
 
  .mainRow {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+ }
+
+ .first {
+    width: 41px;
+ }
+
+ .middle {
+    width: 90px;
+    margin-left: 8px;
+ }
+
+ .right {
+    margin-left: 20px;
+ }
+
+ .addRow {
+    position: relative;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;  /*  Используем transition для прозрачности */
+ }
+
+ .addRow * {
+    color: var(--color-2)
+ }
+
+ .addRow::before {
+    position: absolute;
+    top: -5px;
+    right: -13px;
+    content: '';
+    width: 83%;
+    height: 1px;
+    background: var(--bg-1);
  }

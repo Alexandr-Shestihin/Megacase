@@ -1,24 +1,34 @@
-
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
 import s from './MyCase.module.css';
-import caseIcon from '../../assets/icons/case.svg'
 import { useTranslation } from 'react-i18next';
 
-const MyCase = ({ id, price, left, openCount }) => {
+const caseIcon = '/assets/icons/case.svg';
 
-   const { t } = useTranslation()
+const MyCase = ({ id, price, rest, openCount }) => {
+
+   const [active, setActive] = useState(false);
+
+   const { t } = useTranslation();
+
+   const handler = () => {
+      setActive(!active)
+   }
 
    return (
-      <div className={`${s.container} btn-1`}>
+      <div className={`${s.container} btn-1`} onClick={handler}>
          <div className={s.mainRow}>
-            <img src={caseIcon} alt="" />
-            <div>{t('leftMenu.cases.title')} №{id}</div>
-            <div>{price}$</div>
+            <div className={s.first}><img src={caseIcon} alt="" /></div>
+            <div className={s.middle}>{t('leftMenu.cases.title')} №{id}</div>
+            <div className={s.right}>{price}$</div>
          </div>
-         <div className={s.addRow}>
-
-         </div>
-
+         {active && (
+            <div className={`${s.addRow} mt8`}>
+               <div className={s.first}>{openCount}</div>
+               <div className={s.middle}>{t('leftMenu.cases.rest')}</div>
+               <div className={s.right}>{rest} {t('leftMenu.cases.restCount')}</div>
+            </div>
+         )}
       </div>
    )
 }

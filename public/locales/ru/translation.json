@@ -1,0 +1,29 @@
+{
+   "header": {
+      "info": "Профиль"
+   },
+   "leftMenu": {
+      "title": "Кейсы",
+      "subtitle": "Мои кейсы",
+      "cases": {
+         "title": "Кейс",
+         "restCount": "дн.",
+         "rest": "Осталось"
+      }
+   },
+   "rightMemu": {
+      "title": "Профиль"
+   },
+   "openCasesBlock": {
+      "title": "Открыть кейс",
+      "pageSubtitlePrice": "Стоимость",
+      "pageSubtitleChance": "Шанс",
+      "statistics": {
+         "one": "Шанс",
+         "two": "Риск",
+         "three": "Min скин",
+         "four": "Max скин",
+         "five": "Стоимость"
+      }
+   }
+}

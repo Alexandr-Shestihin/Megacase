@@ -1,95 +1,102 @@
-
+"use client"
 import React from 'react';
 import s from './LeftMenu.module.css';
 
-import inactiveIcon from '../../assets/icons/inactive.svg';
-import activeIcon from '../../assets/icons/active.svg';
+const inactiveIcon = '/assets/icons/inactive.svg';
+const activeIcon = '/assets/icons/active.svg';
 
 import {
    Button,
    MyCase
 } from '../';
+
 import { useTranslation } from 'react-i18next';
+import useMenuSelection from '@/utils';
 
 const LeftMenu = (props) => {
+   const { activeID, handler } = useMenuSelection();
 
    const { t } = useTranslation();
 
    const cases = [
       {
          id: 123,
-         price: 12,
-         left: 6,
+         price: 125,
+         rest: 6,
          openCount: '(x12)',
       },
       {
          id: 124,
-         price: 12,
-         left: 6,
+         price: 125,
+         rest: 6,
          openCount: '(x12)',
       },
       {
          id: 125,
-         price: 12,
-         left: 6,
+         price: 125,
+         rest: 6,
          openCount: '(x12)',
       },
       {
          id: 126,
-         price: 12,
-         left: 6,
+         price: 125,
+         rest: 6,
          openCount: '(x12)',
       },
       {
          id: 127,
-         price: 12,
-         left: 6,
+         price: 125,
+         rest: 6,
          openCount: '(x12)',
       },
       {
          id: 128,
-         price: 12,
-         left: 6,
+         price: 125,
+         rest: 6,
          openCount: '(x12)',
       },
       {
          id: 129,
-         price: 12,
-         left: 6,
+         price: 125,
+         rest: 6,
          openCount: '(x12)',
       },
       {
          id: 130,
-         price: 12,
-         left: 6,
+         price: 125,
+         rest: 6,
          openCount: '(x12)',
       },
       {
          id: 131,
-         price: 12,
-         left: 6,
+         price: 125,
+         rest: 6,
          openCount: '(x12)',
       },
    ];
 
    return (
-      <div className={s.container}>
+      <div className={s.container} onClick={handler}>
          <div className="pageSubtitle">{t('leftMenu.title')}</div>
          <Button
+            id={'Counter-Strike'}
+            active={activeID === 'Counter-Strike' && true}
             className={`${s.btn} mt12`}
-            onClick={() => console.log('Counter-Strike 2')}
             activeI={activeIcon}
             inactiveI={inactiveIcon}
          >Counter-Strike 2</Button>
          <Button
+            id={'Dota-2'}
+            active={activeID === 'Dota-2' && true}
             className={s.btn}
             onClick={() => console.log('Dota 2')}
             activeI={activeIcon}
             inactiveI={inactiveIcon}
          >Dota 2</Button>
          <Button
+            id={'Rust'}
+            active={activeID === 'Rust' && true}
             className={s.btn}
-            onClick={() => console.log('Rust')}
             activeI={activeIcon}
             inactiveI={inactiveIcon}
          >Rust</Button>
@@ -99,7 +106,7 @@ const LeftMenu = (props) => {
             key={el.id}
             id={el.id}
             price={el.price}
-            left={el.left}
+            rest={el.rest}
             openCount={el.openCount}
          />)}
 

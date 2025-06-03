@@ -1,0 +1,29 @@
+{
+   "header": {
+      "info": "Profile"
+   },
+   "leftMenu": {
+      "title": "Cases",
+      "subtitle": "My cases",
+      "cases": {
+         "title": "Case",
+         "restCount": "d",
+         "rest": "Left"
+      }
+   },
+   "rightMemu": {
+      "title": "Profile"
+   },
+   "openCasesBlock": {
+      "title": "Open cases",
+      "pageSubtitlePrice": "Price",
+      "pageSubtitleChance": "Chance",
+      "statistics": {
+         "one": "Chance",
+         "two": "Risik",
+         "three": "Min Skin",
+         "four": "Max Skin",
+         "five": "Cost"
+      }
+   }
+}

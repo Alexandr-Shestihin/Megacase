@@ -1,0 +1,18 @@
+
+.btnRow {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   gap: 6px;
+} 
+
+.btn {
+   width: 23%;
+   display: flex;
+   justify-content: center;
+   white-space: nowrap;
+   padding: 14px 25px;
+   background: var(--bg-2);
+   font-size: 15px;
+   border-radius: var(--border-r14);
+}

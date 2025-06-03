@@ -1,4 +1,4 @@
-
+"use client"
 import React from 'react';
 import s from './RightMemu.module.css';
 import { useTranslation } from 'react-i18next';

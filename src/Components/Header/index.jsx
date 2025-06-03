@@ -1,32 +1,33 @@
+"use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import s from './Header.module.css';
+
+import Image from 'next/image';
 
 import {
    Button,
 } from '../';
+const mainLogo = '../../assets/img/logo/mainLogo.svg';
+const totalScore = '../../assets/icons/totalScore.svg';
+const addMoney = '../../assets/icons/addMoney.svg';
+const userIcon = '../../assets/icons/userIcon.svg';
+const logOut = '../../assets/icons/logOut.svg';
+const user = '../../assets/icons/user.png';
 
-import mainLogo from '../../assets/img/logo/mainLogo.svg';
-import totalScore from '../../assets/icons/totalScore.svg';
-import addMoney from '../../assets/icons/addMoney.svg';
-import userIcon from '../../assets/icons/userIcon.svg';
-import logOut from '../../assets/icons/logOut.svg';
-import user from '../../assets/icons/user.png';
-
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const Header = (props) => {
+
+   const [userPhoto, setUserPhoto] = useState(null);
 
    const { t, i18n } = useTranslation(); // t - функция перевода, i18n - объект i18n
 
    const changeLanguage = (lng) => {
-      console.log('Header.jsx: changeLanguage called with:', lng);  // <<-- ADD THIS LINE
       i18n.changeLanguage(lng);
-      console.log('Header.jsx: i18n.language after changeLanguage:', i18n.language);
    };
 
    const balance = 123455;
-   const userPhoto = null;
    const userName = 'Герасим Муму';
 
    return (
@@ -37,11 +38,13 @@ const Header = (props) => {
          </div>
 
 
-         <div className={s.imgContainer}><img src={mainLogo} alt="" /></div>
+         <div className={s.imgContainer}><Image src={mainLogo} alt="Logo" width={200} height={100} className="img"  /></div>
          <div className={s.contantContainer}>
-            <div className={`${s.addMoney} btn-1`}><img src={addMoney} alt="" /></div>
+            <div className={`${s.addMoney} btn-1`}>
+               <Image src={addMoney} alt="add money" width={200} height={100} className="img"  />
+               </div>
             <div className={`${s.balance} btn-1 btn-text`}>
-               <img src={totalScore} alt="" />
+               <Image src={totalScore} alt="total score" width={200} height={100} className="img"  />
                {balance.toLocaleString('ru-ru')}$
             </div>
             <div className={`${s.userInfo}  btn-1`}>
@@ -52,7 +55,7 @@ const Header = (props) => {
                   <div className={s.info}>{t('header.info')}</div>
                   <div className={s.fullname}>{userName}</div>
                </div>
-               <img src={logOut} alt="" className={s.logOut} />
+               <Image src={logOut} alt="log Out" width={200} height={100} className={s.logOut}  />
             </div>
          </div>
       </div>

@@ -1,5 +1,10 @@
-export {default as Header} from './Header';
-export {default as Button} from './Button';
-export {default as MyCase} from './MyCase';
+export { default as Header } from './Header';
+export { default as Button } from './Button';
+export { default as MyCase } from './MyCase';
 export {default as LeftMenu} from './LeftMenu';
 export {default as RightMemu} from './RightMemu';
+export {default as OpenCasesBlock} from './OpenCasesBlock';
+export {default as Item} from './Item';
+export {default as Input} from './Input';
+export {default as OpenCasesBlockPrice} from './OpenCasesBlockBtns/OpenCasesBlockPrice.jsx';
+export {default as OpenCasesBlockPercent} from './OpenCasesBlockBtns/OpenCasesBlockPercent.jsx';

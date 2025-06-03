@@ -1,0 +1,20 @@
+ .inputContainer {
+    position: relative;
+    display: flex;
+    width: 100%;
+ }
+
+ .input {
+    background: var(--bg-2);
+    padding: 20px;
+    width: 100%;
+    color: var(--color-1);
+    border-radius: var(--border-r20);
+ }
+
+ .icon {
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 20px;
+    width: 20px;
+ }
