@@ -57,11 +57,6 @@ const OpenCasesBlock = (props) => {
       }
    }, [debouncedSetPrice]);
 
-   useEffect(() => {
-      console.log(data)
-   }, [data])
-
-
    return (
       <div className={s.container}>
          <div className={s.left}>
@@ -72,7 +67,7 @@ const OpenCasesBlock = (props) => {
                img={price}
                className={'mt12'}
             />
-            <OpenCasesBlockPrice handler={handler} set={setData} value={data} />
+            <OpenCasesBlockPrice handler={handler} set={setData} data={data} />
             {/* <div className={`${s.btnRow} mt8`}>
                <Button
                   className={`${s.btn}`}

@@ -7,7 +7,7 @@ import {
    Button,
 } from '..';
 
-const OpenCasesBlockPercent = ({ set, value }) => {
+const OpenCasesBlockPercent = ({ set, data }) => {
 
    const { activeID, handler, clear } = useMenuSelection();
    const handlerClick = (e) => {
@@ -17,11 +17,14 @@ const OpenCasesBlockPercent = ({ set, value }) => {
    }
 
    useEffect(() => {
-      console.log(value)
-      if (activeID !== value) {
-         clear()
+      console.log('useEffect')
+      console.log(data?.percent)
+      console.log(activeID)
+      if (activeID !== data?.percent) {
+         clear();
+         console.log('clear')
       }
-   }, [value])
+   }, [data])
 
    return (
       <div className={`${s.btnRow} mt8`} onClick={handlerClick}>
