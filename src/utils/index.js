@@ -73,7 +73,7 @@ const useMenuSelection = () => {
 
    const handler = useCallback((e) => {
       const id = e.target.id;
-      setActiveID(id || null);
+      setActiveID(prev => id || prev);
    }, []);
 
    const clear = useCallback(() => {

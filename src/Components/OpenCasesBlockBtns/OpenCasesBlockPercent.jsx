@@ -11,18 +11,13 @@ const OpenCasesBlockPercent = ({ set, data }) => {
 
    const { activeID, handler, clear } = useMenuSelection();
    const handlerClick = (e) => {
-      console.log(e.target.id)
       handler(e);
-      set(prev => ({ ...prev, 'percent': e.target.id }))
+      set(prev => ({ ...prev, 'percent': e.target.id || prev.percent }))
    }
 
    useEffect(() => {
-      console.log('useEffect')
-      console.log(data?.percent)
-      console.log(activeID)
       if (activeID !== data?.percent) {
          clear();
-         console.log('clear')
       }
    }, [data])
 

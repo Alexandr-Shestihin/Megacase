@@ -1,5 +1,5 @@
 .container {
-   min-width: 100%;
+   width: 100%;
    display: flex;
    justify-content: space-between;
    padding: 26px;
@@ -7,20 +7,24 @@
    background: var(--main-main);
 }
 
-.container * {
-   width: 33.333%;
-}
-
 .left {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
    padding-right: 36px;
 }
 
 .right {
+   width: 52%;
    padding-left: 36px;
 }
 
 .middle {
    position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding: 0 20px;
 }
 
 .middle:after,
@@ -35,6 +39,10 @@
 }
 
 .middle:before {
+   left: 0;
+}
+
+.middle:after {
    right: 0;
 }
 
@@ -70,4 +78,35 @@
    display: flex;
    flex-direction: column;
    gap: 9px;
+}
+
+.btn {
+   width: 100%;
+   padding: 22px 0;
+   display: flex;
+   justify-content: center;
+}
+
+.btnShare {
+   width: 177px;
+   display: flex;
+   justify-content: center;
+   white-space: nowrap;
+   padding: 15px;
+   background: var(--bg-2);
+}
+
+.caseImg {
+   width: 100%;
+}
+
+.count {
+   width: auto;
+}
+
+.flipContainer {
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
 }

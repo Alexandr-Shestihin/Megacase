@@ -9,13 +9,23 @@ import Image from 'next/image';
 
 const price = '/assets/icons/addMoney.svg';
 const caseIcon = '/assets/img/case.png';
+const create = '/assets/icons/create.svg';
+const share = '/assets/icons/share.svg';
+const caseLarge = '/assets/img/caseLarge.png';
+const caseI = '/assets/icons/active.svg';
 
 import {
+   Button,
    Item,
    Input,
    OpenCasesBlockPrice,
-   OpenCasesBlockPercent
+   OpenCasesBlockPercent,
+   FlipCard,
+   FrontContent,
+   BackContent
 } from '../';
+
+import { cardsData } from '../../../public/data';
 
 const OpenCasesBlock = (props) => {
 
@@ -68,61 +78,9 @@ const OpenCasesBlock = (props) => {
                className={'mt12'}
             />
             <OpenCasesBlockPrice handler={handler} set={setData} data={data} />
-            {/* <div className={`${s.btnRow} mt8`}>
-               <Button
-                  className={`${s.btn}`}
-                  onClick={() => console.log('100$')}
-                  activeI={null}
-                  inactiveI={null}
-               >100$</Button>
-               <Button
-                  className={`${s.btn}`}
-                  onClick={() => console.log('500')}
-                  activeI={null}
-                  inactiveI={null}
-               >500$</Button>
-               <Button
-                  className={`${s.btn}`}
-                  onClick={() => console.log('1000')}
-                  activeI={null}
-                  inactiveI={null}
-               >1 000$</Button>
-               <Button
-                  className={`${s.btn}`}
-                  onClick={() => console.log('5000')}
-                  activeI={null}
-                  inactiveI={null}
-               >5 000$</Button>
-            </div> */}
             <div className="pageSubtitle mt22">{t("openCasesBlock.pageSubtitleChance")}</div>
             <Input set={(e) => handler(e, "percent")} value={`${data.percent}%`} className={'mt12'} />
-            <OpenCasesBlockPercent handler={handler} set={setData} />
-            {/* <div className={`${s.btnRow} mt8`}>
-               <Button
-                  className={`${s.btn}`}
-                  onClick={() => console.log('100%')}
-                  activeI={null}
-                  inactiveI={null}
-               >10%</Button>
-               <Button
-                  className={`${s.btn}`}
-                  onClick={() => console.log('100%')}
-                  activeI={null}
-                  inactiveI={null}
-               >30%</Button>
-               <Button
-                  className={`${s.btn}`}
-                  onClick={() => console.log('100%')}
-                  activeI={null}
-                  inactiveI={null}
-               >50%</Button>
-               <Button
-                  className={`${s.btn}`}
-                  onClick={() => console.log('100%')}
-                  activeI={null}
-                  inactiveI={null}
-               >100%</Button>
-            </div> */}
+            <OpenCasesBlockPercent handler={handler} set={setData} data={data} />
             <div className={`${s.statisticsBlock} mt12`}>
                <div className={s.photoBlock}>
                   <Image src={caseIcon} alt="Case" width={200} height={100} className="img" />
@@ -135,13 +93,50 @@ const OpenCasesBlock = (props) => {
                   <Item name={t("openCasesBlock.statistics.four")} value={'0.000023%'} />
                   <Item name={t("openCasesBlock.statistics.five")} value={'12 569$'} />
                </div>
+            </div>
+            <Button
+               className={`${s.btn} btn-2 mt12`}
+               activeI={create}
+               inactiveI={create}
+            >{t("openCasesBlock.createBtn")}</Button>
+         </div>
+
+         <div className={s.middle}>
+            <div className="row">
+               <div className="pageTitle">{t("openCasesBlock.title")}</div>
+               <Button
+                  className={`${s.btnShare}`}
+                  activeI={share}
+                  inactiveI={share}
+               >{t("openCasesBlock.shareBtn")}</Button>
+            </div>
+            <Image src={caseLarge} alt="Case" width={528} height={358} className={`img mt26 ${s.caseImg}`} />
+            <Button
+               className={`${s.btn} btn-3 mt54`}
+               activeI={caseI}
+               inactiveI={caseI}
+            >{t("openCasesBlock.openBtn")}$12</Button>
+         </div>
+
+         <div className={s.right}>
+            <div className="row">
+               <div className="pageSubtitle">{t("openCasesBlock.fillingCase")}</div>
+               <div className={s.count}>12{t("openCasesBlock.count")}</div>
+            </div>
+            <div className={`mt12 ${s.flipContainer}`}>
+               {cardsData.map(el => <FlipCard key={el.id}
+                  frontContent={<FrontContent dw={el.dw} img={el.img} />}
+                  backContent={<BackContent
+                     dw={el.dw}
+                     text={el.text}
+                     price={el.price}
+                     chance={el.chance}
+                  />}
+                  className="my-custom-class" // Добавьте свои классы
+               />)}
 
             </div>
          </div>
-         <div className={s.middle}>
-            <div className="pageTitle">{t("openCasesBlock.title")}</div>
-         </div>
-         <div className={s.right}></div>
       </div>
    )
 }

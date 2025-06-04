@@ -12,7 +12,15 @@
       }
    },
    "rightMemu": {
-      "title": "Профиль"
+      "title": "Профиль",
+      "deposit": "Депозит",
+      "historyConclusions": "История выводов",
+      "historyGames": "История игр",
+      "profit": "Доход",
+      "bonuses": "Бонусы",
+      "accountStatistics": "Статистика аккаунта",
+      "honestyCheck": "Проверка честности",
+      "changeLink": "Изменить"
    },
    "openCasesBlock": {
       "title": "Открыть кейс",
@@ -24,6 +32,12 @@
          "three": "Min скин",
          "four": "Max скин",
          "five": "Стоимость"
-      }
-   }
+      },
+      "createBtn": "Создать и открыть",
+      "shareBtn": "Поделиться",
+      "openBtn": "Открыть за ",
+      "fillingCase": "Наполнение кейса",
+      "count": " предметов"
+   },
+   "liveLastDrop": " лента последних дропов"
 }

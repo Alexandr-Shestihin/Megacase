@@ -1,35 +1,53 @@
-
-import React from 'react';
+"use client"
+import React, { useEffect } from 'react';
 import s from './OpenCasesBlockBtns.module.css';
+import useMenuSelection from '@/utils';
 
 import {
    Button,
 } from '..';
 
-const OpenCasesBlockPrice = (props) => {
+const OpenCasesBlockPrice = ({ set, data }) => {
+
+   const { activeID, handler, clear } = useMenuSelection();
+   const handlerClick = (e) => {
+      handler(e);
+      set(prev => ({ ...prev, 'price': e.target.id || prev.price }))
+   }
+
+   useEffect(() => {
+      if (activeID !== data?.price) {
+         clear();
+      }
+   }, [data])
+
    return (
-      <div className={`${s.btnRow} mt8`}>
+      <div className={`${s.btnRow} mt8`} onClick={handlerClick}>
          <Button
+            id={'100'}
+            active={activeID === '100'}
             className={`${s.btn}`}
-            onClick={() => console.log('100$')}
             activeI={null}
             inactiveI={null}
          >100$</Button>
          <Button
+            id={'500'}
+            active={activeID === '500'}
             className={`${s.btn}`}
-            onClick={() => console.log('500')}
             activeI={null}
             inactiveI={null}
          >500$</Button>
          <Button
+            id={'1000'}
+            active={activeID === '1 000'}
             className={`${s.btn}`}
-            onClick={() => console.log('1000')}
             activeI={null}
             inactiveI={null}
          >1 000$</Button>
          <Button
+            id={'5000'}
+            active={activeID === '5 000'}
             className={`${s.btn}`}
-            onClick={() => console.log('5000')}
             activeI={null}
             inactiveI={null}
          >5 000$</Button>

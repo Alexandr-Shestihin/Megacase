@@ -12,7 +12,15 @@
       }
    },
    "rightMemu": {
-      "title": "Profile"
+      "title": "Profile",
+      "deposit": "Deposit",
+      "historyConclusions": "History of conclusions",
+      "historyGames": "History of games",
+      "profit": "Profits",
+      "bonuses": "Bonuses",
+      "accountStatistics": "Account statistics",
+      "honestyCheck": "Honesty check",
+      "changeLink": "Change"
    },
    "openCasesBlock": {
       "title": "Open cases",
@@ -24,6 +32,12 @@
          "three": "Min Skin",
          "four": "Max Skin",
          "five": "Cost"
-      }
-   }
+      },
+      "createBtn": "Create and open",
+      "shareBtn": "Share",
+      "openBtn": "Open for ",
+      "fillingCase": "Filling the case",
+      "count": " things"
+   },
+   "liveLastDrop": " feed of the latest drops"
 }

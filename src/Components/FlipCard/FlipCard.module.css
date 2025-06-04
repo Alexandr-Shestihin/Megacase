@@ -1,0 +1,48 @@
+.flipCard {
+   background-color: transparent;
+   width: 120px; /* Задайте нужную ширину по умолчанию */
+   height: 120px; /* Задайте нужную высоту по умолчанию */
+   perspective: 1000px; /* Важно для 3D эффекта */
+   cursor: pointer;
+ }
+ 
+ .flipCardInner {
+   position: relative;
+   min-width: 100%;
+   min-height: 100%;
+   text-align: center;
+   transition: transform 0.8s;
+   transform-style: preserve-3d; /* Важно для 3D эффекта */
+
+ }
+ 
+ .flipped {
+   transform: rotateY(180deg);
+ }
+ 
+ .flipCardFront,
+ .flipCardBack {
+   position: absolute;
+   min-width: 100%;
+   min-height: 100%;
+   backface-visibility: hidden; /* Скрывает заднюю сторону при повороте */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 20px;
+   color: white;
+   border-radius: var(--border-r20);
+   background: var(--bg-2);
+   overflow: hidden;
+   padding: 10px;
+ }
+ 
+ .flipCardFront {
+   color: black;
+
+ }
+ 
+ .flipCardBack {
+   color: white;
+   transform: rotateY(180deg); /* Поворачивает заднюю сторону изначально */
+ }

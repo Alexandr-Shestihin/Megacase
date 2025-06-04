@@ -104,6 +104,7 @@ img,
 }
 
 .pageTitle {
+   font-size: 24px;
    font-weight: 700;
 }
 
@@ -153,9 +154,18 @@ img,
    --font-size-20: 20px;
    --font-size-16: 16px;
    --font-size-15: 15px;
+   --font-size-14: 14px;
 }
 
 /* Отступы */
+.mt54 {
+   margin-top: 54px;
+}
+
+.mt26 {
+   margin-top: 26px;
+}
+
 .mt22 {
    margin-top: 22px;
 }
@@ -243,4 +253,73 @@ img,
    .btn-1 img {
       width: 18px;
    }
+}
+
+
+.row {
+   min-width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+/* степень износа */
+.dw {
+   font-size: var(--font-size-14);
+   font-weight: var(--font-weight-500);
+   position: relative;
+   padding-left: 14px;
+}
+
+.dw::before {
+   content: '';
+   position: absolute; 
+   left: 0;          
+   top: 50%;         
+   transform: translateY(-50%); 
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background-color: #ccc; 
+}
+
+/* Стили для конкретных состояний */
+.fn::before {
+   background: rgb(73, 73, 224);
+}
+
+.mw::before {
+   background: green; /* Пример цвета */
+}
+
+.ft::before {
+   background: orange; /* Пример цвета */
+}
+
+.ww::before {
+   background: gray; /* Пример цвета */
+}
+
+.bs::before {
+   background: brown; /* Пример цвета */
+}
+
+/* Отдельные классы для текста */
+.fn {
+   color: rgb(73, 73, 224);
+}
+
+.mw {
+   color: green; /* Пример цвета */
+}
+
+.ft {
+   color: orange; /* Пример цвета */
+}
+
+.ww {
+   color: gray; /* Пример цвета */
+}
+
+.bs {
+   color: brown; /* Пример цвета */
 }

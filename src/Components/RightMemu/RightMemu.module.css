@@ -1,1 +1,33 @@
- 
+.container {
+   width: 262px;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.btn {
+   padding: 22px 20px;
+   width: 100%;
+}
+
+.changeLink {
+   padding: 14px 16px;
+}
+
+.imgContainer {
+   width: 121px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.img {
+   width: auto;
+   height: 18px;
+   margin-left: 0;
+}
+
+.changeText {
+   font-size: var(--font-size-16);
+   font-weight: var(--font-weight-400);
+   color: var(--color-2);
+}

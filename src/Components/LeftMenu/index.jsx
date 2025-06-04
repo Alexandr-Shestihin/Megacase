@@ -12,68 +12,12 @@ import {
 
 import { useTranslation } from 'react-i18next';
 import useMenuSelection from '@/utils';
+import { cases } from '../../../public/data';
 
 const LeftMenu = (props) => {
    const { activeID, handler } = useMenuSelection();
 
    const { t } = useTranslation();
-
-   const cases = [
-      {
-         id: 123,
-         price: 125,
-         rest: 6,
-         openCount: '(x12)',
-      },
-      {
-         id: 124,
-         price: 125,
-         rest: 6,
-         openCount: '(x12)',
-      },
-      {
-         id: 125,
-         price: 125,
-         rest: 6,
-         openCount: '(x12)',
-      },
-      {
-         id: 126,
-         price: 125,
-         rest: 6,
-         openCount: '(x12)',
-      },
-      {
-         id: 127,
-         price: 125,
-         rest: 6,
-         openCount: '(x12)',
-      },
-      {
-         id: 128,
-         price: 125,
-         rest: 6,
-         openCount: '(x12)',
-      },
-      {
-         id: 129,
-         price: 125,
-         rest: 6,
-         openCount: '(x12)',
-      },
-      {
-         id: 130,
-         price: 125,
-         rest: 6,
-         openCount: '(x12)',
-      },
-      {
-         id: 131,
-         price: 125,
-         rest: 6,
-         openCount: '(x12)',
-      },
-   ];
 
    return (
       <div className={s.container} onClick={handler}>

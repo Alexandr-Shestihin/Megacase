@@ -3,13 +3,96 @@ import React from 'react';
 import s from './RightMemu.module.css';
 import { useTranslation } from 'react-i18next';
 
+import useMenuSelection from '@/utils';
+
+import {
+   Button,
+   Input
+} from '../';
+
+const link = '/assets/icons/link.svg';
+const deposit = '/assets/icons/addMoney.svg';
+const historyConclusions = '/assets/icons/historyConclusions.svg';
+const historyGames = '/assets/icons/historyGames.svg';
+const profits = '/assets/icons/profits.svg';
+const bonuses = '/assets/icons/bonuses.svg';
+const accountStatistics = '/assets/icons/accountStatistics.svg';
+const honestyCheck = '/assets/icons/honestyCheck.svg';
+
+import Image from 'next/image';
+
 const RightMemu = (props) => {
+
+   const { activeID, handler } = useMenuSelection();
 
    const { t } = useTranslation();
 
    return (
-      <div>
+      <div onClick={handler} className={s.container}>
          <div className="pageSubtitle">{t('rightMemu.title')}</div>
+         <div className={`btn-1 ${s.changeLink}`}>
+            <div className="row">
+            <div className={s.imgContainer}>
+               <Image src={link} alt="link" width={18} height={18} className={`img ${s.img}`} />
+               Trade URL Link
+            </div>
+            <div className={s.changeText}>{t('rightMemu.changeLink')}</div>
+            </div>
+            <Input
+               set={(e) => console.log(e)}
+               value={"https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url"}
+               className={'mt8'}
+            /> 
+         </div>
+         <Button
+            id={'deposit'}
+            active={activeID === 'deposit' && true}
+            className={`${s.btn}`}
+            activeI={deposit}
+            inactiveI={deposit}
+         >{t('rightMemu.deposit')}</Button>
+         <Button
+            id={'historyConclusions'}
+            active={activeID === 'historyConclusions' && true}
+            className={s.btn}
+            activeI={historyConclusions}
+            inactiveI={historyConclusions}
+         >{t('rightMemu.historyConclusions')}</Button>
+         <Button
+            id={'historyGames'}
+            active={activeID === 'historyGames' && true}
+            className={s.btn}
+            activeI={historyGames}
+            inactiveI={historyGames}
+         >{t('rightMemu.historyGames')}</Button>
+         <Button
+            id={'profit'}
+            active={activeID === 'profit' && true}
+            className={s.btn}
+            activeI={profits}
+            inactiveI={profits}
+         >{t('rightMemu.profit')}</Button>
+         <Button
+            id={'bonuses'}
+            active={activeID === 'bonuses' && true}
+            className={s.btn}
+            activeI={bonuses}
+            inactiveI={bonuses}
+         >{t('rightMemu.bonuses')}</Button>
+         <Button
+            id={'accountStatistics'}
+            active={activeID === 'accountStatistics' && true}
+            className={s.btn}
+            activeI={accountStatistics}
+            inactiveI={accountStatistics}
+         >{t('rightMemu.accountStatistics')}</Button>
+         <Button
+            id={'honestyCheck'}
+            active={activeID === 'honestyCheck' && true}
+            className={s.btn}
+            activeI={honestyCheck}
+            inactiveI={honestyCheck}
+         >{t('rightMemu.honestyCheck')}</Button>
       </div>
    )
 }
