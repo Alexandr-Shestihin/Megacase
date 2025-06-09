@@ -1,6 +1,10 @@
 {
+   "language": {
+      "english": "English",
+      "russian": "Russian"
+   },
    "header": {
-      "info": "Profile"
+      "info": "Account"
    },
    "leftMenu": {
       "title": "Cases",
@@ -39,5 +43,11 @@
       "fillingCase": "Filling the case",
       "count": " things"
    },
-   "liveLastDrop": " feed of the latest drops"
+   "liveLastDrop": {
+      "title": " feed of the latest drops",
+      "cardLiveDrops":{
+         "price": "Price",
+         "chance": "Chance"
+      }
+   }
 }

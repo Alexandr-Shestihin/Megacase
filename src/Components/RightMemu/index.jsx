@@ -12,12 +12,19 @@ import {
 
 const link = '/assets/icons/link.svg';
 const deposit = '/assets/icons/addMoney.svg';
-const historyConclusions = '/assets/icons/historyConclusions.svg';
-const historyGames = '/assets/icons/historyGames.svg';
-const profits = '/assets/icons/profits.svg';
-const bonuses = '/assets/icons/bonuses.svg';
-const accountStatistics = '/assets/icons/accountStatistics.svg';
-const honestyCheck = '/assets/icons/honestyCheck.svg';
+const depositUnactive = '/assets/icons/addMoneyUnactive.svg';
+const historyConclusionsActive = '/assets/icons/historyConclusionsActive.svg';
+const historyConclusionsUnactive = '/assets/icons/historyConclusionsUnactive.svg';
+const historyGamesActive = '/assets/icons/historyGamesActive.svg';
+const historyGamesUnactive = '/assets/icons/historyGamesUnactive.svg';
+const profitsActive = '/assets/icons/profitsActive.svg';
+const profitsUnactive = '/assets/icons/profitsUnactive.svg';
+const bonusesActive = '/assets/icons/bonusesActive.svg';
+const bonusesUnactive = '/assets/icons/bonusesUnactive.svg';
+const accountStatisticsActive = '/assets/icons/accountStatisticsActive.svg';
+const accountStatisticsUnactive = '/assets/icons/accountStatisticsUnactive.svg';
+const honestyCheckActive = '/assets/icons/honestyCheckActive.svg';
+const honestyCheckUnactive = '/assets/icons/honestyCheckUnactive.svg';
 
 import Image from 'next/image';
 
@@ -47,51 +54,51 @@ const RightMemu = (props) => {
          <Button
             id={'deposit'}
             active={activeID === 'deposit' && true}
-            className={`${s.btn}`}
+            className={`${s.btn} btn-text`}
             activeI={deposit}
-            inactiveI={deposit}
+            inactiveI={depositUnactive}
          >{t('rightMemu.deposit')}</Button>
          <Button
             id={'historyConclusions'}
             active={activeID === 'historyConclusions' && true}
-            className={s.btn}
-            activeI={historyConclusions}
-            inactiveI={historyConclusions}
+            className={`${s.btn} btn-text`}
+            activeI={historyConclusionsActive}
+            inactiveI={historyConclusionsUnactive}
          >{t('rightMemu.historyConclusions')}</Button>
          <Button
             id={'historyGames'}
             active={activeID === 'historyGames' && true}
-            className={s.btn}
-            activeI={historyGames}
-            inactiveI={historyGames}
+            className={`${s.btn} btn-text`}
+            activeI={historyGamesActive}
+            inactiveI={historyGamesUnactive}
          >{t('rightMemu.historyGames')}</Button>
          <Button
             id={'profit'}
             active={activeID === 'profit' && true}
-            className={s.btn}
-            activeI={profits}
-            inactiveI={profits}
+            className={`${s.btn} btn-text`}
+            activeI={profitsActive}
+            inactiveI={profitsUnactive}
          >{t('rightMemu.profit')}</Button>
          <Button
             id={'bonuses'}
             active={activeID === 'bonuses' && true}
-            className={s.btn}
-            activeI={bonuses}
-            inactiveI={bonuses}
+            className={`${s.btn} btn-text`}
+            activeI={bonusesActive}
+            inactiveI={bonusesUnactive}
          >{t('rightMemu.bonuses')}</Button>
          <Button
             id={'accountStatistics'}
             active={activeID === 'accountStatistics' && true}
-            className={s.btn}
-            activeI={accountStatistics}
-            inactiveI={accountStatistics}
+            className={`${s.btn} btn-text`}
+            activeI={accountStatisticsActive}
+            inactiveI={accountStatisticsUnactive}
          >{t('rightMemu.accountStatistics')}</Button>
          <Button
             id={'honestyCheck'}
             active={activeID === 'honestyCheck' && true}
-            className={s.btn}
-            activeI={honestyCheck}
-            inactiveI={honestyCheck}
+            className={`${s.btn} btn-text`}
+            activeI={honestyCheckActive}
+            inactiveI={honestyCheckUnactive}
          >{t('rightMemu.honestyCheck')}</Button>
       </div>
    )

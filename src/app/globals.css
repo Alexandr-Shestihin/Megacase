@@ -99,7 +99,9 @@ img,
 
 .wrapper {
    flex: 1 0 auto;
-   margin: 0 20px;
+   margin: 0 auto;
+   padding: 0 20px;
+   max-width: 1920px;
    height: 100vh;
 }
 
@@ -262,6 +264,10 @@ img,
    justify-content: space-between;
 }
 
+.row.row_center {
+   align-items: center;
+}
+
 /* степень износа */
 .dw {
    font-size: var(--font-size-14);
@@ -272,14 +278,14 @@ img,
 
 .dw::before {
    content: '';
-   position: absolute; 
-   left: 0;          
-   top: 50%;         
-   transform: translateY(-50%); 
+   position: absolute;
+   left: 0;
+   top: 50%;
+   transform: translateY(-50%);
    width: 10px;
    height: 10px;
    border-radius: 50%;
-   background-color: #ccc; 
+   background-color: #ccc;
 }
 
 /* Стили для конкретных состояний */
@@ -288,19 +294,23 @@ img,
 }
 
 .mw::before {
-   background: green; /* Пример цвета */
+   background: green;
+   /* Пример цвета */
 }
 
 .ft::before {
-   background: orange; /* Пример цвета */
+   background: orange;
+   /* Пример цвета */
 }
 
 .ww::before {
-   background: gray; /* Пример цвета */
+   background: gray;
+   /* Пример цвета */
 }
 
 .bs::before {
-   background: brown; /* Пример цвета */
+   background: brown;
+   /* Пример цвета */
 }
 
 /* Отдельные классы для текста */
@@ -309,17 +319,21 @@ img,
 }
 
 .mw {
-   color: green; /* Пример цвета */
+   color: green;
+   /* Пример цвета */
 }
 
 .ft {
-   color: orange; /* Пример цвета */
+   color: orange;
+   /* Пример цвета */
 }
 
 .ww {
-   color: gray; /* Пример цвета */
+   color: gray;
+   /* Пример цвета */
 }
 
 .bs {
-   color: brown; /* Пример цвета */
+   color: brown;
+   /* Пример цвета */
 }

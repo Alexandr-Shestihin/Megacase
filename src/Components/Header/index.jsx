@@ -11,13 +11,19 @@ import {
 const mainLogo = '../../assets/img/logo/mainLogo.svg';
 const totalScore = '../../assets/icons/totalScore.svg';
 const addMoney = '../../assets/icons/addMoney.svg';
+const languageActive = '../../assets/icons/languageActive.svg';
+const languageUnactive = '../../assets/icons/languageUnactive.svg';
 const userIcon = '../../assets/icons/userIcon.svg';
 const logOut = '../../assets/icons/logOut.svg';
+const usa = '../../assets/icons/languages/usa.svg';
+const rs = '../../assets/icons/languages/rs.svg';
 const user = '../../assets/icons/user.png';
 
 import { useTranslation } from "react-i18next";
 
 const Header = (props) => {
+
+   const [activeLanguage, setActiveLanguage] = useState(false);
 
    const [userPhoto, setUserPhoto] = useState(null);
 
@@ -32,22 +38,38 @@ const Header = (props) => {
 
    return (
       <div className={s.container}>
-         <div className={s.langContainer}>
-            <button onClick={() => changeLanguage('en')} className='btn-1'>En</button>
-            <button onClick={() => changeLanguage('ru')} className='btn-1'>Ру</button>
-         </div>
 
-
-         <div className={s.imgContainer}><Image src={mainLogo} alt="Logo" width={200} height={100} className="img"  /></div>
+         <div className={s.imgContainer}><Image src={mainLogo} alt="Logo" width={200} height={100} className="img" /></div>
          <div className={s.contantContainer}>
-            <div className={`${s.addMoney} btn-1`}>
-               <Image src={addMoney} alt="add money" width={200} height={100} className="img"  />
+
+            <Button
+               active={activeLanguage}
+               onClick={() => setActiveLanguage(!activeLanguage)}
+               className={`${s.btnMini}`}
+               activeI={languageActive}
+               inactiveI={languageUnactive}
+            >
+               <div className={`${s.langContainer} ${activeLanguage && s.active}`}>
+                  <div onClick={() => changeLanguage('en')} className={`btn-1 ${s.lan}`}>
+                     {t("language.english")}
+                     <Image src={usa} alt="usa" width={20} height={20} className="img" />
+                  </div>
+                  <div onClick={() => changeLanguage('ru')} className={`btn-1 ${s.lan}`}>
+                     {t("language.russian")}
+                     <Image src={rs} alt="rs" width={20} height={20} className="img" />
+                  </div>
                </div>
-            <div className={`${s.balance} btn-1 btn-text`}>
-               <Image src={totalScore} alt="total score" width={200} height={100} className="img"  />
+            </Button>
+
+            <Button className={`${s.btnMini}`}>
+               <Image src={addMoney} alt="add money" width={200} height={100} className="img" />
+            </Button>
+
+            <Button className={`${s.balance} btn-text`}>
+               <Image src={totalScore} alt="total score" width={200} height={100} className="img" />
                {balance.toLocaleString('ru-ru')}$
-            </div>
-            <div className={`${s.userInfo}  btn-1`}>
+            </Button>
+            <Button className={`${s.userInfo} `}>
                <div className={s.userAvatar}>
                   <img src={userPhoto || userIcon} alt="" />
                </div>
@@ -55,8 +77,8 @@ const Header = (props) => {
                   <div className={s.info}>{t('header.info')}</div>
                   <div className={s.fullname}>{userName}</div>
                </div>
-               <Image src={logOut} alt="log Out" width={200} height={100} className={s.logOut}  />
-            </div>
+               <Image src={logOut} alt="log Out" width={200} height={100} className={s.logOut} />
+            </Button>
          </div>
       </div>
    )

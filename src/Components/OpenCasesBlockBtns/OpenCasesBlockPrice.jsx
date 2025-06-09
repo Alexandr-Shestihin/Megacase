@@ -38,14 +38,14 @@ const OpenCasesBlockPrice = ({ set, data }) => {
             inactiveI={null}
          >500$</Button>
          <Button
-            id={'1000'}
+            id={'1 000'}
             active={activeID === '1 000'}
             className={`${s.btn}`}
             activeI={null}
             inactiveI={null}
          >1 000$</Button>
          <Button
-            id={'5000'}
+            id={'5 000'}
             active={activeID === '5 000'}
             className={`${s.btn}`}
             activeI={null}

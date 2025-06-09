@@ -21,8 +21,8 @@ import {
    OpenCasesBlockPrice,
    OpenCasesBlockPercent,
    FlipCard,
-   FrontContent,
-   BackContent
+   CardFrontContent,
+   CardBackContent
 } from '../';
 
 import { cardsData } from '../../../public/data';
@@ -95,7 +95,7 @@ const OpenCasesBlock = (props) => {
                </div>
             </div>
             <Button
-               className={`${s.btn} btn-2 mt12`}
+               className={`${s.btn} btn-2 btn-text mt12`}
                activeI={create}
                inactiveI={create}
             >{t("openCasesBlock.createBtn")}</Button>
@@ -105,14 +105,14 @@ const OpenCasesBlock = (props) => {
             <div className="row">
                <div className="pageTitle">{t("openCasesBlock.title")}</div>
                <Button
-                  className={`${s.btnShare}`}
+                  className={`${s.btnShare} btn-text`}
                   activeI={share}
                   inactiveI={share}
                >{t("openCasesBlock.shareBtn")}</Button>
             </div>
             <Image src={caseLarge} alt="Case" width={528} height={358} className={`img mt26 ${s.caseImg}`} />
             <Button
-               className={`${s.btn} btn-3 mt54`}
+               className={`${s.btn} btn-3 btn-text mt54`}
                activeI={caseI}
                inactiveI={caseI}
             >{t("openCasesBlock.openBtn")}$12</Button>
@@ -121,18 +121,20 @@ const OpenCasesBlock = (props) => {
          <div className={s.right}>
             <div className="row">
                <div className="pageSubtitle">{t("openCasesBlock.fillingCase")}</div>
-               <div className={s.count}>12{t("openCasesBlock.count")}</div>
+               <div className={s.count}>{cardsData.length}{t("openCasesBlock.count")}</div>
             </div>
             <div className={`mt12 ${s.flipContainer}`}>
                {cardsData.map(el => <FlipCard key={el.id}
-                  frontContent={<FrontContent dw={el.dw} img={el.img} />}
-                  backContent={<BackContent
+                  frontContent={<CardFrontContent dw={el.dw} img={el.img} />}
+                  backContent={<CardBackContent
                      dw={el.dw}
                      text={el.text}
                      price={el.price}
                      chance={el.chance}
                   />}
-                  className="my-custom-class" // Добавьте свои классы
+                  className="my-custom-class" 
+                  width={'120px'}
+                  height={'120px'}
                />)}
 
             </div>

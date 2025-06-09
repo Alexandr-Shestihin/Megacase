@@ -8,6 +8,7 @@
 }
 
 .left {
+   max-width: 27%;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -15,7 +16,7 @@
 }
 
 .right {
-   width: 52%;
+   width: 41.5%;
    padding-left: 36px;
 }
 
@@ -108,5 +109,5 @@
    width: 100%;
    display: flex;
    flex-wrap: wrap;
-   gap: 15px;
+   gap: 10px;
 }

@@ -84,3 +84,32 @@ const useMenuSelection = () => {
 };
 
 export default useMenuSelection;
+
+/* Логика отрисовки состояния в карточках */
+export const getDegreeWear = (dw, style) => {
+   if (dw === "FN") {
+      return <div className={`dw fn ${style}`}>Factory New</div>
+   } else if (dw === "MW") {
+      return <div className={`dw mw ${style}`}>Minimal Wear</div>
+   } else if (dw === "FT") {
+      return <div className={`dw ft ${style}`}>Field-Tested</div>
+   } else if (dw === "WW") {
+      return <div className={`dw ww ${style}`}>Well-Worn</div>
+   } else if (dw === "BS") {
+      return <div className={`dw bs ${style}`}>Battle-Scarred</div>
+   }
+}
+
+export const getDegreeWearMin = (dw) => {
+   if (dw === "FN") {
+      return <div className="dw fn">FN</div>
+   } else if (dw === "MW") {
+      return <div className="dw mw">MW</div>
+   } else if (dw === "FT") {
+      return <div className="dw ft">FT</div>
+   } else if (dw === "WW") {
+      return <div className="dw ww">WW</div>
+   } else if (dw === "BS") {
+      return <div className="dw bs">BS</div>
+   }
+}

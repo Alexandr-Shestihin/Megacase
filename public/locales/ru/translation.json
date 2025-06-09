@@ -1,6 +1,10 @@
 {
+   "language": {
+      "english": "Английский",
+      "russian": "Русский"
+   },
    "header": {
-      "info": "Профиль"
+      "info": "Аккаунт"
    },
    "leftMenu": {
       "title": "Кейсы",
@@ -39,5 +43,11 @@
       "fillingCase": "Наполнение кейса",
       "count": " предметов"
    },
-   "liveLastDrop": " лента последних дропов"
+   "liveLastDrop": {
+      "title": " дроп с кейса",
+      "cardLiveDrops":{
+         "price": "Цена",
+         "chance": "Шанс"
+      }
+   }
 }

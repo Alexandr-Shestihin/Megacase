@@ -16,19 +16,17 @@ const MyCase = ({ id, price, rest, openCount }) => {
    }
 
    return (
-      <div className={`${s.container} btn-1`} onClick={handler}>
+      <div className={`${s.container} ${active && s.active} btn-1`} onClick={handler}>
          <div className={s.mainRow}>
             <div className={s.first}><img src={caseIcon} alt="" /></div>
             <div className={s.middle}>{t('leftMenu.cases.title')} №{id}</div>
             <div className={s.right}>{price}$</div>
          </div>
-         {active && (
-            <div className={`${s.addRow} mt8`}>
-               <div className={s.first}>{openCount}</div>
-               <div className={s.middle}>{t('leftMenu.cases.rest')}</div>
-               <div className={s.right}>{rest} {t('leftMenu.cases.restCount')}</div>
-            </div>
-         )}
+         <div className={`${s.addRow} mt8`}>
+            <div className={s.first}>{openCount}</div>
+            <div className={s.middle}>{t('leftMenu.cases.rest')}</div>
+            <div className={s.right}>{rest} {t('leftMenu.cases.restCount')}</div>
+         </div>
       </div>
    )
 }

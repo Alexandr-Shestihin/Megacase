@@ -25,14 +25,14 @@ const LeftMenu = (props) => {
          <Button
             id={'Counter-Strike'}
             active={activeID === 'Counter-Strike' && true}
-            className={`${s.btn} mt12`}
+            className={`${s.btn} btn-text mt12`}
             activeI={activeIcon}
             inactiveI={inactiveIcon}
          >Counter-Strike 2</Button>
          <Button
             id={'Dota-2'}
             active={activeID === 'Dota-2' && true}
-            className={s.btn}
+            className={`${s.btn} btn-text`}
             onClick={() => console.log('Dota 2')}
             activeI={activeIcon}
             inactiveI={inactiveIcon}
@@ -40,7 +40,7 @@ const LeftMenu = (props) => {
          <Button
             id={'Rust'}
             active={activeID === 'Rust' && true}
-            className={s.btn}
+            className={`${s.btn} btn-text`}
             activeI={activeIcon}
             inactiveI={inactiveIcon}
          >Rust</Button>

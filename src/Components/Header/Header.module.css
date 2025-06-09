@@ -22,16 +22,21 @@
    align-items: center;
 }
 
-.addMoney {
+.balance img {
+   width: 25px;
+}
+
+.btnMini {
+   position: relative;
    width: 70px;
    display: flex;
    justify-content: center;
    align-items: center;
-   overflow: hidden;
    box-sizing: border-box;
+   z-index: 1;
 }
 
-.addMoney img {
+.btnMini img {
    width: 24px;
 }
 
@@ -43,7 +48,7 @@
    overflow: hidden;
 }
 
-.userInfo .userAvatar {
+.userAvatar img {
    width: 40px;
    height: 40px;
    border-radius: 12px;
@@ -103,18 +108,31 @@
 }
 
 .langContainer {
-   opacity: .3;
+   transition: all linear .4s;
+   height: 0;
    position: absolute;
-   left: 50%;
-   width: 75px;
-   padding: 10px;
+   bottom: 0;
+   min-width: 165px;
    display: flex;
+   flex-direction: column;
    justify-content: space-between;
-   border: 1px solid grey;
-   border-radius: 12px;
+   box-sizing: border-box;
+   border-radius: var(--border-r20);
+   background: var(--main-main);
+   overflow: hidden;
+   pointer-events: none;
+   z-index: -500;
 }
 
-.langContainer button {
-   width: 25px;
-   height: 25px;
+.langContainer.active {
+   height: auto;
+   bottom: -124px;
+   z-index: 999;
+   pointer-events: auto;
+}
+
+.lan {
+   display: flex;
+   justify-content: space-between;
+   padding: 16px;
 }

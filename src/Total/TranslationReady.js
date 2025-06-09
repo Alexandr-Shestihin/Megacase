@@ -1,23 +1,23 @@
-// src/components/TranslationReady.js
-"use client";
+// components/TranslationReady.jsx
+'use client';
 
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function TranslationReady({ children }) {
+function TranslationReady({ children, showLoadingIndicator = true, loadingText = "Loading translations..." }) {
   const { i18n } = useTranslation();
-  const [isReady, setIsReady] = useState(false);
+  const [isReady, setIsReady] = useState(i18n.isInitialized); // Инициализируем useState начальным значением
 
   useEffect(() => {
-    if (i18n.isInitialized) {
+    if (!isReady && i18n.isInitialized) {
       setIsReady(true);
     }
-  }, [i18n]);
+  }, [i18n, isReady]); // Добавляем i18n в зависимости
 
   return isReady ? (
     <>{children}</>
   ) : (
-    <></> // Или отобразите компонент Loading...
+    showLoadingIndicator ? <div>{loadingText}</div> : <></>
   );
 }
 

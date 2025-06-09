@@ -1,0 +1,33 @@
+ .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 15px;
+ }
+
+ .full {
+    width: 100%;
+ }
+
+ .text {
+    width: 100%;
+    text-align: left;
+ }
+
+ .key {
+   width: auto;
+    font-size: var(--font-size-15);
+    font-weight: var(--font-weight-500);
+    color: var(--color-2);
+    white-space: nowrap;
+ }
+
+ .value {
+   width: auto;
+    font-size: var(--font-size-15);
+    font-weight: var(--font-weight-500);
+    white-space: nowrap;
+ }

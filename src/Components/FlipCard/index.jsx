@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import s from './FlipCard.module.css';
 
-const FlipCard = ({ frontContent, backContent, width = '120px', height = '120px', className = '' }) => {
+const FlipCard = ({ frontContent, backContent, width = '160px', height = '150px', className = '' }) => {
    const [isFlipped, setIsFlipped] = useState(false);
 
    const handleMouseEnter = () => {
