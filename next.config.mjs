@@ -1,7 +1,7 @@
 // next.config.mjs
 const nextConfig = {
    reactStrictMode: true,
-   output: 'export',
+   output: 'standalone',
    /* i18n: {
      locales: ['en', 'ru'],
      defaultLocale: 'en',
