@@ -20,7 +20,7 @@ const CardBackContent = ({ dw, text, price, chance }) => {
             <div className={s.value}>{chance}</div>
          </div>
          <div className="row">
-            {getDegreeWear(dw, s.full)}
+            {getDegreeWear(dw, true)}
          </div>
       </div>
    )

@@ -61,7 +61,7 @@ const Header = (props) => {
                </div>
             </Button>
 
-            <Button className={`${s.btnMini}`}>
+            <Button active={true} className={`${s.btnMini}`}>
                <Image src={addMoney} alt="add money" width={200} height={100} className="img" />
             </Button>
 

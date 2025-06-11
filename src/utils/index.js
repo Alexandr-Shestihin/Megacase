@@ -1,4 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from 'next/image';
+
+const arrow = '/assets/icons/arrow.svg';
 
 // Функция для обработки ввода чисел до 100
 export function formatNumericPercentInput(value) {
@@ -86,30 +89,60 @@ const useMenuSelection = () => {
 export default useMenuSelection;
 
 /* Логика отрисовки состояния в карточках */
-export const getDegreeWear = (dw, style) => {
+export const getDegreeWear = (dw, children) => {
    if (dw === "FN") {
-      return <div className={`dw fn ${style}`}>Factory New</div>
+      return <div className="row">
+         <div className="dw fn">Factory New</div>
+         {children || <div className="img arrow fn" />}
+      </div>
    } else if (dw === "MW") {
-      return <div className={`dw mw ${style}`}>Minimal Wear</div>
+      return <div className="row">
+         <div className="dw mw">Minimal Wear</div>
+         {children || <div className="img arrow mw" />}
+      </div>
    } else if (dw === "FT") {
-      return <div className={`dw ft ${style}`}>Field-Tested</div>
+      return <div className="row">
+         <div className="dw ft">Field-Tested</div>
+         {children || <div className="img arrow ft" />}
+      </div>
    } else if (dw === "WW") {
-      return <div className={`dw ww ${style}`}>Well-Worn</div>
+      return <div className="row">
+         <div className="dw ww">Well-Worn</div>
+         {children || <div className="img arrow ww" />}
+      </div>
    } else if (dw === "BS") {
-      return <div className={`dw bs ${style}`}>Battle-Scarred</div>
+      return <div className="row">
+         <div className="dw bs">Battle-Scarred</div>
+         {children || <div className="img arrow bs" />}
+      </div>
    }
 }
 
 export const getDegreeWearMin = (dw) => {
    if (dw === "FN") {
-      return <div className="dw fn">FN</div>
+      return <div className="row">
+         <div className="dw fn">FN</div>
+         <div className="img arrow fn" />
+      </div>
    } else if (dw === "MW") {
-      return <div className="dw mw">MW</div>
+      return <div className="row">
+         <div className="dw mw">MW</div>
+         <div className="img arrow mw" />
+      </div>
    } else if (dw === "FT") {
-      return <div className="dw ft">FT</div>
+      return <div className="row">
+         <div className="dw ft">FT</div>
+         <div className="img arrow ft" />
+      </div>
    } else if (dw === "WW") {
-      return <div className="dw ww">WW</div>
+      return <div className="row">
+         <div className="dw ww">WW</div>
+         <div className="img arrow ww" />
+      </div>
    } else if (dw === "BS") {
-      return <div className="dw bs">BS</div>
+      return <div className="row">
+         <div className="dw bs">BS</div>
+         <div className="img arrow bs" />
+      </div>
    }
 }

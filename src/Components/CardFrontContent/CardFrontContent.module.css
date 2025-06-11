@@ -5,17 +5,13 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 11px 15px;
+    padding: 10px;
  }
 
  .logoMini {
     width: 90px;
  }
 
- .automaticFirearm {
-    width: 100px;
- }
-
- .arrow {
-    width: 18px;
+ .arms {
+    width: 100%;
  }

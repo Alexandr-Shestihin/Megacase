@@ -33,7 +33,7 @@ const OpenCasesBlock = (props) => {
    const [data, setData] = useState(initialValue);
    const { t } = useTranslation();
 
-   // Helper function to format with spaces and handle multiple dots
+   // Вспомогательная функция для форматирования с пробелами и обработки нескольких точек
    const formatWithSpaces = (value) => {
       if (!value) return '';
 

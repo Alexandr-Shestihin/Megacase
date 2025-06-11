@@ -157,6 +157,13 @@ img,
    --font-size-16: 16px;
    --font-size-15: 15px;
    --font-size-14: 14px;
+
+   /* arrow color for card */
+   --fn: rgb(73, 73, 224);
+   --mw: green;
+   --ft: orange;
+   --ww: gray;
+   --bs: brown;
 }
 
 /* Отступы */
@@ -290,50 +297,81 @@ img,
 
 /* Стили для конкретных состояний */
 .fn::before {
-   background: rgb(73, 73, 224);
+   background: var(--fn);
 }
 
 .mw::before {
-   background: green;
-   /* Пример цвета */
+   background: var(--mw);
 }
 
 .ft::before {
-   background: orange;
-   /* Пример цвета */
+   background: var(--ft);
 }
 
 .ww::before {
-   background: gray;
-   /* Пример цвета */
+   background: var(--ww);
 }
 
 .bs::before {
-   background: brown;
-   /* Пример цвета */
+   background: var(--bs);
 }
 
 /* Отдельные классы для текста */
 .fn {
-   color: rgb(73, 73, 224);
+   color: var(--fn);
 }
 
 .mw {
-   color: green;
-   /* Пример цвета */
+   color: var(--mw);
 }
 
 .ft {
-   color: orange;
-   /* Пример цвета */
+   color: var(--ft);
 }
 
 .ww {
-   color: gray;
-   /* Пример цвета */
+   color: var(--ww);
 }
 
 .bs {
-   color: brown;
-   /* Пример цвета */
+   color: var(--bs);
+}
+
+.arrow {
+   width: 18px;
+   height: 12px;
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   /* Маска для изменения цвета (нужно убедиться, что SVG в черном цвете) */
+   -webkit-mask-image: url('/assets/icons/arrow.svg');
+   /* Для Safari */
+   mask-image: url('/assets/icons/arrow.svg');
+   -webkit-mask-size: contain;
+   mask-size: contain;
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-position: center;
+   mask-position: center;
+}
+
+/* Отдельные классы для стрелок */
+.arrow.fn {
+   background-color: var(--fn);
+}
+
+.arrow.mw {
+   background-color: var(--mw);
+}
+
+.arrow.ft {
+   background-color: var(--ft);
+}
+
+.arrow.ww {
+   background-color: var(--ww);
+}
+
+.arrow.bs {
+   background-color: var(--bs);
 }
