@@ -31,3 +31,15 @@
    font-weight: var(--font-weight-400);
    color: var(--color-2);
 }
+
+@media screen and (max-width: 1882px) {
+   .changeText {
+      display: none;
+   }
+}
+
+@media screen and (max-width: 1853px) {
+   .container {
+      width: 14%;
+   }
+}

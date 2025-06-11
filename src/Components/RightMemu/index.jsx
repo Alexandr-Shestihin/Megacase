@@ -39,7 +39,7 @@ const RightMemu = (props) => {
          <div className="pageSubtitle">{t('rightMemu.title')}</div>
          <div className={`btn-1 ${s.changeLink}`}>
             <div className="row">
-            <div className={s.imgContainer}>
+            <div className={`innerText ${s.imgContainer}`}>
                <Image src={link} alt="link" width={18} height={18} className={`img ${s.img}`} />
                Trade URL Link
             </div>
@@ -57,49 +57,49 @@ const RightMemu = (props) => {
             className={`${s.btn} btn-text`}
             activeI={deposit}
             inactiveI={depositUnactive}
-         >{t('rightMemu.deposit')}</Button>
+         ><span className="innerText">{t('rightMemu.deposit')}</span></Button>
          <Button
             id={'historyConclusions'}
             active={activeID === 'historyConclusions' && true}
             className={`${s.btn} btn-text`}
             activeI={historyConclusionsActive}
             inactiveI={historyConclusionsUnactive}
-         >{t('rightMemu.historyConclusions')}</Button>
+         ><span className="innerText">{t('rightMemu.historyConclusions')}</span></Button>
          <Button
             id={'historyGames'}
             active={activeID === 'historyGames' && true}
             className={`${s.btn} btn-text`}
             activeI={historyGamesActive}
             inactiveI={historyGamesUnactive}
-         >{t('rightMemu.historyGames')}</Button>
+         ><span className="innerText">{t('rightMemu.historyGames')}</span></Button>
          <Button
             id={'profit'}
             active={activeID === 'profit' && true}
             className={`${s.btn} btn-text`}
             activeI={profitsActive}
             inactiveI={profitsUnactive}
-         >{t('rightMemu.profit')}</Button>
+         ><span className="innerText">{t('rightMemu.profit')}</span></Button>
          <Button
             id={'bonuses'}
             active={activeID === 'bonuses' && true}
             className={`${s.btn} btn-text`}
             activeI={bonusesActive}
             inactiveI={bonusesUnactive}
-         >{t('rightMemu.bonuses')}</Button>
+         ><span className="innerText">{t('rightMemu.bonuses')}</span></Button>
          <Button
             id={'accountStatistics'}
             active={activeID === 'accountStatistics' && true}
             className={`${s.btn} btn-text`}
             activeI={accountStatisticsActive}
             inactiveI={accountStatisticsUnactive}
-         >{t('rightMemu.accountStatistics')}</Button>
+         ><span className="innerText">{t('rightMemu.accountStatistics')}</span></Button>
          <Button
             id={'honestyCheck'}
             active={activeID === 'honestyCheck' && true}
             className={`${s.btn} btn-text`}
             activeI={honestyCheckActive}
             inactiveI={honestyCheckUnactive}
-         >{t('rightMemu.honestyCheck')}</Button>
+         ><span className="innerText">{t('rightMemu.honestyCheck')}</span></Button>
       </div>
    )
 }

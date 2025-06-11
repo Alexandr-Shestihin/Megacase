@@ -78,7 +78,7 @@
 
 @media screen and (max-width: 720px) {
    .balance {
-      width: 105px;
+      width: auto;
       padding: 14px 9px;
    }
 

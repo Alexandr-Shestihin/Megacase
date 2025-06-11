@@ -28,7 +28,8 @@ const LeftMenu = (props) => {
             className={`${s.btn} btn-text mt12`}
             activeI={activeIcon}
             inactiveI={inactiveIcon}
-         >Counter-Strike 2</Button>
+            title='Counter-Strike 2'
+         ><span className="innerText">Counter-Strike 2</span></Button>
          <Button
             id={'Dota-2'}
             active={activeID === 'Dota-2' && true}
@@ -36,19 +37,22 @@ const LeftMenu = (props) => {
             onClick={() => console.log('Dota 2')}
             activeI={activeIcon}
             inactiveI={inactiveIcon}
-         >Dota 2</Button>
+            title='Dota 2'
+         ><span className="innerText">Dota 2</span></Button>
          <Button
             id={'Rust'}
             active={activeID === 'Rust' && true}
             className={`${s.btn} btn-text`}
             activeI={activeIcon}
             inactiveI={inactiveIcon}
-         >Rust</Button>
+            title='Rust'
+         ><span className="innerText">Rust</span></Button>
 
          <div className="pageSubtitle mt12">{t('leftMenu.subtitle')}</div>
          {cases.map(el => <MyCase
             key={el.id}
             id={el.id}
+            title={el.id}
             price={el.price}
             rest={el.rest}
             openCount={el.openCount}

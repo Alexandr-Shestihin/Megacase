@@ -9,3 +9,9 @@
     padding: 22px 20px;
     width: 100%;
  }
+
+ @media screen and (max-width: 1853px) {
+    .container {
+       width: 12%;
+    }
+ }

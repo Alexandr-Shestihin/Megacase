@@ -375,3 +375,17 @@ img,
 .arrow.bs {
    background-color: var(--bs);
 }
+
+/* Весь внутренний текст элементов, кнопок, который должен обрезаться точками */
+.innerText {
+   width: auto;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+@media screen and (max-width: 790px) {
+   .innerText {
+      display: none;
+   }
+}

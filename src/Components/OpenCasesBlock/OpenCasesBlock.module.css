@@ -111,3 +111,47 @@
    flex-wrap: wrap;
    gap: 10px;
 }
+
+/* .container>* {
+   border: 1px solid red;
+} */
+
+@media screen and (max-width: 1853px) {
+   .container {
+      flex-wrap: wrap;
+      gap: 40px;
+   }
+
+   .left {
+      max-width: 100%;
+      width: 46%;
+      padding: 0;
+   }
+
+   .middle {
+      width: 50%;
+   }
+
+   .middle:after {
+      display: none;
+   }
+
+   .right {
+      width: 100%;
+      padding: 0;
+   }
+}
+
+@media screen and (max-width: 1511px){
+  .left {
+      width: 100%;
+   }
+
+   .middle {
+      width: 100%;
+   }
+
+   .middle::before {
+      display: none;
+   }
+}

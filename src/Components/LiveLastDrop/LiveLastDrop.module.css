@@ -12,3 +12,9 @@
    flex-wrap: wrap;
    gap: 9px;
 }
+
+@media screen and (max-width: 756px) {
+   .cordRow {
+      flex-direction: column;
+   }
+}

@@ -7,7 +7,16 @@
  }
 
  .container.active {
+    position: relative;
+    width: 220px;
     height: 84px;
+    transition: width 0.5s ease;
+    z-index: 1;
+ }
+
+ .container.active .left,
+ .container.active .middle {
+    display: block;
  }
 
  .mainRow {
@@ -15,7 +24,7 @@
     align-items: center;
  }
 
- .first {
+ .left {
     width: 41px;
  }
 
@@ -52,4 +61,32 @@
 
  .container.active .addRow {
     opacity: 1;
+ }
+
+ @media screen and (max-width: 1648px) {
+
+    .middle,
+    .right {
+       margin-left: 0px;
+    }
+
+    .middle .textHidden_mob,
+    .left {
+       display: none;
+    }
+
+    .container {
+       height: 50px;
+    }
+ }
+
+ @media screen and (max-width: 920px) {
+    .container {
+       display: flex;
+       justify-content: center;
+    }
+
+    .middle {
+       display: none;
+    }
  }
