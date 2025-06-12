@@ -101,7 +101,7 @@ img,
    flex: 1 0 auto;
    margin: 0 auto;
    padding: 0 20px;
-   max-width: 1920px;
+   max-width: 2150px;
    height: 100vh;
 }
 
@@ -169,6 +169,10 @@ img,
 /* Отступы */
 .mt54 {
    margin-top: 54px;
+}
+
+.mt30 {
+   margin-top: 30px;
 }
 
 .mt26 {

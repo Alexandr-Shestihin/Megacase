@@ -30,7 +30,7 @@ export default async function RootLayout({ children}) {
                <TranslationReady>{/* индикатор загрузки, пока переводы не загрузятся */}
                <div className="wrapper">
                   <Header />
-                  <div className={`ContantContainer mt22`}>
+                  <div className={`ContantContainer mt30`}>
                      <LeftMenu />
                      {children}
                      <RightMemu />
