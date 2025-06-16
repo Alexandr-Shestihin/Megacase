@@ -7,8 +7,7 @@
       "info": "Account"
    },
    "leftMenu": {
-      "title": "Cases",
-      "subtitle": "My cases",
+      "title": "My cases",
       "cases": {
          "title": "Case",
          "restCount": "d",
@@ -45,9 +44,12 @@
    },
    "liveLastDrop": {
       "title": " feed of the latest drops",
-      "cardLiveDrops":{
+      "cardLiveDrops": {
          "price": "Price",
          "chance": "Chance"
       }
+   },
+   "menuBtn": {
+      "indicator": "Online"
    }
 }

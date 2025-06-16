@@ -43,3 +43,10 @@
       width: 14%;
    }
 }
+
+
+@media screen and (max-width: 720px) {
+   .container {
+      display: none;
+   }
+}

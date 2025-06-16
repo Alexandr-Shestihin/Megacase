@@ -68,7 +68,7 @@ const OpenCasesBlock = (props) => {
    }, [debouncedSetPrice]);
 
    return (
-      <div className={s.container}>
+      <div className={`${s.container} mt12`}>
          <div className={s.left}>
             <div className="pageSubtitle">{t("openCasesBlock.pageSubtitlePrice")}</div>
             <Input

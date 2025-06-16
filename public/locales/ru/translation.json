@@ -7,8 +7,7 @@
       "info": "Аккаунт"
    },
    "leftMenu": {
-      "title": "Кейсы",
-      "subtitle": "Мои кейсы",
+      "title": "Мои кейсы",
       "cases": {
          "title": "Кейс",
          "restCount": "дн.",
@@ -49,5 +48,8 @@
          "price": "Цена",
          "chance": "Шанс"
       }
+   },
+   "menuBtn": {
+      "indicator": "Онлайн"
    }
 }

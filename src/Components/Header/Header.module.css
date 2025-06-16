@@ -77,6 +77,10 @@
 }
 
 @media screen and (max-width: 720px) {
+   .contantContainer {
+      height: 46px;
+   }
+
    .balance {
       width: auto;
       padding: 14px 9px;
@@ -92,6 +96,7 @@
 
    .userInfo {
       width: 46px;
+      height: 46px;
       padding: 0;
    }
 

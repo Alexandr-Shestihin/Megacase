@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 import {
    Button,
+   RightMemuMobile
 } from '../';
 const mainLogo = '../../assets/img/logo/mainLogo.svg';
 const totalScore = '../../assets/icons/totalScore.svg';
@@ -24,8 +25,8 @@ import { useTranslation } from "react-i18next";
 const Header = (props) => {
 
    const [activeLanguage, setActiveLanguage] = useState(false);
-
    const [userPhoto, setUserPhoto] = useState(null);
+   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
    const { t, i18n } = useTranslation(); // t - функция перевода, i18n - объект i18n
 
@@ -38,7 +39,7 @@ const Header = (props) => {
 
    return (
       <div className={s.container}>
-
+         <RightMemuMobile active={menuIsOpen} setActive={setMenuIsOpen} />
          <div className={s.imgContainer}><Image src={mainLogo} alt="Logo" width={200} height={100} className="img" /></div>
          <div className={s.contantContainer}>
 
@@ -69,7 +70,7 @@ const Header = (props) => {
                <Image src={totalScore} alt="total score" width={200} height={100} className="img" />
                {balance.toLocaleString('ru-ru')}$
             </Button>
-            <Button className={`${s.userInfo} `}>
+            <Button className={`${s.userInfo} `} onClick={() => setMenuIsOpen(!menuIsOpen)}>
                <div className={s.userAvatar}>
                   <img src={userPhoto || userIcon} alt="" />
                </div>
