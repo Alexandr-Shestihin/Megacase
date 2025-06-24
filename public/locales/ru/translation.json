@@ -17,11 +17,11 @@
    "rightMemu": {
       "title": "Профиль",
       "deposit": "Депозит",
-      "historyConclusions": "История выводов",
+      "historyConclusions": "Выводы",
       "historyGames": "История игр",
       "profit": "Доход",
       "bonuses": "Бонусы",
-      "accountStatistics": "Статистика аккаунта",
+      "accountStatistics": "Статистика",
       "honestyCheck": "Проверка честности",
       "changeLink": "Изменить"
    },

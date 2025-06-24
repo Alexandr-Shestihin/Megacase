@@ -3,7 +3,7 @@ import React from 'react';
 import s from './CardBackContentLiveDrops.module.css';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
-import { getDegreeWear } from '@/utils';
+import { getDegreeWear } from '@/utils/index';
 
 const userIcon = '/assets/icons/userIcon.svg';
 const arrow = '/assets/icons/arrowLeft.svg';

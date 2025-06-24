@@ -8,9 +8,30 @@
 }
 
 .cordRow {
+   max-width: 1860px;
+   position: relative;
    display: flex;
-   flex-wrap: wrap;
+   flex-wrap: nowrap;
    gap: 9px;
+   overflow-x: auto;
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+   overflow: hidden;
+   width: fit-content;
+     will-change: transform;
+}
+
+.cordRow {
+    display: flex;
+    overflow: hidden;
+}
+
+.flipCard {
+    width: 160px;
+}
+
+.container::-webkit-scrollbar {
+   display: none;
 }
 
 @media screen and (max-width: 756px) {

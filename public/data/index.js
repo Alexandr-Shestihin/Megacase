@@ -101,7 +101,7 @@ export const cardsDataLiveDrops = [
    {
       id: 1,
       user: {
-         name: "Timonik2000",
+         name: "1",
          avatar: "/assets/icons/user.png"
       },
       dw: "FN",
@@ -113,7 +113,7 @@ export const cardsDataLiveDrops = [
    {
       id: 2,
       user: {
-         name: "AbUser",
+         name: "2",
          avatar: null
       },
       dw: "MW",
@@ -125,7 +125,7 @@ export const cardsDataLiveDrops = [
    {
       id: 3,
       user: {
-         name: "CoolGamer777",
+         name: "3",
          avatar: "/assets/icons/user.png"
       },
       dw: "FT",
@@ -137,7 +137,7 @@ export const cardsDataLiveDrops = [
    {
       id: 4,
       user: {
-         name: "ProNoob123",
+         name: "4",
          avatar: null
       },
       dw: "WW",
@@ -149,7 +149,7 @@ export const cardsDataLiveDrops = [
    {
       id: 5,
       user: {
-         name: "TheLegend27",
+         name: "5",
          avatar: "/assets/icons/user.png"
       },
       dw: "BS",
@@ -161,7 +161,7 @@ export const cardsDataLiveDrops = [
    {
       id: 6,
       user: {
-         name: "XxSniperElitexX",
+         name: "6",
          avatar: null
       },
       dw: "FN",
@@ -173,7 +173,7 @@ export const cardsDataLiveDrops = [
    {
       id: 7,
       user: {
-         name: "ToxicPlayer69",
+         name: "7",
          avatar: "/assets/icons/user.png"
       },
       dw: "MW",

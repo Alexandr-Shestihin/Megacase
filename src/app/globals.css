@@ -121,6 +121,7 @@ img,
    --main-main: #23272B;
    --main-main-hover: #35393d;
    --main-main-active: #FF6D00;
+   --main-header: #202326;
 
    --main-second: #7C4DFF;
    --main-second-hover: #8a64f3;
@@ -182,6 +183,10 @@ img,
 
 .mt22 {
    margin-top: 22px;
+}
+
+.mt19 {
+   margin-top: 19px;
 }
 
 .mt12 {
@@ -389,8 +394,13 @@ img,
    overflow: hidden;
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 1135px) {
    .innerText {
       display: none;
    }
+}
+
+.transitioning>.LiveLastDrop_flipCard___yYB8 {
+   transform: translateX(calc(-1 * 160px));
+   transition: transform 0.5s ease-in-out;
 }

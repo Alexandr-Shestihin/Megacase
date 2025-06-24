@@ -10,9 +10,10 @@ export default function Home() {
 
    return (
       <main className={s.main}>
-         <MenuBtn/>
-         <OpenCasesBlock />
+         {/* <MenuBtn/> */}
          <LiveLastDrop />
+         <OpenCasesBlock />
+         
       </main>
    );
 }

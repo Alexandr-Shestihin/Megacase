@@ -17,11 +17,11 @@
    "rightMemu": {
       "title": "Profile",
       "deposit": "Deposit",
-      "historyConclusions": "History of conclusions",
+      "historyConclusions": "Conclusions",
       "historyGames": "History of games",
       "profit": "Profits",
       "bonuses": "Bonuses",
-      "accountStatistics": "Account statistics",
+      "accountStatistics": "Statistics",
       "honestyCheck": "Honesty check",
       "changeLink": "Change"
    },

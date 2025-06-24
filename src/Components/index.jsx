@@ -16,3 +16,4 @@ export {default as CardBackContentLiveDrops} from './CardBackContentLiveDrops';
 export {default as LiveLastDrop} from './LiveLastDrop';
 export {default as MenuBtn} from './MenuBtn';
 export {default as RightMemuMobile} from './RightMemuMobile';
+export {default as OnlineCard} from './OnlineCard';

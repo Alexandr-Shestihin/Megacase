@@ -71,7 +71,7 @@ export function useDebounce(func, delay, cleanUp = false) {
 }
 
 //хук для обработки логики выбора активного элемента в меню
-const useMenuSelection = () => {
+export const useMenuSelection = () => {
    const [activeID, setActiveID] = useState(null);
 
    const handler = useCallback((e) => {
@@ -85,8 +85,6 @@ const useMenuSelection = () => {
 
    return { activeID, handler, clear };
 };
-
-export default useMenuSelection;
 
 /* Логика отрисовки состояния в карточках */
 export const getDegreeWear = (dw, children) => {
