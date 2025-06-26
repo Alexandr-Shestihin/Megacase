@@ -29,14 +29,8 @@
       "title": "Открыть кейс",
       "pageSubtitlePrice": "Стоимость",
       "pageSubtitleChance": "Шанс",
-      "statistics": {
-         "one": "Шанс",
-         "two": "Риск",
-         "three": "Min скин",
-         "four": "Max скин",
-         "five": "Стоимость"
-      },
-      "createBtn": "Создать и открыть",
+      "droppedSkin": "Выпавший скин",
+      "createBtn": "Создать",
       "shareBtn": "Поделиться",
       "openBtn": "Открыть за ",
       "fillingCase": "Наполнение кейса",
@@ -44,12 +38,40 @@
    },
    "liveLastDrop": {
       "title": " дроп с кейса",
-      "cardLiveDrops":{
-         "price": "Цена",
+      "cardLiveDrops": {
          "chance": "Шанс"
       }
    },
    "menuBtn": {
       "indicator": "Онлайн"
+   },
+   "rowCase": {
+      "title": "Кейсов",
+      "myCase": {
+         "timeSymbol": "ч",
+         "statistics": {
+            "chance": "Chance",
+            "risk": "Risk",
+            "min": "Min",
+            "max": "Max",
+            "price": "Стоимость"
+         }
+      }
+   },
+   "footer": {
+      "links": {
+         "link1": "Пользовательское соглашение",
+         "link2": "Использование файлов cookie",
+         "link3": "Политика конфиденциальности",
+         "link4": "Контакты",
+         "link5": "Система честности",
+         "link6": "Сотрудничество"
+      },
+      "channel": "канал",
+      "statistics": {
+         "item1": "Кейсов",
+         "item2": "Пользователей",
+         "item3": "Улучшено"
+      }
    }
 }

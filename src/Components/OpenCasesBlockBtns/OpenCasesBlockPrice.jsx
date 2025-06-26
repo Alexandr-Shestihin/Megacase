@@ -7,7 +7,7 @@ import {
    Button,
 } from '..';
 
-const OpenCasesBlockPrice = ({ set, data }) => {
+const OpenCasesBlockPrice = ({ set, data, max }) => {
 
    const { activeID, handler, clear } = useMenuSelection();
    const handlerClick = (e) => {
@@ -22,7 +22,7 @@ const OpenCasesBlockPrice = ({ set, data }) => {
    }, [data])
 
    return (
-      <div className={`${s.btnRow} mt8`} onClick={handlerClick}>
+      <div className={`${s.btnRow} mt12`} onClick={handlerClick}>
          <Button
             id={'100'}
             active={activeID === '100'}
@@ -38,19 +38,19 @@ const OpenCasesBlockPrice = ({ set, data }) => {
             inactiveI={null}
          >500$</Button>
          <Button
-            id={'1 000'}
-            active={activeID === '1 000'}
+            id={'1000'}
+            active={activeID === '1000'}
             className={`${s.btn}`}
             activeI={null}
             inactiveI={null}
          >1 000$</Button>
          <Button
-            id={'5 000'}
-            active={activeID === '5 000'}
+            id={max.toString()}
+            active={activeID === max.toString()}
             className={`${s.btn}`}
             activeI={null}
             inactiveI={null}
-         >5 000$</Button>
+         >Max</Button>
       </div>
    )
 }

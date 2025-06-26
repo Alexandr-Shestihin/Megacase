@@ -5,20 +5,14 @@
 .cordRow {
    max-width: 100%;
    position: relative;
-   left: 20px;
+   left: 137px;
    display: flex;
    flex-wrap: nowrap;
    gap: 9px;
    padding: 20px 0;
-   overflow-x: auto;
+   overflow-x: scroll;
    scrollbar-width: none;
    -ms-overflow-style: none;
-   width: fit-content;
-}
-
-.cordRow {
-   display: flex;
-   overflow: hidden;
 }
 
 .flipCard {

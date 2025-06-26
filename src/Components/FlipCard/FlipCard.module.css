@@ -2,18 +2,13 @@
    background-color: transparent;
    perspective: 1000px;
    cursor: pointer;
-   
 }
 
 .flipCardInner {
    position: relative;
-   width: 160px;
-   height: 150px;
-
    text-align: center;
    transition: transform 0.8s;
    transform-style: preserve-3d;
-   /* Важно для 3D эффекта */
 }
 
 .flipped {

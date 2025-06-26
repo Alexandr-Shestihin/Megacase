@@ -29,14 +29,8 @@
       "title": "Open cases",
       "pageSubtitlePrice": "Price",
       "pageSubtitleChance": "Chance",
-      "statistics": {
-         "one": "Chance",
-         "two": "Risik",
-         "three": "Min Skin",
-         "four": "Max Skin",
-         "five": "Cost"
-      },
-      "createBtn": "Create and open",
+      "droppedSkin": "Dropped skin",
+      "createBtn": "Create",
       "shareBtn": "Share",
       "openBtn": "Open for ",
       "fillingCase": "Filling the case",
@@ -45,11 +39,39 @@
    "liveLastDrop": {
       "title": " feed of the latest drops",
       "cardLiveDrops": {
-         "price": "Price",
          "chance": "Chance"
       }
    },
    "menuBtn": {
       "indicator": "Online"
+   },
+   "rowCase": {
+      "title": "Cases",
+      "myCase": {
+         "timeSymbol": "h",
+         "statistics": {
+            "chance": "Шанс",
+            "risk": "Риск",
+            "min": "Min",
+            "max": "Max",
+            "price": "Price"
+         }
+      }
+   },
+   "footer": {
+      "links": {
+         "link1": "User agreement",
+         "link2": "Use of cookies",
+         "link3": "Privacy Policy",
+         "link4": "Contacts",
+         "link5": "Honesty system",
+         "link6": "Cooperation"
+      },
+      "channel": "channel",
+      "statistics": {
+         "item1": "Cases",
+         "item2": "Users",
+         "item3": "Improvements"
+      }
    }
 }

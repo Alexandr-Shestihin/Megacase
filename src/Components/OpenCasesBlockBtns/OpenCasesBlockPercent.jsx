@@ -22,7 +22,7 @@ const OpenCasesBlockPercent = ({ set, data }) => {
    }, [data])
 
    return (
-      <div className={`${s.btnRow} mt8`} onClick={handlerClick}>
+      <div className={`${s.btnRow} mt12`} onClick={handlerClick}>
          <Button
             id={'10'}
             active={activeID === '10'}
@@ -50,7 +50,7 @@ const OpenCasesBlockPercent = ({ set, data }) => {
             className={`${s.btn}`}
             activeI={null}
             inactiveI={null}
-         >100%</Button>
+         >Max</Button>
       </div>
    )
 }

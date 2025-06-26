@@ -5,7 +5,7 @@
    align-items: center;
    gap: 8px;
    background: var(--main-header);
-   padding: 16px;
+   padding: 17px 20px;
    border-radius: var(--border-r20);
 }
 
@@ -44,6 +44,11 @@
 .btn {
    padding: 19px 29px;
    background: none;
+   color: var(--color-2);
+}
+
+.btn span{
+   color: var(--color-2);
 }
 
 .btn img {
@@ -60,6 +65,10 @@
    align-items: center;
    box-sizing: border-box;
    z-index: 1;
+}
+.btnMini *{
+   pointer-events: fill !important;
+
 }
 
 .btnMini img {

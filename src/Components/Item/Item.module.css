@@ -10,7 +10,7 @@
 
  .name {
     position: relative;
-    padding-left: 11px;
+    padding-left: 9px;
  }
 
  .name::after {
@@ -25,6 +25,11 @@
  }
 
  .value {
+    width: 80px;
     color: var(--color-2);
-    font-size: var(--font-size-15)
+    font-size: var(--font-size-15);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: right;
  }

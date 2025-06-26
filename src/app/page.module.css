@@ -1,7 +1,6 @@
-/* .main {
-   max-width: 1346px;
-   margin: 0 26px;
-} */
+.main {
+   max-width: 100%;
+}
 
 /* @media screen and (max-width: 720px) {
    .main {

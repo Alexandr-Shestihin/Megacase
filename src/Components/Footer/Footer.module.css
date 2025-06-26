@@ -1,0 +1,104 @@
+ .container {
+    background: var(--main-header);
+    /* padding: 0 50px; */
+    display: flex;
+    justify-content: space-between;
+    border-radius: var(--border-r20);
+ }
+
+ .container * {
+    color: var(--color-2);
+ }
+
+ .container>* {
+    min-height: 100%;
+    padding: 25px 45px;
+    border-right: 1px solid var(--bg-2);
+    display: flex;
+    align-items: center;
+ }
+
+ .companyInfo {
+    display: flex;
+    gap: 20.29px;
+ }
+
+ .text {
+
+    width: 237px;
+ }
+
+ .img {
+    width: 170px;
+ }
+
+ .links {
+    display: flex;
+    gap: 75px;
+ }
+
+ .column {
+    display: flex;
+    flex-direction: column;
+ }
+
+ .column a:not(first-child) {
+
+    margin-top: 10px;
+    white-space: nowrap;
+ }
+
+ .column a:hover {
+    color: var(--color-1)
+ }
+
+ .column a:active {
+    color: var(--main-third);
+    font-weight: var(--font-weight-600);
+ }
+
+ .socialNetworks {
+    display: flex;
+    gap: 40px;
+ }
+
+ .block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+    gap: 10px;
+    cursor: pointer;
+ }
+
+ .snIcon {
+    width: 26px;
+ }
+
+ .socNetName {
+    color: var(--color-2)
+ }
+
+ .statistics {
+    display: flex;
+    gap: 30px;
+    min-width: 506px;
+ }
+
+ .count {
+    color: var(--color-1);
+    font-size: var(--font-size-20);
+    font-weight: var(--font-weight-600);
+ }
+
+ .statickIcon {
+    width: 20px;
+ }
+
+ .iconRow {
+    width: 76px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+ }

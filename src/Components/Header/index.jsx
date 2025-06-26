@@ -44,7 +44,6 @@ const Header = (props) => {
 
    const [activeLanguage, setActiveLanguage] = useState(false);
    const [userPhoto, setUserPhoto] = useState(null);
-   const [menuIsOpen, setMenuIsOpen] = useState(false);
    const { activeID, handler } = useMenuSelection();
 
    const { t, i18n } = useTranslation(); // t - функция перевода, i18n - объект i18n
@@ -58,7 +57,6 @@ const Header = (props) => {
 
    return (
       <div onClick={handler} className={s.container}>
-         <RightMemuMobile active={menuIsOpen} setActive={setMenuIsOpen} />
          <div className={s.leftContainer}>
             <div className={s.imgContainer}><Image src={mainLogo} alt="Logo" width={200} height={100} className="img" /></div>
             <div className={s.btnContainer}>
@@ -152,14 +150,14 @@ const Header = (props) => {
 
             <Button active={true} className={`${s.btnAddMoney}`}>
                <Image src={addMoney} alt="add money" width={200} height={100} className="img" />
-               <span>0$</span>
+               <span>1000 000$</span>
             </Button>
 
             {/* <Button className={`${s.balance} btn-text`}>
                <Image src={totalScore} alt="total score" width={200} height={100} className="img" />
                {balance.toLocaleString('ru-ru')}$
             </Button> */}
-            <Button className={`${s.userInfo} `} onClick={() => setMenuIsOpen(!menuIsOpen)}>
+            <Button className={`${s.userInfo} `} >
                <div className={s.userAvatar}>
                   <img src={userPhoto || userIcon} alt="" />
                </div>

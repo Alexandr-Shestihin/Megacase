@@ -101,8 +101,10 @@ img,
    flex: 1 0 auto;
    margin: 0 auto;
    padding: 0 20px;
-   max-width: 2150px;
+   /* max-width: 2150px; */
+   max-width: 1900px;
    height: 100vh;
+   overflow-x: hidden;
 }
 
 .pageTitle {
@@ -113,6 +115,7 @@ img,
 .pageSubtitle {
    font-weight: 600;
    text-transform: uppercase;
+   color: var(--color-2);
 }
 
 /* Шаблонные стили */
@@ -189,6 +192,10 @@ img,
    margin-top: 19px;
 }
 
+.mt16 {
+   margin-top: 16px;
+}
+
 .mt12 {
    margin-top: 12px;
 }
@@ -217,8 +224,13 @@ img,
 
 .btn-1:active,
 .btn-1.active {
-   color: var(--color-1);
    background: var(--main-main-active);
+}
+
+.btn-1:active,
+.btn-1.active, 
+.btn-1.active > * {
+   color: var(--color-1);
 }
 
 .btn-1:active img,
@@ -290,19 +302,6 @@ img,
    font-size: var(--font-size-14);
    font-weight: var(--font-weight-500);
    position: relative;
-   padding-left: 14px;
-}
-
-.dw::before {
-   content: '';
-   position: absolute;
-   left: 0;
-   top: 50%;
-   transform: translateY(-50%);
-   width: 10px;
-   height: 10px;
-   border-radius: 50%;
-   background-color: #ccc;
 }
 
 /* Стили для конкретных состояний */
@@ -398,9 +397,4 @@ img,
    .innerText {
       display: none;
    }
-}
-
-.transitioning>.LiveLastDrop_flipCard___yYB8 {
-   transform: translateX(calc(-1 * 160px));
-   transition: transform 0.5s ease-in-out;
 }

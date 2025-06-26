@@ -9,13 +9,6 @@
     padding: 12px 16px;
  }
 
- .caseOutline {
-    width: 126px;
-    position: absolute;
-    top: 35px;
-    filter: blur(2px);
- }
-
  .userContainer {
     width: 100%;
     display: flex;
@@ -30,6 +23,7 @@
     width: 100%;
     text-align: left;
     font-size: var(--font-size-15);
+    color: var(--color-2);
  }
 
  .userAvatar {
@@ -42,7 +36,6 @@
 
  .name {
     max-width: 103px;
-    color: var(--color-2);
     font-size: var(--font-size-15);
     font-weight: var(--font-weight-500);
     white-space: nowrap;
@@ -51,7 +44,6 @@
  }
 
  .key {
-    color: var(--color-2);
     font-size: var(--font-size-15);
     font-weight: var(--font-weight-500);
  }

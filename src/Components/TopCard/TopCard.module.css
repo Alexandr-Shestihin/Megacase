@@ -1,6 +1,7 @@
  .container {
-   position: absolute;
-    width: 160px;
+    position: absolute;
+    top: 20px;
+    width: 124px;
     height: 150px;
     display: flex;
     flex-direction: column;
@@ -11,8 +12,9 @@
     border-radius: var(--border-r20);
     gap: 8px;
     z-index: 1;
+    box-shadow: 0 2px 20px #00000033;
  }
-
+ 
  .userAvatar img {
     width: 30px;
     height: 30px;
@@ -21,4 +23,9 @@
 
  .text {
     color: var(--color-2);
+ }
+
+ .textCount {
+    font-weight: var(--font-weight-600);
+    font-size: var(--font-size-20);
  }
