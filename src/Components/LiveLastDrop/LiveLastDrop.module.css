@@ -5,7 +5,7 @@
 .cordRow {
    max-width: 100%;
    position: relative;
-   left: 20px;
+   left: 0px;
    display: flex;
    flex-wrap: nowrap;
    gap: 9px;
@@ -14,6 +14,7 @@
    scrollbar-width: none;
    -ms-overflow-style: none;
    width: fit-content;
+
 }
 
 .cordRow {
@@ -24,4 +25,12 @@
 .flipCard {
    transition: transform 1ms linear;
    box-shadow: 0 2px 20px #00000033;
+}
+
+@media screen and (max-width: 1024px) {
+   .flipCard,
+   .flipCard> * {
+      width: 90px !important;
+      height: 80px !important;
+   }
 }

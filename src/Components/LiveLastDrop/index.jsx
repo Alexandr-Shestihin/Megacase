@@ -14,7 +14,7 @@ import {
 const userIcon = '/assets/icons/userIcon.svg';
 
 const LiveLastDrop = (props) => {
-   
+
    const { t } = useTranslation()
 
    const containerRef = useRef(null);
@@ -22,7 +22,8 @@ const LiveLastDrop = (props) => {
    const animationIntervalRef = useRef(null);
    const [isPaused, setIsPaused] = useState(false); // Состояние для паузы
    const cardWidth = 160;  // Ширина карточки
-   const animationSpeed = 15; // Скорость анимации (px/ms)
+   const animationSpeed = 5; // Скорость анимации (px/ms)
+   const cardCount = cardsDataLiveDrops.length; // Количество карточек
 
 
    const calculateTotalWidth = useCallback(() => {
@@ -33,21 +34,24 @@ const LiveLastDrop = (props) => {
       return 0;
    }, []);
 
-   const startAnimation = useCallback(() => {
-      if (isPaused) return; // Не запускаем, если на паузе
+    const startAnimation = useCallback(() => {
+        if (isPaused) return; // Не запускаем, если на паузе
 
-      const totalWidth = calculateTotalWidth();
-      if (totalWidth === 0) return;
-      animationIntervalRef.current = setInterval(() => {
-         setTranslateX(prevTranslateX => {
-            const newTranslateX = prevTranslateX - animationSpeed;
-            if (newTranslateX <= -cardWidth) {
-               return 0;  // Сбрасываем на начало, когда элемент полностью ушел
-            }
-            return newTranslateX;
-         });
-      }, 16); //  Примерно 60 кадров в секунду (1000ms / 60 ≈ 16ms)
-   }, [animationSpeed, cardWidth, calculateTotalWidth, isPaused]);
+        const totalWidth = calculateTotalWidth();
+        if (totalWidth === 0) return;
+        animationIntervalRef.current = setInterval(() => {
+            setTranslateX(prevTranslateX => {
+                const newTranslateX = prevTranslateX + animationSpeed; // Увеличиваем translateX
+                const fullWidth = cardWidth * cardCount; // Полная ширина всех карточек
+
+                if (newTranslateX >= cardWidth) {
+                    return -cardWidth;  // Сбрасываем translateX
+                }
+
+                return newTranslateX;
+            });
+        }, 16); //  Примерно 60 кадров в секунду (1000ms / 60 ≈ 16ms)
+    }, [animationSpeed, cardWidth, calculateTotalWidth, isPaused, cardCount]);
 
    const pauseAnimation = useCallback(() => {
       clearInterval(animationIntervalRef.current);

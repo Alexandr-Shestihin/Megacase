@@ -36,3 +36,20 @@
    display: flex;
    gap: 6px;
 }
+
+@media screen and (max-width: 1024px) {
+   .container {
+      padding: 10px;
+   }
+
+   .price {
+      font-size: var(--font-size-14);
+      width: 100%;
+      align-items: center;
+   }
+
+   .content,
+   .price:first-child {
+      display: none;
+   }
+}

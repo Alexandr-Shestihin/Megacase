@@ -45,11 +45,11 @@ const OpenCasesBlock = (props) => {
    const minPriceValue = useMemo(() => minPrice(activeID), [activeID]);
 
    //Анимация центрального блока
-    const [isImageLoaded, setIsImageLoaded] = useState(false);
+   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-    const handleImageLoad = () => {
-        setIsImageLoaded(true);
-    };
+   const handleImageLoad = () => {
+      setIsImageLoaded(true);
+   };
 
    return (
       <div className={`${s.container}`}>
@@ -67,20 +67,23 @@ const OpenCasesBlock = (props) => {
 
             <OpenCasesBlockPercent handler={handlerPercent} set={setData} data={data} />
 
-            <Button className={`${s.btnCreate} btn-3 btn-text mt19`} activeI={create} inactiveI={create} >{t("openCasesBlock.createBtn")}</Button>
+            <div className="row">
+               <Button className={`${s.btnCreate} btn-3 btn-text mt19`} activeI={create} inactiveI={create} >{t("openCasesBlock.createBtn")}</Button>
+               <Button className={`${s.btnCreate} ${s.btnCreate_fast} btn-1 btn-text mt19`} >{t("openCasesBlock.createFastBtn")}</Button>
+            </div>
          </div>
 
          <div className={s.middle}>
-            
+
             <div className="row">
                {/* <div className="pageTitle">{t("openCasesBlock.title")}</div> */}
-               <SignProgress className={s.w22} name={t("openCasesBlock.pageSubtitlePrice")} value={434500} symbol={'$'} max={data.balance} />
-               <Sign className={s.w49} name={t("openCasesBlock.droppedSkin")} value={'???'} />
-               <SignProgress className={s.w22} name={t("openCasesBlock.droppedSkin")} value={50} symbol={'%'} max={100} />
+               <SignProgress className={s.signProgress} name={t("openCasesBlock.pageSubtitlePrice")} value={434500} symbol={'$'} max={data.balance} />
+               <Sign className={s.sign} name={t("openCasesBlock.droppedSkin")} value={'???'} />
+               <SignProgress className={s.signProgress} name={t("openCasesBlock.droppedSkin")} value={50} symbol={'%'} max={100} />
             </div>
             <div className={s.imageContainer}>
-               <Image src={caseLarge} alt="Case" layout="fill" objectFit="contain"   className={`img ${s.caseImg} ${isImageLoaded ? `${s.loaded}` : ''}`}
-                        onLoad={handleImageLoad} />
+               <Image src={caseLarge} alt="Case" layout="fill" objectFit="cover" className={`img ${s.caseImg} ${isImageLoaded ? `${s.loaded}` : ''}`}
+                  onLoad={handleImageLoad} />
             </div>
             <div className={s.row}>
                <Button className={`${s.btn} btn-3 btn-text`} activeI={caseI} inactiveI={caseI} >{t("openCasesBlock.openBtn")}$12</Button>

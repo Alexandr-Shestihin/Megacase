@@ -18,13 +18,16 @@
     align-items: center;
  }
 
+ .container>*:last-child {
+    border: none;
+ }
+
  .companyInfo {
     display: flex;
     gap: 20.29px;
  }
 
  .text {
-
     width: 237px;
  }
 
@@ -101,4 +104,39 @@
     gap: 8px;
     justify-content: center;
     align-items: center;
+ }
+
+ @media screen and (max-width: 1627px) {
+    .img {
+       width: 100px;
+    }
+
+    .container>* {
+       flex-direction: column;
+       justify-content: space-between;
+       border: none;
+    }
+
+    .socialNetworks {
+       align-items: center;
+    }
+
+    .statistics {
+       min-width: auto;
+    }
+
+    .text {
+       width: auto;
+    }
+ }
+
+ @media screen and (max-width: 768px) {
+    .container {
+       flex-direction: column;
+    }
+
+    .container>* {
+       flex-direction: row;
+       justify-content: center;
+    }
  }

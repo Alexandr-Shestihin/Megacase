@@ -42,9 +42,3 @@
    transform: rotateY(180deg);
    /* Поворачивает заднюю сторону изначально */
 }
-
-@media screen and (max-width: 756px) {
-   .flipCard {
-      width: 100% !important;
-   }
-}

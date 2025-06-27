@@ -54,3 +54,28 @@
     font-weight: var(--font-weight-500);
     white-space: nowrap;
  }
+
+ .mobile {
+    display: none;
+ }
+
+ .context {
+    width: 100%;
+ }
+
+ @media screen and (max-width: 1024px) {
+    .mobile {
+       display: block;
+       width: 100%;
+    }
+
+    .container {
+       padding: 10px;
+    }
+
+    .userContainer,
+    .context,
+    .desktop {
+       display: none;
+    }
+ }

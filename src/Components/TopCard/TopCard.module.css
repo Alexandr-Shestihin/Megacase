@@ -14,7 +14,7 @@
     z-index: 1;
     box-shadow: 0 2px 20px #00000033;
  }
- 
+
  .userAvatar img {
     width: 30px;
     height: 30px;
@@ -28,4 +28,20 @@
  .textCount {
     font-weight: var(--font-weight-600);
     font-size: var(--font-size-20);
+ }
+
+ @media screen and (max-width: 1024px) {
+    .container {
+       width: 60px;
+       height: 80px;
+    }
+
+    .userAvatar img {
+       width: 15px;
+       height: 15px;
+    }
+
+    .text, .textCount {
+       font-size: var(--font-size-14);
+    }
  }

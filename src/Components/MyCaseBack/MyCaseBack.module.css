@@ -22,3 +22,22 @@
    display: flex;
    flex-direction: column;
 }
+
+
+@media screen and (max-width: 1024px) {
+   .container {
+      padding: 10px;
+   }
+
+   .price {
+      font-size: var(--font-size-14);
+      width: 100%;
+      align-items: center;
+   }
+
+   .dataBlock,
+   .timeIcon,
+   .price:first-child{
+      display: none;
+   }
+}

@@ -15,7 +15,6 @@ const FlipCard = ({ frontContent, backContent, width = '160px', height = '150px'
 
    return (
       <div
-      /* style={{ border: '1px solid red' }} */
          className={`${s.flipCard} ${className}`}
          style={{ width: width, height: height, ...style }}
          onMouseEnter={handleMouseEnter}

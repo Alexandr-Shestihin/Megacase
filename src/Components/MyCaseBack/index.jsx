@@ -19,7 +19,7 @@ const MyCaseBack = ({ number, time, chance, risk, min, max, price }) => {
          <div className="row">
             <div className={s.title}>№{number}</div>
             <div className={s.timeConteiner}>
-               <Image src={timeIcon} alt="time" width={14} height={14} className="img" />
+               <Image src={timeIcon} alt="time" width={14} height={14} className={`img ${s.timeIcon}`} />
                <div className={s.time}>{time}</div>
             </div>
          </div>
