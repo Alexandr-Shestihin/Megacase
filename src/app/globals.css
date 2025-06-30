@@ -86,9 +86,7 @@ img,
 }
 
 .App {
-   position: relative;
    display: flex;
-   flex-direction: column;
    min-height: 100vh;
 }
 
@@ -105,9 +103,8 @@ img,
    flex: 1 0 auto;
    margin: 0 auto;
    padding: 0 20px;
-   /* max-width: 2150px; */
    max-width: 1900px;
-   height: 100vh;
+   min-height: 100%;
    overflow-x: hidden;
 }
 

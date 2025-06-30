@@ -24,7 +24,7 @@ export default async function RootLayout({ children}) {
 
    return (
       <html lang="en">
-         <body className={`${robotoCondensed.variable}`}>
+         <body className={`${robotoCondensed.variable} App`}>
             <I18nextProvider>
                <TranslationReady>{/* индикатор загрузки, пока переводы не загрузятся */}
                <div className="wrapper">
