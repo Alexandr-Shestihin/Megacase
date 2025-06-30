@@ -1,6 +1,5 @@
  .container {
     background: var(--main-header);
-    /* padding: 0 50px; */
     display: flex;
     justify-content: space-between;
     border-radius: var(--border-r20);
@@ -11,7 +10,7 @@
  }
 
  .container>* {
-    min-height: 100%;
+    /* min-height: 100%; */
     padding: 25px 45px;
     border-right: 1px solid var(--bg-2);
     display: flex;
@@ -66,10 +65,12 @@
  }
 
  .block {
+    width: auto;
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex: 1 1 auto;
     gap: 10px;
     cursor: pointer;
  }
@@ -79,13 +80,14 @@
  }
 
  .socNetName {
-    color: var(--color-2)
+    color: var(--color-2);
+    text-align: center;
  }
 
  .statistics {
     display: flex;
+    flex: 1 0 auto;
     gap: 30px;
-    min-width: 506px;
  }
 
  .count {
@@ -112,9 +114,10 @@
     }
 
     .container>* {
-       flex-direction: column;
        justify-content: space-between;
        border: none;
+       padding: 10px;
+       gap: 10px;
     }
 
     .socialNetworks {
@@ -122,7 +125,7 @@
     }
 
     .statistics {
-       min-width: auto;
+       min-width: 300px;
     }
 
     .text {
@@ -130,13 +133,33 @@
     }
  }
 
- @media screen and (max-width: 768px) {
-    .container {
+ @media screen and (max-width: 1316px) {
+
+    .companyInfo,
+    .links,
+    .socialNetworks {
        flex-direction: column;
     }
 
-    .container>* {
-       flex-direction: row;
+    .statistics {
+       max-width: 35%;
+    }
+ }
+
+ @media screen and (max-width: 1034px) {
+    .container {
+       flex-wrap: wrap;
        justify-content: center;
+       gap: 20px;
+    }
+
+    .container>* {
+       flex-wrap: wrap;
+    }
+
+    .statistics {
+       margin: 20px;
+       min-width: auto;
+       flex-wrap: wrap;
     }
  }
