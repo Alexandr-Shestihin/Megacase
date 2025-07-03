@@ -47,7 +47,7 @@
    color: var(--color-2);
 }
 
-.btn span{
+.btn span {
    color: var(--color-2);
 }
 
@@ -66,7 +66,8 @@
    box-sizing: border-box;
    z-index: 1;
 }
-.btnMini *{
+
+.btnMini * {
    pointer-events: fill !important;
 
 }
@@ -133,12 +134,6 @@
    }
 }
 
-@media screen and (max-width: 820px) {
-   .btnContainer {
-      display: none;
-   }
-}
-
 .langContainer {
    transition: all linear .4s;
    height: 0;
@@ -168,4 +163,23 @@
    padding: 16px;
    border-radius: 0;
    background: var(--bg-1);
+}
+
+@media screen and (max-width: 820px) {
+   .btnContainer {
+      display: none;
+   }
+}
+
+@media screen and (max-width: 520px) {
+   .container {
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   .contantContainer{
+      justify-content: space-between;
+      width: 100%;
+   }
+   
 }
