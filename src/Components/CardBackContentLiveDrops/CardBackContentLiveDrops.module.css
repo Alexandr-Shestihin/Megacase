@@ -9,17 +9,10 @@
     padding: 12px 16px;
  }
 
- .caseOutline {
-    width: 126px;
-    position: absolute;
-    top: 35px;
-    filter: blur(2px);
- }
-
  .userContainer {
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
  }
 
  .name {
@@ -30,6 +23,7 @@
     width: 100%;
     text-align: left;
     font-size: var(--font-size-15);
+    color: var(--color-2);
  }
 
  .userAvatar {
@@ -42,7 +36,6 @@
 
  .name {
     max-width: 103px;
-    color: var(--color-2);
     font-size: var(--font-size-15);
     font-weight: var(--font-weight-500);
     white-space: nowrap;
@@ -51,7 +44,6 @@
  }
 
  .key {
-    color: var(--color-2);
     font-size: var(--font-size-15);
     font-weight: var(--font-weight-500);
  }
@@ -61,4 +53,29 @@
     font-size: var(--font-size-15);
     font-weight: var(--font-weight-500);
     white-space: nowrap;
+ }
+
+ .mobile {
+    display: none;
+ }
+
+ .context {
+    width: 100%;
+ }
+
+ @media screen and (max-width: 1024px) {
+    .mobile {
+       display: block;
+       width: 100%;
+    }
+
+    .container {
+       padding: 10px;
+    }
+
+    .userContainer,
+    .context,
+    .desktop {
+       display: none;
+    }
  }

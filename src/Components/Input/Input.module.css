@@ -3,12 +3,15 @@
     display: flex;
     width: 100%;
     z-index: 0;
+    /* overflow: hidden; */
+    border-radius: var(--border-r20);
  }
 
  .input {
     background: var(--bg-2);
-    padding: 20px;
+    padding: 23px 20px;
     width: 100%;
+    height: 100%;
     color: var(--color-1);
     border-radius: var(--border-r20);
  }
@@ -18,4 +21,82 @@
     top: calc(50% - 5px);
     left: 20px;
     width: 20px;
+ }
+
+ /* LiveLastDrop.module.css */
+ .range {
+    position: absolute;
+    bottom: 0px;
+    left: 2px;
+    width: 99%;
+    background: linear-gradient(to right, var(--main-third) 0%, var(--main-third) var(--active-percentage), #FFFFFF05 var(--active-percentage), #FFFFFF05 100%);
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    /* Важно для стилизации в Chrome */
+    appearance: none;
+    /* Стандартизированный способ скрыть нативные стили */
+    -webkit-appearance: none;
+    vertical-align: middle;
+    outline: none;
+    border: none;
+    padding: 0;
+    background: none;
+ }
+
+ /* Track (полоса) - для браузеров на основе WebKit (Chrome, Safari) */
+ .range::-webkit-slider-runnable-track {
+    height: 10px;
+    background: linear-gradient(to right, var(--main-third) 0%, var(--main-third) var(--active-percentage), #FFFFFF05 var(--active-percentage), #FFFFFF05 100%);
+    border: none;
+    border-radius: 0 0 100px 100px;
+ }
+
+ /* Track (полоса) - для Firefox */
+ .range::-moz-range-track {
+    height: 10px;
+    background: linear-gradient(to right, var(--main-third) 0%, var(--main-third) var(--active-percentage), #FFFFFF05 var(--active-percentage), #FFFFFF05 100%);
+    border: none;
+    border-radius: 0 0 100px 100px;
+ }
+
+ /* Thumb (ползунок) - общие стили */
+ .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Убираем стандартный вид */
+    appearance: none;
+    border: none;
+    width: 13px;
+    /* Ширина ползунка */
+    height: 18px;
+    border-radius: 50%;
+    /* Высота ползунка */
+    /* border-radius: 50%; */
+    /* Круглая форма */
+    background-color: var(--color-1);
+    /* Цвет фона ползунка */
+    cursor: pointer;
+    /* Курсор при наведении */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* Тень (необязательно) */
+ }
+
+ /* Thumb (ползунок) - для Chrome и Safari */
+ .range::-webkit-slider-thumb {
+    margin-top: -5px;
+    /* Центрируем ползунок относительно трека */
+ }
+
+ /* Thumb (ползунок) - при наведении */
+ .range::-webkit-slider-thumb:hover,
+ .range::-moz-range-thumb:hover {
+    background-color: #3e8e41;
+    /* Цвет фона при наведении */
+ }
+
+ /* Thumb (ползунок) - при фокусе */
+ .range:focus::-webkit-slider-thumb,
+ .range:focus::-moz-range-thumb {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    /* Тень при фокусе */
  }

@@ -1,0 +1,47 @@
+ .container {
+    position: absolute;
+    top: 20px;
+    width: 124px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--main-main);
+    border-radius: var(--border-r20);
+    gap: 8px;
+    z-index: 1;
+    box-shadow: 0 2px 20px #00000033;
+ }
+
+ .userAvatar img {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+ }
+
+ .text {
+    color: var(--color-2);
+ }
+
+ .textCount {
+    font-weight: var(--font-weight-600);
+    font-size: var(--font-size-20);
+ }
+
+ @media screen and (max-width: 1024px) {
+    .container {
+       width: 60px;
+       height: 80px;
+    }
+
+    .userAvatar img {
+       width: 15px;
+       height: 15px;
+    }
+
+    .text, .textCount {
+       font-size: var(--font-size-14);
+    }
+ }

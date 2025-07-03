@@ -1,0 +1,20 @@
+ .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: var(--bg-2);
+    border-radius: var(--border-r20);
+    padding: 21px 20px;
+    font-weight: var(--font-weight-500);
+    overflow: hidden;
+ }
+
+ .name {
+    color: var(--color-2);
+    font-weight: var(--font-weight-500);
+ }
+
+ .value {
+    color: var(--color-1);
+    font-weight: var(--font-weight-500);
+ }

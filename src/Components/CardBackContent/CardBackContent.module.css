@@ -11,13 +11,13 @@
  .text {
     width: 100%;
     text-align: left;
+    color: var(--color-2)
  }
 
  .key {
     width: auto;
     font-size: var(--font-size-15);
     font-weight: var(--font-weight-500);
-    color: var(--color-2);
     white-space: nowrap;
  }
 

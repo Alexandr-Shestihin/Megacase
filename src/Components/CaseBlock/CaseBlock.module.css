@@ -1,0 +1,34 @@
+.container {
+   position: relative;
+}
+
+.cordRow {
+   max-width: 100%;
+   position: relative;
+   left: 137px;
+   display: flex;
+   flex-wrap: nowrap;
+   gap: 9px;
+   padding: 20px 0;
+   overflow-x: scroll;
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+}
+
+.flipCard {
+   transition: transform 1ms linear;
+   box-shadow: 0 2px 20px #00000033;
+}
+
+@media screen and (max-width: 1024px) {
+
+   .flipCard,
+   .flipCard>* {
+      width: 90px !important;
+      height: 80px !important;
+   }
+
+   .cordRow {
+      left: 64px;
+   }
+}

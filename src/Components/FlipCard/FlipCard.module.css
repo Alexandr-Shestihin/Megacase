@@ -1,19 +1,14 @@
 .flipCard {
    background-color: transparent;
    perspective: 1000px;
-   /* Важно для 3D эффекта */
    cursor: pointer;
 }
 
 .flipCardInner {
    position: relative;
-   min-width: 100%;
-   height: 100%;
-   
    text-align: center;
    transition: transform 0.8s;
    transform-style: preserve-3d;
-   /* Важно для 3D эффекта */
 }
 
 .flipped {
@@ -47,9 +42,3 @@
    transform: rotateY(180deg);
    /* Поворачивает заднюю сторону изначально */
 }
-
- @media screen and (max-width: 756px) {
-    .flipCard {
-       width: 100% !important;
-    }
- }

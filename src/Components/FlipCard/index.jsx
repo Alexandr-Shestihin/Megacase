@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import s from './FlipCard.module.css';
 
-const FlipCard = ({ frontContent, backContent, width = '160px', height = '150px', className = '' }) => {
+const FlipCard = ({ frontContent, backContent, width = '160px', height = '150px', className = '', style }) => {
    const [isFlipped, setIsFlipped] = useState(false);
 
    const handleMouseEnter = () => {
@@ -16,11 +16,12 @@ const FlipCard = ({ frontContent, backContent, width = '160px', height = '150px'
    return (
       <div
          className={`${s.flipCard} ${className}`}
-         style={{ width: width, height: height }}
+         style={{ width: width, height: height, ...style }}
          onMouseEnter={handleMouseEnter}
          onMouseLeave={handleMouseLeave}
       >
-         <div className={`${s.flipCardInner} ${isFlipped ? s.flipped : ''}`}>
+         <div className={`${s.flipCardInner} ${isFlipped ? s.flipped : ''}`}
+         style={{ width: width, height: height}}>
             <div className={s.flipCardFront}>
                {frontContent}
             </div>

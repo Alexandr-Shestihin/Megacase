@@ -86,23 +86,26 @@ img,
 }
 
 .App {
-   position: relative;
-   display: flex;
-   flex-direction: column;
+   width: 100%;
    min-height: 100vh;
 }
 
 .ContantContainer {
    display: flex;
+   flex: 1 1 auto;
    justify-content: space-between;
 }
 
 .wrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
    flex: 1 0 auto;
    margin: 0 auto;
    padding: 0 20px;
-   max-width: 2150px;
-   height: 100vh;
+   max-width: 1900px;
+   min-height: 100%;
+   overflow-x: hidden;
 }
 
 .pageTitle {
@@ -113,6 +116,7 @@ img,
 .pageSubtitle {
    font-weight: 600;
    text-transform: uppercase;
+   color: var(--color-2);
 }
 
 /* Шаблонные стили */
@@ -121,6 +125,7 @@ img,
    --main-main: #23272B;
    --main-main-hover: #35393d;
    --main-main-active: #FF6D00;
+   --main-header: #202326;
 
    --main-second: #7C4DFF;
    --main-second-hover: #8a64f3;
@@ -184,6 +189,14 @@ img,
    margin-top: 22px;
 }
 
+.mt19 {
+   margin-top: 19px;
+}
+
+.mt16 {
+   margin-top: 16px;
+}
+
 .mt12 {
    margin-top: 12px;
 }
@@ -212,8 +225,13 @@ img,
 
 .btn-1:active,
 .btn-1.active {
-   color: var(--color-1);
    background: var(--main-main-active);
+}
+
+.btn-1:active,
+.btn-1.active, 
+.btn-1.active > * {
+   color: var(--color-1);
 }
 
 .btn-1:active img,
@@ -285,19 +303,6 @@ img,
    font-size: var(--font-size-14);
    font-weight: var(--font-weight-500);
    position: relative;
-   padding-left: 14px;
-}
-
-.dw::before {
-   content: '';
-   position: absolute;
-   left: 0;
-   top: 50%;
-   transform: translateY(-50%);
-   width: 10px;
-   height: 10px;
-   border-radius: 50%;
-   background-color: #ccc;
 }
 
 /* Стили для конкретных состояний */
@@ -389,7 +394,7 @@ img,
    overflow: hidden;
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 1135px) {
    .innerText {
       display: none;
    }

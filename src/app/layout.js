@@ -6,8 +6,7 @@ import TranslationReady from '@/Total/TranslationReady';
 
 import {
    Header,
-   LeftMenu,
-   RightMemu
+   Footer
 } from '../Components';
 
 const robotoCondensed = Roboto_Condensed({
@@ -25,16 +24,15 @@ export default async function RootLayout({ children}) {
 
    return (
       <html lang="en">
-         <body className={`${robotoCondensed.variable}`}>
+         <body className={`${robotoCondensed.variable} App`}>
             <I18nextProvider>
                <TranslationReady>{/* индикатор загрузки, пока переводы не загрузятся */}
                <div className="wrapper">
                   <Header />
-                  <div className={`ContantContainer mt12`}>
-                     <LeftMenu />
+                  <div className={`ContantContainer`}>
                      {children}
-                     <RightMemu />
                   </div>
+                  <Footer/>
                </div>
                </TranslationReady>
             </I18nextProvider>

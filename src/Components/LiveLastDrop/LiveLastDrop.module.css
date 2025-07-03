@@ -1,20 +1,36 @@
-.title {
-   font-size: var(--font-size-20)
+.container {
+   position: relative;
 }
 
-.grey {
-   color: var(--color-2);
-   font-size: var(--font-size-20)
+.cordRow {
+   max-width: 100%;
+   position: relative;
+   left: 0px;
+   display: flex;
+   flex-wrap: nowrap;
+   gap: 9px;
+   padding: 20px 0;
+   overflow-x: auto;
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+   width: fit-content;
+
 }
 
 .cordRow {
    display: flex;
-   flex-wrap: wrap;
-   gap: 9px;
+   overflow: hidden;
 }
 
-@media screen and (max-width: 756px) {
-   .cordRow {
-      flex-direction: column;
+.flipCard {
+   transition: transform 1ms linear;
+   box-shadow: 0 2px 20px #00000033;
+}
+
+@media screen and (max-width: 1024px) {
+   .flipCard,
+   .flipCard> * {
+      width: 90px !important;
+      height: 80px !important;
    }
 }

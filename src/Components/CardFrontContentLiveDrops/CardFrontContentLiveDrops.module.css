@@ -11,7 +11,7 @@
  .userContainer {
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
  }
 
  .userAvatar {
@@ -32,4 +32,25 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+ }
+
+ .mobile {
+    display: none;
+ }
+
+ @media screen and (max-width: 1024px) {
+    .mobile {
+       display: block;
+       width: 100%;
+    }
+
+    .userContainer,
+    .desktop {
+       display: none;
+    }
+
+    .container {
+       padding: 10px;
+
+    }
  }

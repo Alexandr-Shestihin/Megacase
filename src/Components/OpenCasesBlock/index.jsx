@@ -1,10 +1,8 @@
 "use client"
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useMemo, useRef } from 'react';
 import s from './OpenCasesBlock.module.css';
 import { useTranslation } from 'react-i18next';
-
-import { formatNumericPercentInput, formatNumericPriceInput, useDebounce } from '../../utils';
-
+import { useMenuSelection } from '@/utils';
 import Image from 'next/image';
 
 const price = '/assets/icons/addMoney.svg';
@@ -12,110 +10,88 @@ const caseIcon = '/assets/img/case.png';
 const create = '/assets/icons/create.svg';
 const share = '/assets/icons/share.svg';
 const caseLarge = '/assets/img/caseLarge.png';
+const caseLargeOpen = '/assets/img/caseAnimation/open.gif';
 const caseI = '/assets/icons/active.svg';
 
 import {
-   Button,
-   Item,
-   Input,
-   OpenCasesBlockPrice,
-   OpenCasesBlockPercent,
-   FlipCard,
-   CardFrontContent,
-   CardBackContent
+   Button, Input, OpenCasesBlockPrice,
+   OpenCasesBlockPercent, FlipCard, CardFrontContent,
+   CardBackContent, MenuBtn, SignProgress, Sign
 } from '../';
-
 import { cardsData } from '../../../public/data';
 
 const OpenCasesBlock = (props) => {
-
-   const initialValue = { percent: '100', price: '123 455' };
+   const initialValue = { percent: '20', price: 123455, balance: 1000000 };
    const [data, setData] = useState(initialValue);
    const { t } = useTranslation();
+   const [caseImg, setCaseImg] = useState(() => caseLarge)
 
-   // Вспомогательная функция для форматирования с пробелами и обработки нескольких точек
-   const formatWithSpaces = (value) => {
-      if (!value) return '';
+   const handlerPrice = useCallback((value) => {
+      setData(prev => ({ ...prev, price: value }));
+   }, []);
 
-      const cleanedValue = formatNumericPriceInput(value); // Clean up input
+   const handlerPercent = useCallback((value) => {
+      setData(prev => ({ ...prev, percent: value }));
+   }, []);
 
-      // Разделяем на целую и дробную части
-      const [integerPart, fractionalPart] = cleanedValue.split('.');
+   const { activeID, handler } = useMenuSelection('CS2');
 
-      // Форматируем целую часть с пробелами
-      const formattedIntegerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+   const minPrice = useCallback((id) => {
+      if (id == 'CS2') {
+         return 0.2
+      } else if (id == 'Dota2' || id == 'Rust') {
+         return 0.5
+      } else return 0
+   }, [])
 
-      // Соединяем обратно
-      return fractionalPart !== undefined ? `${formattedIntegerPart}.${fractionalPart}` : formattedIntegerPart;
+   const minPriceValue = useMemo(() => minPrice(activeID), [activeID]);
+
+   //Анимация центрального блока
+   const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+   const handleImageLoad = () => {
+      setIsImageLoaded(true);
    };
 
-   // Debounced function to set the price
-   const debouncedSetPrice = useDebounce((value) => {
-      setData(prev => ({ ...prev, price: value }));
-   }, 100);
-
-   const handler = useCallback((e, key) => {
-      const value = e.target.value;
-
-      if (key === "price") {
-         debouncedSetPrice(formatWithSpaces(value));
-      } else if (key === "percent") {
-         const formattedValue = formatNumericPercentInput(value);
-         setData(prev => ({ ...prev, [key]: formattedValue }));
-      } else {
-         setData(prev => ({ ...prev, [key]: value }));
-      }
-   }, [debouncedSetPrice]);
-
    return (
-      <div className={`${s.container} mt12`}>
+      <div className={`${s.container}`}>
+
          <div className={s.left}>
-            <div className="pageSubtitle">{t("openCasesBlock.pageSubtitlePrice")}</div>
-            <Input
-               set={(e) => handler(e, "price")}
-               value={data.price}
-               img={price}
-               className={'mt12'}
-            />
-            <OpenCasesBlockPrice handler={handler} set={setData} data={data} />
+            <MenuBtn activeID={activeID} handler={handler} />
+            <div className="pageSubtitle mt19">{t("openCasesBlock.pageSubtitlePrice")}</div>
+
+            <Input set={handlerPrice} value={data.price} max={data.balance} min={minPriceValue} className={'mt16'} />
+
+            <OpenCasesBlockPrice handler={handlerPrice} set={setData} data={data} max={data.balance} />
             <div className="pageSubtitle mt22">{t("openCasesBlock.pageSubtitleChance")}</div>
-            <Input set={(e) => handler(e, "percent")} value={`${data.percent}%`} className={'mt12'} />
-            <OpenCasesBlockPercent handler={handler} set={setData} data={data} />
-            <div className={`${s.statisticsBlock} mt12`}>
-               <div className={s.photoBlock}>
-                  <Image src={caseIcon} alt="Case" width={200} height={100} className="img" />
-                  <div className="pageSubtitle">CS2</div>
-               </div>
-               <div className={s.dataBlock}>
-                  <Item name={t("openCasesBlock.statistics.one")} value={'10%'} />
-                  <Item name={t("openCasesBlock.statistics.two")} value={'10%'} />
-                  <Item name={t("openCasesBlock.statistics.three")} value={'80.0004%'} />
-                  <Item name={t("openCasesBlock.statistics.four")} value={'0.000023%'} />
-                  <Item name={t("openCasesBlock.statistics.five")} value={'12 569$'} />
-               </div>
+
+            <Input set={handlerPercent} value={`${data.percent}`} className={'mt12'} />
+
+            <OpenCasesBlockPercent handler={handlerPercent} set={setData} data={data} />
+
+            <div className="row">
+               <Button className={`${s.btnCreate} btn-3 btn-text mt19`} activeI={create} inactiveI={create} >{t("openCasesBlock.createBtn")}</Button>
+               <Button className={`${s.btnCreate} ${s.btnCreate_fast} btn-1 btn-text mt19`} >{t("openCasesBlock.createFastBtn")}</Button>
             </div>
-            <Button
-               className={`${s.btn} btn-2 btn-text mt12`}
-               activeI={create}
-               inactiveI={create}
-            >{t("openCasesBlock.createBtn")}</Button>
          </div>
 
          <div className={s.middle}>
+
             <div className="row">
-               <div className="pageTitle">{t("openCasesBlock.title")}</div>
-               <Button
-                  className={`${s.btnShare} btn-text`}
-                  activeI={share}
-                  inactiveI={share}
-               >{t("openCasesBlock.shareBtn")}</Button>
+               {/* <div className="pageTitle">{t("openCasesBlock.title")}</div> */}
+               <SignProgress className={s.signProgress} name={t("openCasesBlock.pageSubtitlePrice")} value={434500} symbol={'$'} max={data.balance} />
+               <Sign className={s.sign} name={t("openCasesBlock.droppedSkin")} value={'???'} />
+               <SignProgress className={s.signProgress} name={t("openCasesBlock.droppedSkin")} value={50} symbol={'%'} max={100} />
             </div>
-            <Image src={caseLarge} alt="Case" width={528} height={358} className={`img mt26 ${s.caseImg}`} />
-            <Button
-               className={`${s.btn} btn-3 btn-text mt54`}
-               activeI={caseI}
-               inactiveI={caseI}
-            >{t("openCasesBlock.openBtn")}$12</Button>
+            <div className={s.imageContainer} onMouseOver={() => setCaseImg(caseLargeOpen)} onMouseLeave={() => setCaseImg(caseLarge)} >
+               <Image src={caseImg} alt="Case" layout="fill" objectFit="cover" className={`img ${s.caseImg} ${isImageLoaded ? `${s.loaded}` : ''}`}
+                  onLoad={handleImageLoad} />
+            </div>
+            <div className={s.row}>
+               <Button className={`${s.btn} btn-3 btn-text`} activeI={caseI} inactiveI={caseI} >{t("openCasesBlock.openBtn")}$12</Button>
+               <Button className={`${s.btnShare} btn-text`} activeI={share} inactiveI={share} >{t("openCasesBlock.shareBtn")}</Button>
+            </div>
+
          </div>
 
          <div className={s.right}>
@@ -125,18 +101,10 @@ const OpenCasesBlock = (props) => {
             </div>
             <div className={`mt12 ${s.flipContainer}`}>
                {cardsData.map(el => <FlipCard key={el.id}
-                  frontContent={<CardFrontContent dw={el.dw} img={el.img} />}
-                  backContent={<CardBackContent
-                     dw={el.dw}
-                     text={el.text}
-                     price={el.price}
-                     chance={el.chance}
-                  />}
-                  className="my-custom-class" 
-                  width={'120px'}
-                  height={'120px'}
-               />)}
-
+                  frontContent={<CardFrontContent dw={el.dw} img={el.img} text={el.text} />}
+                  backContent={<CardBackContent dw={el.dw}
+                     text={el.text} price={el.price} chance={el.chance}
+                  />} className="my-custom-class" width={'120px'} height={'120px'} />)}
             </div>
          </div>
       </div>

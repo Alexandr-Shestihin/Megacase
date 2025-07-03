@@ -1,7 +1,10 @@
  .button {
     display: flex;
     align-items: center;
+ }
 
+ .button * {
+    pointer-events: none;
  }
 
  .button img {

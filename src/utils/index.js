@@ -71,8 +71,8 @@ export function useDebounce(func, delay, cleanUp = false) {
 }
 
 //хук для обработки логики выбора активного элемента в меню
-const useMenuSelection = () => {
-   const [activeID, setActiveID] = useState(null);
+export const useMenuSelection = (defaultActiveID) => {
+   const [activeID, setActiveID] = useState(defaultActiveID || null);
 
    const handler = useCallback((e) => {
       const id = e.target.id;
@@ -85,8 +85,6 @@ const useMenuSelection = () => {
 
    return { activeID, handler, clear };
 };
-
-export default useMenuSelection;
 
 /* Логика отрисовки состояния в карточках */
 export const getDegreeWear = (dw, children) => {
@@ -146,3 +144,15 @@ export const getDegreeWearMin = (dw) => {
       </div>
    }
 }
+
+// Вспомогательная функция для форматирования с пробелами и обработки нескольких точек
+export const formatWithSpaces = (value) => {
+   if (value === null || value === undefined) return '';  //  Добавлено
+   const cleanedValue = formatNumericPriceInput(value.toString()); // Clean up input
+   // Разделяем на целую и дробную части
+   const [integerPart, fractionalPart] = cleanedValue.split('.');
+   // Форматируем целую часть с пробелами
+   const formattedIntegerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+   // Соединяем обратно
+   return fractionalPart !== undefined ? `${formattedIntegerPart}.${fractionalPart}` : formattedIntegerPart;
+};

@@ -2,17 +2,15 @@
 import React from 'react';
 import s from './CardFrontContent.module.css';
 import Image from 'next/image';
-import { getDegreeWearMin } from '@/utils';
+import { getDegreeWear } from '@/utils';
 
-const logoMini = '/assets/img/logo/logoMini.svg';
-
-const CardFrontContent = ({ dw, img }) => {
+const CardFrontContent = ({ dw, img, text }) => {
 
    return (
       <div className={s.container}>
-         <Image src={logoMini} alt="logoMini" width={69} height={12} className={`img ${s.logoMini}`} />
+         <div className={s.text} dangerouslySetInnerHTML={{ __html: text }} />
          <Image src={img} alt="Case" width={100} height={29} className={`img ${s.arms}`} />
-         {getDegreeWearMin(dw)}
+         {getDegreeWear(dw)}
       </div>
    )
 }

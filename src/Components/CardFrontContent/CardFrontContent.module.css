@@ -8,10 +8,15 @@
     padding: 10px;
  }
 
- .logoMini {
-    width: 90px;
- }
-
  .arms {
     width: 100%;
+ }
+ 
+ .text {
+    width: 95px;
+    text-align: left;
+    color: var(--color-2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
  }

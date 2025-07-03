@@ -12,7 +12,7 @@ const CardBackContent = ({ dw, text, price, chance }) => {
       <div className={s.container}>
          <div className={s.text} dangerouslySetInnerHTML={{ __html: text }} />
          <div className="row">
-            <div className={s.key}>{t("liveLastDrop.cardLiveDrops.price")}</div>
+            <div className={s.key}>{t("openCasesBlock.pageSubtitlePrice")}</div>
             <div className={s.value}>{price}</div>
          </div>
          <div className="row">
@@ -20,7 +20,7 @@ const CardBackContent = ({ dw, text, price, chance }) => {
             <div className={s.value}>{chance}</div>
          </div>
          <div className="row">
-            {getDegreeWear(dw, true)}
+            {getDegreeWear(dw)}
          </div>
       </div>
    )
