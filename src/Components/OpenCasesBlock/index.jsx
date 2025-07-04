@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useCallback, useMemo, useRef } from 'react';
+import React, { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import s from './OpenCasesBlock.module.css';
 import { useTranslation } from 'react-i18next';
 import { useMenuSelection } from '@/utils';
@@ -11,6 +11,7 @@ const create = '/assets/icons/create.svg';
 const share = '/assets/icons/share.svg';
 const caseLarge = '/assets/img/caseLarge.png';
 const caseLargeOpen = '/assets/img/caseAnimation/open.gif';
+const caseLargeAppearance = '/assets/img/caseAnimation/appearance.gif';
 const caseI = '/assets/icons/active.svg';
 
 import {
@@ -53,6 +54,8 @@ const OpenCasesBlock = (props) => {
       setIsImageLoaded(true);
    };
 
+   const imageSource = isImageLoaded ? caseImg : caseLargeAppearance;
+
    return (
       <div className={`${s.container}`}>
 
@@ -84,7 +87,7 @@ const OpenCasesBlock = (props) => {
                <SignProgress className={s.signProgress} name={t("openCasesBlock.droppedSkin")} value={50} symbol={'%'} max={100} />
             </div>
             <div className={s.imageContainer} onMouseOver={() => setCaseImg(caseLargeOpen)} onMouseLeave={() => setCaseImg(caseLarge)} >
-               <Image src={caseImg} alt="Case" layout="fill" objectFit="cover" className={`img ${s.caseImg} ${isImageLoaded ? `${s.loaded}` : ''}`}
+               <Image src={imageSource} alt="Case" layout="fill" objectFit="cover" className={`img ${s.caseImg} ${isImageLoaded ? `${s.loaded}` : ''}`}
                   onLoad={handleImageLoad} />
             </div>
             <div className={s.row}>
