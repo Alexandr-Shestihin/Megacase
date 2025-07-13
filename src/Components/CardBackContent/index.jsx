@@ -12,7 +12,7 @@ const CardBackContent = ({ dw, text, price, chance }) => {
       <div className={s.container}>
          <div className={s.text} dangerouslySetInnerHTML={{ __html: text }} />
          <div className="row">
-            <div className={s.key}>{t("openCasesBlock.pageSubtitlePrice")}</div>
+            <div className={s.key}>{t("openCasesBlock.price")}</div>
             <div className={s.value}>{price}</div>
          </div>
          <div className="row">

@@ -7,90 +7,25 @@
 
 .container>* {
    background: var(--main-main);
-   padding: 20px;
    border-radius: var(--border-r20);
 }
 
 .left {
    width: 23%;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
+   padding: 20px;
 }
 
 .right {
    width: 22.60%;
+   padding: 20px;
 }
 
 .middle {
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   padding: 20px;
    width: 53%;
    overflow: hidden;
 }
 
 /* Внутренний контент блоков */
-
-.row {
-   display: flex;
-   justify-content: center;
-   gap: 8px;
-}
-
-.btnCreate {
-   width: 44%;
-   padding: 22px 0;
-   display: flex;
-   justify-content: center;
-}
-
-.btnCreate_fast {
-   background: var(--bg-2);
-}
-
-.btn {
-   width: 240px;
-   padding: 22px 0;
-   display: flex;
-   justify-content: center;
-   z-index: 10;
-}
-
-.btnShare {
-   width: 240px;
-   display: flex;
-   justify-content: center;
-   white-space: nowrap;
-   padding: 15px;
-   background: #FFFFFF05;
-   z-index: 10000;
-}
-
-.imageContainer {
-   position: absolute;
-   top: -95px;
-   left: -20px;
-   width: calc(100% + 40px);
-   min-height: 138%;
-   overflow: hidden;
-}
-
-.caseImg {
-   object-fit: contain;
-   /* transition: transform 0.5s ease-out;
-   transform: scale(0.4) skew(5deg);
-   opacity: 0; */
-   position: relative;
-   width: 100%;
-}
-
-/* .caseImg.loaded {
-   transform: scale(1) skew(0deg);
-   opacity: 1;
-} */
 
 .count {
    width: auto;
@@ -102,16 +37,6 @@
    justify-content: center;
    flex-wrap: wrap;
    gap: 9px;
-}
-
-.container .signProgress {
-   width: 22.5%;
-   z-index: 1;
-}
-
-.container .sign {
-   width: 51%;
-   z-index: 1;
 }
 
 @media screen and (max-width: 1895px) {
@@ -127,10 +52,6 @@
       width: 74%;
    }
 
-   .imageContainer {
-      position: absolute;
-   }
-
    .right {
       width: 100%;
    }
@@ -143,11 +64,6 @@
 
    .middle {
       width: 63%;
-   }
-
-   .container .signProgress,
-   .container .sign {
-      width: 32%;
    }
 }
 

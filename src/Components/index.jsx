@@ -19,3 +19,5 @@ export {default as CaseBlock} from './CaseBlock';
 export {default as MyCaseFront} from './MyCaseFront';
 export {default as MyCaseBack} from './MyCaseBack';
 export {default as Footer} from './Footer';
+export {default as СaseLargeImg} from './СaseLargeImg';
+export {default as ScrollingAnimation} from './ScrollingAnimation';

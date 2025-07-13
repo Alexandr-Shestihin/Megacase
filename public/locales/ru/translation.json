@@ -27,15 +27,18 @@
    },
    "openCasesBlock": {
       "title": "Открыть кейс",
-      "pageSubtitlePrice": "Стоимость",
+      "price": "Стоимость",
       "pageSubtitleChance": "Шанс",
       "droppedSkin": "Выпавший скин",
       "createBtn": "Создать",
       "createFastBtn": "Создать быстро",
       "shareBtn": "Поделиться",
-      "openBtn": "Открыть за ",
+      "openBtn": "Открыть",
       "fillingCase": "Наполнение кейса",
-      "count": " предметов"
+      "count": " предметов",
+      "improve": "Улучшить",
+      "take": "Забрать",
+      "sell": "Продать"
    },
    "liveLastDrop": {
       "title": " дроп с кейса",

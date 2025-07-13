@@ -21,7 +21,7 @@ const CardBackContentLiveDrops = ({ dw, text, price, chance, userName, userAvata
          <div className={s.text} dangerouslySetInnerHTML={{ __html: text }} />
          <span className={s.context}>
             <div className="row">
-               <div className={s.key}>{t("openCasesBlock.pageSubtitlePrice")}</div>
+               <div className={s.key}>{t("openCasesBlock.price")}</div>
                <div className={s.value}>{price}</div>
             </div>
             <div className="row">

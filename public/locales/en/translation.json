@@ -27,15 +27,18 @@
    },
    "openCasesBlock": {
       "title": "Open cases",
-      "pageSubtitlePrice": "Price",
+      "price": "Price",
       "pageSubtitleChance": "Chance",
       "droppedSkin": "Dropped skin",
       "createBtn": "Create",
       "createFastBtn": "Create fast",
       "shareBtn": "Share",
-      "openBtn": "Open for ",
+      "openBtn": "Open",
       "fillingCase": "Filling the case",
-      "count": " things"
+      "count": " things",
+      "improve": "Improve",
+      "take": "Take",
+      "sell": "Sell"
    },
    "liveLastDrop": {
       "title": " feed of the latest drops",

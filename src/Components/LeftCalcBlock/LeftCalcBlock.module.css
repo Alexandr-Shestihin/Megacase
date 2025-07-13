@@ -1,0 +1,16 @@
+.left {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.btnCreate {
+   width: 44%;
+   padding: 22px 0;
+   display: flex;
+   justify-content: center;
+}
+
+.btnCreate_fast {
+   background: var(--bg-2);
+}
