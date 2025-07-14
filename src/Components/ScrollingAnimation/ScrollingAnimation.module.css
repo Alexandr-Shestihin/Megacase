@@ -41,8 +41,8 @@
 
 .item {
    flex: 0 0 auto;
-   width: 200px;
-   height: 100px;
+   width: 180px;
+   height: 90px;
    margin-right: 10px;
    display: flex;
    justify-content: center;
@@ -51,7 +51,7 @@
 }
 
 .inView {
-    transform: scale(1.8);
+    transform: scale(1.6);
     z-index: 3;
 }
 
@@ -61,7 +61,7 @@
    }
 
    100% {
-      transform: translateX(-403%);
+      transform: translateX(-368%);
       /* This has to stay */
    }
 }
