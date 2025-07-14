@@ -42,13 +42,10 @@ const LeftCalcBlock = ({initialValue}) => {
          <MenuBtn activeID={activeID} handler={handler} />
          <div className="pageSubtitle mt19">{t("openCasesBlock.price")}</div>
 
-
-
          <Input set={handlerPrice} value={data.price} max={data.balance} min={minPriceValue} className={'mt16'} />
 
          <OpenCasesBlockPrice handler={handlerPrice} set={setData} data={data} max={data.balance} />
-         <div className="pageSubtitle mt22">{t("openCasesBlock.price")}</div>
-
+         <div className="pageSubtitle mt22">{t("openCasesBlock.pageSubtitleChance")}</div>
 
          <Input set={handlerPercent} value={`${data.percent}`} className={'mt12'} />
 

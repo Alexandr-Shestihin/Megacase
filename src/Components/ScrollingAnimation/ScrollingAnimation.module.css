@@ -27,7 +27,7 @@
 
 .arrow{
    position: absolute;
-   left: calc(50% - 2px);
+   left: calc(50% + 19px);
    height: 100%;
    width: 2px;
    background: radial-gradient(50% 50% at 50% 50%, #FF6D00 0%, rgba(255, 109, 0, 0) 100%);
@@ -61,7 +61,7 @@
    }
 
    100% {
-      transform: translateX(-368%);
+      transform: translateX(-362%);
       /* This has to stay */
    }
 }

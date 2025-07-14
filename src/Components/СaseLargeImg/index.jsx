@@ -56,8 +56,17 @@ const СaseLargeImg = ({ className }) => {
                      video.addEventListener('ended', handleOpenEnded);
                   }
 
-                  // Добавляем обработчик события 'ended' для выполнения openCase
+                  // Добавляем обработчик события 'ended' для выполнения setDisappearance
                   if (animationName === 'disappearance') {
+                     const handleOpenEnded = () => {
+                        setisAnimationStart();
+                        video.removeEventListener('ended', handleOpenEnded);
+                     };
+                     video.addEventListener('ended', handleOpenEnded);
+                  }
+
+                  // Добавляем обработчик события 'ended' для выполнения closeCase
+                  if (animationName === 'close') {
                      const handleOpenEnded = () => {
                         setisAnimationStart();
                         video.removeEventListener('ended', handleOpenEnded);

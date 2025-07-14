@@ -14,7 +14,7 @@ const useCaseStore = create((set, get) => ({
       set({ currentAnimation: 'open', isAnimationStart: true }); // Устанавливаем состояние для запуска анимации
    },
    openCase: () => set({ currentAnimation: 'open', isOpened: true }),
-   closeCase: () => set({ currentAnimation: 'close', isOpened: false, isScrollingAnimationEnd: false }),
+   closeCase: () => set({ currentAnimation: 'close', isOpened: false, isScrollingAnimationEnd: false, isAnimationStart: true }),
    setError: () => set({ currentAnimation: 'error' }),
    setDisappearance: () => set({ currentAnimation: 'disappearance', isAnimationStart: true, isScrollingAnimationEnd: false, isOpened : false }),
    setHover: () => {
