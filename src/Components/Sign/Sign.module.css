@@ -18,3 +18,10 @@
     color: var(--color-1);
     font-weight: var(--font-weight-500);
  }
+
+ 
+@media screen and (max-width: 705px) {
+   .container {
+      padding: 10px;
+   }
+}

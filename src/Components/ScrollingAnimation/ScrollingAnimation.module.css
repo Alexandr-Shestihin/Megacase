@@ -25,7 +25,7 @@
    z-index: 1;
 }
 
-.arrow{
+.arrow {
    position: absolute;
    left: calc(50% + 19px);
    height: 100%;
@@ -34,9 +34,10 @@
 }
 
 .scrollContent {
+   width: 4800px;
    display: flex;
    animation: scroll 5s ease-out forwards;
-   gap: 50px
+   gap: 50px;
 }
 
 .item {
@@ -51,8 +52,8 @@
 }
 
 .inView {
-    transform: scale(1.6);
-    z-index: 3;
+   transform: scale(1.6);
+   z-index: 3;
 }
 
 @keyframes scroll {
@@ -61,7 +62,130 @@
    }
 
    100% {
-      transform: translateX(-362%);
-      /* This has to stay */
+      transform: translateX(-3667px);
+   }
+}
+
+@media screen and (max-width: 1895px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(var(--offset));
+      }
+   }
+}
+
+@media screen and (max-width: 1582px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 50px));
+      }
+   }
+}
+
+@media screen and (max-width: 1375px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 100px));
+      }
+   }
+}
+
+@media screen and (max-width: 1295px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 150px));
+      }
+   }
+}
+
+@media screen and (max-width: 1223px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 260px));
+      }
+   }
+}
+
+@media screen and (max-width: 1020px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 320px));
+      }
+   }
+}
+
+@media screen and (max-width: 850px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 220px));
+      }
+   }
+}
+
+@media screen and (max-width: 728px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 260px));
+      }
+   }
+}
+
+@media screen and (max-width: 630px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 320px));
+      }
+   }
+}
+
+
+@media screen and (max-width: 560px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 350px));
+      }
+   }
+}
+
+@media screen and (max-width: 510px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 700px));
+      }
+   }
+
+   .inView {
+      transform: scale(1.3);
+      z-index: 3;
+   }
+
+   .item {
+      width: 162px;
+      height: 81px;
+   }
+}
+
+@media screen and (max-width: 450px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 720px));
+      }
+   }
+}
+
+@media screen and (max-width: 414px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 760px));
+      }
+   }
+}
+
+
+@media screen and (max-width: 340px) {
+   @keyframes scroll {
+      100% {
+         transform: translateX(calc(var(--offset) + 800px));
+      }
    }
 }

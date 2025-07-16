@@ -2,8 +2,16 @@
    position: absolute;
    width: calc(100% + 40px);
    left: -20px;
-   top: -95px;
+   top: -121px;
    overflow: hidden;
+
+   margin: auto;
+   display: block;
+   bottom: 0px;
+   top: -103px;
+   left: 0px;
+   transform: translate(-50%, 0);
+   transform: scale(1.2);
 }
 
 .caseImg {
@@ -15,6 +23,18 @@
 
 @media screen and (max-width: 1895px) {
    .imageContainer {
-      position: absolute;
+      transform: scale(1.5);
+   }
+}
+
+@media screen and (max-width: 943px) {
+   .imageContainer {
+      top: 0px;
+   }
+}
+
+@media screen and (max-width: 470px) {
+   .imageContainer {
+      transform: scale(2);
    }
 }
