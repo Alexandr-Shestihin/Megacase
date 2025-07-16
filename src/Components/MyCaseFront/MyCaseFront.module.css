@@ -37,6 +37,11 @@
    gap: 6px;
 }
 
+.price {
+   width: 100%;
+   align-items: center;
+}
+
 @media screen and (max-width: 1024px) {
    .container {
       padding: 10px;

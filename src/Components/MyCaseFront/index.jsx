@@ -37,10 +37,7 @@ const MyCaseFront = ({ title, time, price, img, delay }) => {
             <Image src={img || caseMini} alt="case" layout="fill" objectFit="contain" className={`img ${s.caseImg} ${isImageLoaded ? `${s.loaded}` : ''}`}
             />
          </div>
-         <div className="row">
-            <div className={s.price}>{t("rowCase.myCase.statistics.price")}</div>
             <div className={s.price}>{price.toLocaleString()}$</div>
-         </div>
       </div>
    )
 }

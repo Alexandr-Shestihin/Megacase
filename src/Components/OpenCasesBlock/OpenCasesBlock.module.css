@@ -55,6 +55,11 @@
    .right {
       width: 100%;
    }
+
+   .flipContainer {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+   }
 }
 
 @media screen and (max-width: 1246px) {

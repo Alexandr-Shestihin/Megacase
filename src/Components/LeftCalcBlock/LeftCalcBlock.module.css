@@ -9,6 +9,7 @@
    padding: 22px 0;
    display: flex;
    justify-content: center;
+   color: var(--color-1);
 }
 
 .btnCreate_fast {

@@ -25,8 +25,7 @@ import { useMenuSelection } from '@/utils';
 
 const linkActive = '/assets/icons/linkActive.svg';
 const linkUnactive = '/assets/icons/linkUnactive.svg';
-const deposit = '/assets/icons/addMoney.svg';
-const depositUnactive = '/assets/icons/addMoneyUnactive.svg';
+
 const historyConclusionsActive = '/assets/icons/historyConclusionsActive.svg';
 const historyConclusionsUnactive = '/assets/icons/historyConclusionsUnactive.svg';
 const historyGamesActive = '/assets/icons/historyGamesActive.svg';
@@ -37,8 +36,6 @@ const bonusesActive = '/assets/icons/bonusesActive.svg';
 const bonusesUnactive = '/assets/icons/bonusesUnactive.svg';
 const accountStatisticsActive = '/assets/icons/accountStatisticsActive.svg';
 const accountStatisticsUnactive = '/assets/icons/accountStatisticsUnactive.svg';
-const honestyCheckActive = '/assets/icons/honestyCheckActive.svg';
-const honestyCheckUnactive = '/assets/icons/honestyCheckUnactive.svg';
 
 const Header = (props) => {
 
@@ -52,9 +49,6 @@ const Header = (props) => {
       i18n.changeLanguage(lng);
    };
 
-   const balance = 123455;
-   const userName = 'Герасим Муму';
-
    return (
       <div onClick={handler} className={s.container}>
          <div className={s.leftContainer}>
@@ -67,13 +61,6 @@ const Header = (props) => {
                   activeI={linkActive}
                   inactiveI={linkUnactive}
                ><span className="innerText">Trade URL</span></Button>
-               {/* <Button
-            id={'deposit'}
-            active={activeID === 'deposit' && true}
-            className={`${s.btn} btn-text`}
-            activeI={deposit}
-            inactiveI={depositUnactive}
-         ><span className="innerText">{t('rightMemu.deposit')}</span></Button> */}
                <Button
                   id={'historyConclusions'}
                   active={activeID === 'historyConclusions' && true}
@@ -109,13 +96,6 @@ const Header = (props) => {
                   activeI={accountStatisticsActive}
                   inactiveI={accountStatisticsUnactive}
                ><span className="innerText">{t('rightMemu.accountStatistics')}</span></Button>
-               {/*  <Button
-            id={'honestyCheck'}
-            active={activeID === 'honestyCheck' && true}
-            className={`${s.btn} btn-text`}
-            activeI={honestyCheckActive}
-            inactiveI={honestyCheckUnactive}
-         ><span className="innerText">{t('rightMemu.honestyCheck')}</span></Button> */}
                <Button
                   id={'FAQ'}
                   active={activeID === 'FAQ' && true}
@@ -153,19 +133,11 @@ const Header = (props) => {
                <span>1000 000$</span>
             </Button>
 
-            {/* <Button className={`${s.balance} btn-text`}>
-               <Image src={totalScore} alt="total score" width={200} height={100} className="img" />
-               {balance.toLocaleString('ru-ru')}$
-            </Button> */}
             <Button className={`${s.userInfo} `} >
                <div className={s.userAvatar}>
                   <img src={userPhoto || userIcon} alt="" />
                </div>
-               {/* <div className={s.textContainer}>
-                  <div className={s.info}>{t('header.info')}</div>
-                  <div className={s.fullname}>{userName}</div>
-               </div>
-               <Image src={logOut} alt="log Out" width={200} height={100} className={s.logOut} /> */}
+              
             </Button>
          </div>
       </div>

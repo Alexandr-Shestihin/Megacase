@@ -57,8 +57,7 @@
             "chance": "Шанс",
             "risk": "Риск",
             "min": "Min",
-            "max": "Max",
-            "price": "Price"
+            "max": "Max"
          }
       }
    },

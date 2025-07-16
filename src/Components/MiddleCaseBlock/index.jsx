@@ -53,7 +53,6 @@ const MiddleCaseBlock = ({ data }) => {
                <Button onClick={setError} className={`${s.btnShare} btn-text`} activeI={share} inactiveI={share} >{t("openCasesBlock.shareBtn")}</Button>
             </div>}
 
-
          </div>
 
          {isScrollingAnimationEnd && <div className={s.openCaseCard}>
