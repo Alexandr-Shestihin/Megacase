@@ -5,9 +5,8 @@
    },
    "header": {
       "info": "Account",
-      "language": "language",
-      "logOut": "log out",
-      "balance": "balance"
+      "language": "Language",
+      "logOut": "Log out"
    },
    "leftMenu": {
       "title": "My cases",

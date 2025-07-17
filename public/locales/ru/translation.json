@@ -5,9 +5,8 @@
    },
    "header": {
       "info": "Учётная запись",
-      "language": "язык",
-      "logOut": "выйти",
-      "balance": "баланс"
+      "language": "Язык",
+      "logOut": "Выйти"
    },
    "leftMenu": {
       "title": "Мои кейсы",

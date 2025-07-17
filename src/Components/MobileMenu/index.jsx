@@ -22,6 +22,8 @@ const bonusesActive = '/assets/icons/bonusesActive.svg';
 const bonusesUnactive = '/assets/icons/bonusesUnactive.svg';
 const accountStatisticsActive = '/assets/icons/accountStatisticsActive.svg';
 const accountStatisticsUnactive = '/assets/icons/accountStatisticsUnactive.svg';
+const faqActive = '/assets/icons/faqActive.svg';
+const faqUnactive = '/assets/icons/faqUnactive.svg';
 
 const MobileMenu = (props) => {
 
@@ -77,6 +79,8 @@ const MobileMenu = (props) => {
             id={'FAQ'}
             active={activeID === 'FAQ' && true}
             className={`${s.btn} ${s.btnFAQ} btn-text`}
+            activeI={faqActive}
+            inactiveI={faqUnactive}
             title='FAQ'
          >FAQ</MobileMenuItem>
       </div>
