@@ -52,7 +52,7 @@ const Header = (props) => {
       i18n.changeLanguage(lng);
    };
 
-   const [isMenuOpen, setIsMenuOpen] = useState(true);
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
    const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
