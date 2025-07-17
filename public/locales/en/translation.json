@@ -4,7 +4,10 @@
       "russian": "Russian"
    },
    "header": {
-      "info": "Account"
+      "info": "Account",
+      "language": "language",
+      "logOut": "log out",
+      "balance": "balance"
    },
    "leftMenu": {
       "title": "My cases",

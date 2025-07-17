@@ -1,0 +1,28 @@
+ .button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+ }
+
+ .button.active {
+    background: var(--bg-1);
+    color: var(--color-1);
+ }
+
+ .button .active * {
+    color: var(--color-1);
+ }
+
+ .button * {
+    pointer-events: none;
+ }
+
+ .button img {
+    width: 20px;
+ }
+
+ @media screen and (max-width: 720px) {
+    .button img {
+       width: 18px;
+    }
+ }

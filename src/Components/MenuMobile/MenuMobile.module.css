@@ -1,0 +1,76 @@
+/* MenuMobile.module.css */
+
+/* Основные стили для шторки */
+.drawer {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   background-color: var(--main-main);
+   z-index: 999;
+   transform: translateY(-100%);
+   transition: transform 0.3s ease-in-out;
+   transition-delay: 0.5s;
+}
+
+/* Когда шторка открыта */
+.drawer.open {
+   transform: translateY(0);
+}
+
+/* Стили для кнопки закрытия */
+.closeButton {
+  position: absolute; 
+  top: 30px; 
+  right: 30px; 
+  background: none;
+  border: none;
+  color: white; 
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 0; 
+  line-height: 1; 
+}
+
+/* Стили для кнопки закрытия при наведении */
+.closeButton:hover {
+  opacity: 0.7; 
+}
+
+/* Добавляем стили для доступности при фокусе с клавиатуры */
+.closeButton:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.7); 
+  outline-offset: 2px;
+}
+
+/* Затемнение фона */
+.overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   z-index: 998;
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;
+   pointer-events: none;
+}
+
+/* Отображаем оверлей, когда шторка открыта */
+.open + .overlay {
+   opacity: 1;
+   transition: opacity 0.3s ease-in-out 0.1s;
+   pointer-events: auto;
+}
+
+/* Стилизуем содержимое шторки */
+.drawerContent {
+   height: 100%;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}

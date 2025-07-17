@@ -7,8 +7,11 @@ import Image from 'next/image';
 
 import {
    Button,
-   RightMemuMobile
+   BtnBurger,
+   MenuMobile,
+   MobileMenu
 } from '../';
+
 const mainLogo = '../../assets/img/logo/mainLogo.svg';
 const totalScore = '../../assets/icons/totalScore.svg';
 const addMoney = '../../assets/icons/addMoney.svg';
@@ -49,11 +52,17 @@ const Header = (props) => {
       i18n.changeLanguage(lng);
    };
 
+   const [isMenuOpen, setIsMenuOpen] = useState(true);
+
+   const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+   };
+
    return (
-      <div onClick={handler} className={s.container}>
+      <div className={s.container}>
          <div className={s.leftContainer}>
             <div className={s.imgContainer}><Image src={mainLogo} alt="Logo" width={200} height={100} className="img" /></div>
-            <div className={s.btnContainer}>
+            <div onClick={handler} className={s.btnContainer}>
                <Button
                   id={'URL'}
                   active={activeID === 'URL' && true}
@@ -137,8 +146,48 @@ const Header = (props) => {
                <div className={s.userAvatar}>
                   <img src={userPhoto || userIcon} alt="" />
                </div>
-              
+
             </Button>
+
+            <BtnBurger isActive={isMenuOpen} setIsActive={setIsMenuOpen} />
+
+            <MenuMobile isOpen={isMenuOpen} onClose={toggleMenu}>
+               <MobileMenu />
+
+               <div>
+                  <Button
+                     active={activeLanguage}
+                     onClick={() => setActiveLanguage(!activeLanguage)}
+                     className={`mt8 ${s.btnMini} ${s.btnMiniMobile}`}
+                     activeI={languageActive}
+                     inactiveI={languageUnactive}
+                  >
+                     <div className={s.textMenuMob}>{t("header.language")}</div>
+                     <div className={`${s.langContainer} ${s.langContainerMobile} ${activeLanguage && s.active}`}>
+                        <div onClick={() => changeLanguage('en')} className={`btn-1 ${s.lan}`}>
+                           {t("language.english")}
+                           <Image src={usa} alt="usa" width={20} height={20} className="img" />
+                        </div>
+                        <div onClick={() => changeLanguage('ru')} className={`btn-1 ${s.lan}`}>
+                           {t("language.russian")}
+                           <Image src={rs} alt="rs" width={20} height={20} className="img" />
+                        </div>
+                     </div>
+                  </Button>
+
+                  <Button className={`mt8 ${s.btnMini} ${s.btnMiniMobile}`}>
+                     <Image src={logOut} alt="log Out" width={200} height={100} className={s.logOut} />
+                     <div className={s.textMenuMob}>{t("header.logOut")}</div>
+                  </Button>
+
+                  <Button className={`mt8 ${s.userInfo} ${s.userInfoMobile}`} >
+                     <div className={s.userAvatar}>
+                        <img src={userPhoto || userIcon} alt="" />
+                     </div>
+                     <div className={s.textMenuMob}>{t("header.info")}</div>
+                  </Button>
+               </div>
+            </MenuMobile>
          </div>
       </div>
    )

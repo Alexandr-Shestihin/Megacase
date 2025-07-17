@@ -4,7 +4,10 @@
       "russian": "Русский"
    },
    "header": {
-      "info": "Аккаунт"
+      "info": "Учётная запись",
+      "language": "язык",
+      "logOut": "выйти",
+      "balance": "баланс"
    },
    "leftMenu": {
       "title": "Мои кейсы",

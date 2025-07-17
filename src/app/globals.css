@@ -395,7 +395,7 @@ img,
    overflow: hidden;
 }
 
-@media screen and (max-width: 1135px) {
+@media screen and (max-width: 1300px) {
    .innerText {
       display: none;
    }

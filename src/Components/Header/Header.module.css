@@ -68,9 +68,17 @@
    z-index: 1;
 }
 
+.btnMini.btnMiniMobile {
+   display: flex;
+   justify-content: start;
+   width: 100%;
+   height: 40px;
+   padding: 0 16px;
+   z-index: 0;
+}
+
 .btnMini * {
    pointer-events: fill !important;
-
 }
 
 .btnMini img {
@@ -83,6 +91,13 @@
    display: flex;
    justify-content: space-between;
    overflow: hidden;
+}
+
+.userInfo.userInfoMobile {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+   padding: 10px;
 }
 
 .userAvatar img {
@@ -148,7 +163,6 @@
    border-radius: var(--border-r20);
    overflow: hidden;
    pointer-events: none;
-   z-index: 0;
 }
 
 .langContainer.active {
@@ -156,6 +170,21 @@
    bottom: -124px;
    z-index: 999;
    pointer-events: auto;
+}
+
+.langContainer.langContainerMobile {
+   min-width: 100%;
+   left: -100%;
+   bottom: calc(100% + 8px);
+   z-index: 999;
+}
+
+.langContainer.langContainerMobile.active {
+   left: 0;
+}
+
+.textMenuMob {
+   margin-left: 10px;
 }
 
 .lan {
@@ -166,8 +195,15 @@
    background: var(--bg-1);
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 850px) {
    .btnContainer {
+      display: none;
+   }
+}
+
+@media screen and (max-width: 650px) {
+
+   .btnMini {
       display: none;
    }
 }
@@ -176,11 +212,6 @@
    .container {
       flex-direction: column;
       gap: 20px;
-   }
-
-   .langContainer {
-      left: 50%;
-      transform: translate(50%);
    }
 
    .contantContainer {
