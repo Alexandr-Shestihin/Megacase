@@ -27,7 +27,7 @@ const faqUnactive = '/assets/icons/faqUnactive.svg';
 
 const MobileMenu = (props) => {
 
-   const { t, i18n } = useTranslation(); // t - функция перевода, i18n - объект i18n
+   const { t } = useTranslation();
 
    const { activeID, handler } = useMenuSelection();
 

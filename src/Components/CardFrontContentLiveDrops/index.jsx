@@ -4,7 +4,7 @@ import s from './CardFrontContentLiveDrops.module.css';
 import Image from 'next/image';
 import { getDegreeWear, getDegreeWearMin } from '@/utils';
 
-const userIcon = '/assets/icons/userIcon.svg';
+const userIcon = '/assets/icons/userIconUnactive.svg';
 
 const CardFrontContentLiveDrops = ({ dw, img, userName, userAvatar }) => {
 

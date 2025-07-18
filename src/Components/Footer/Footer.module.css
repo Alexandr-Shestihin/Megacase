@@ -149,17 +149,36 @@
  @media screen and (max-width: 1034px) {
     .container {
        flex-wrap: wrap;
-       justify-content: center;
+       justify-content: space-between;
        gap: 20px;
     }
 
-    .container>* {
+    /* .container>* {
        flex-wrap: wrap;
-    }
+    } */
 
     .statistics {
        margin: 20px;
        min-width: auto;
-       flex-wrap: wrap;
+       /* flex-wrap: wrap; */
     }
+ }
+
+ @media screen and (max-width: 768px) {
+    .companyInfo {
+       align-items: start;
+    }
+
+    .links,
+    .socialNetworks,
+    .statistics {
+       width: 100px;
+    }
+
+    .container,
+    .statistics {
+       justify-content: flex-start;
+       flex-direction: column;
+    }
+    
  }

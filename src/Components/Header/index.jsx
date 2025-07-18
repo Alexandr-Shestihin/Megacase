@@ -17,7 +17,7 @@ const totalScore = '../../assets/icons/totalScore.svg';
 const addMoney = '../../assets/icons/addMoney.svg';
 const languageActive = '../../assets/icons/languageActive.svg';
 const languageUnactive = '../../assets/icons/languageUnactive.svg';
-const userIcon = '../../assets/icons/userIcon.svg';
+const userIcon = '../../assets/icons/userIconUnactive.svg';
 const logOut = '../../assets/icons/logOut.svg';
 const usa = '../../assets/icons/languages/usa.svg';
 const rs = '../../assets/icons/languages/rs.svg';
@@ -39,6 +39,8 @@ const bonusesActive = '/assets/icons/bonusesActive.svg';
 const bonusesUnactive = '/assets/icons/bonusesUnactive.svg';
 const accountStatisticsActive = '/assets/icons/accountStatisticsActive.svg';
 const accountStatisticsUnactive = '/assets/icons/accountStatisticsUnactive.svg';
+const faqActive = '/assets/icons/faqActive.svg';
+const faqUnactive = '/assets/icons/faqUnactive.svg';
 
 const Header = (props) => {
 
@@ -108,9 +110,11 @@ const Header = (props) => {
                <Button
                   id={'FAQ'}
                   active={activeID === 'FAQ' && true}
+                  activeI={faqActive}
+                  inactiveI={faqUnactive}
                   className={`${s.btn} ${s.btnFAQ} btn-text`}
                   title='FAQ'
-               >FAQ</Button>
+               ><span className="innerText">FAQ</span></Button>
             </div>
          </div>
          <div className={s.contantContainer}>
@@ -146,7 +150,6 @@ const Header = (props) => {
                <div className={s.userAvatar}>
                   <img src={userPhoto || userIcon} alt="" />
                </div>
-
             </Button>
 
             <BtnBurger isActive={isMenuOpen} setIsActive={setIsMenuOpen} />

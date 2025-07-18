@@ -233,7 +233,7 @@ img,
 .btn-1:active,
 .btn-1.active, 
 .btn-1.active > * {
-   color: var(--color-1);
+   color: var(--color-1) !important;
 }
 
 .btn-1:active img,

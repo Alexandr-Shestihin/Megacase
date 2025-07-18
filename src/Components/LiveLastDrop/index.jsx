@@ -11,7 +11,7 @@ import {
     TopCard
 } from '../';
 
-const userIcon = '/assets/icons/userIcon.svg';
+const userIcon = '/assets/icons/userIconUnactive.svg';
 
 const LiveLastDrop = (props) => {
 

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { getDegreeWear, getDegreeWearMin } from '@/utils/index';
 
-const userIcon = '/assets/icons/userIcon.svg';
+const userIcon = '/assets/icons/userIconUnactive.svg';
 const arrow = '/assets/icons/arrowLeft.svg';
 
 const CardBackContentLiveDrops = ({ dw, text, price, chance, userName, userAvatar }) => {
