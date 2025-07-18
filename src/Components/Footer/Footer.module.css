@@ -10,7 +10,6 @@
  }
 
  .container>* {
-    /* min-height: 100%; */
     padding: 25px 45px;
     border-right: 1px solid var(--bg-2);
     display: flex;
@@ -73,6 +72,10 @@
     align-items: center;
     gap: 10px;
     cursor: pointer;
+ }
+
+ .block.block_max {
+    width: 100px;
  }
 
  .snIcon {
@@ -153,14 +156,8 @@
        gap: 20px;
     }
 
-    /* .container>* {
-       flex-wrap: wrap;
-    } */
-
     .statistics {
-       margin: 20px;
        min-width: auto;
-       /* flex-wrap: wrap; */
     }
  }
 
@@ -180,5 +177,10 @@
        justify-content: flex-start;
        flex-direction: column;
     }
-    
+
+    .block.block_max {
+       margin-left: 20px;
+    }
+
+
  }
