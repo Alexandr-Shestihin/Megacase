@@ -57,8 +57,7 @@ const MiddleCaseBlock = ({ data }) => {
                   className={`${s.btn} btn-3 btn-text`}
                   activeI={caseI}
                   inactiveI={caseI}
-                  /* onClick={startOpenAnimation} */
-                  onClick={handleTake}
+                  onClick={startOpenAnimation}
                >
                   {t("openCasesBlock.openBtn")}</Button>
                <Button onClick={setError} className={`${s.btnShare} btn-text`} activeI={share} inactiveI={share} >{t("openCasesBlock.shareBtn")}</Button>
