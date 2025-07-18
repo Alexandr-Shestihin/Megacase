@@ -56,10 +56,11 @@
       "myCase": {
          "timeSymbol": "ч",
          "statistics": {
-            "chance": "Chance",
-            "risk": "Risk",
+            "chance": "Шанс",
+            "risk": "Риск",
             "min": "Min",
-            "max": "Max"
+            "max": "Max",
+            "price":"Стоимость"
          }
       }
    },

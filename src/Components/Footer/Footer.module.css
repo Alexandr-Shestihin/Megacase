@@ -142,6 +142,7 @@
     .links,
     .socialNetworks {
        flex-direction: column;
+       justify-content: center;
     }
 
     .statistics {
@@ -151,9 +152,10 @@
 
  @media screen and (max-width: 1034px) {
     .container {
-       flex-wrap: wrap;
+       flex-wrap: wrap-reverse;
        justify-content: space-between;
-       gap: 20px;
+       justify-content: center;
+       gap: 40px;
     }
 
     .statistics {
@@ -161,26 +163,27 @@
     }
  }
 
- @media screen and (max-width: 768px) {
-    .companyInfo {
-       align-items: start;
+ @media screen and (max-width: 700px) {
+    .socialNetworks {
+       flex-direction: row;
+       gap: 40px;
     }
 
-    .links,
-    .socialNetworks,
     .statistics {
-       width: 100px;
+       min-width: 300px;
     }
+ }
 
-    .container,
+ @media screen and (max-width: 650px) {
+    .links {
+       flex-direction: row;
+    }
+ }
+
+ @media screen and (max-width: 370px) {
     .statistics {
-       justify-content: flex-start;
-       flex-direction: column;
+       flex-wrap: wrap !important;
+       border: 1px solid red;
+       min-width: 100%;
     }
-
-    .block.block_max {
-       margin-left: 20px;
-    }
-
-
  }
