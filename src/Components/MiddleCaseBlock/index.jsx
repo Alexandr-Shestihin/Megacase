@@ -85,7 +85,7 @@ const MiddleCaseBlock = ({ data }) => {
             setActive={setModalActive}
             className={s.modalGetSkin}
          >
-            <div className="pageTitle">Вывод скина <span className="pageSubtitle">История выводов</span> </div>
+            <div className="pageTitle">{t("openCasesBlock.skinOutput")} <span className="pageSubtitle">{t("openCasesBlock.historyConclusions")}</span> </div>
             <Image src={skin} alt="" width={332} height={268} />
             <div onClick={handleClick} className={`mt26 ${s.linkCopy}`}>https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url</div>
             <Button className={`mt8 ${s.takePopUpSkin} btn-3 btn-text`} activeI={downloadActive} inactiveI={downloadActive} >{t("openCasesBlock.take")}</Button>

@@ -41,7 +41,9 @@
       "improve": "Improve",
       "take": "Take skin",
       "sell": "Sell",
-      "notification": "If the item is out of stock, the item is returned to the site. <br/> You will be able to <span>replace</span> or <span>sell</span> the item."
+      "notification": "If the item is out of stock, the item is returned to the site. <br/> You will be able to <span>replace</span> or <span>sell</span> the item.",
+      "skinOutput": "Skin output",
+      "historyConclusions": "History of conclusions"
    },
    "liveLastDrop": {
       "title": " feed of the latest drops",
