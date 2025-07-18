@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from 'next/image';
+import { t } from "i18next";
 
 const arrow = '/assets/icons/arrow.svg';
 
@@ -156,4 +157,16 @@ export const formatWithSpaces = (value) => {
    const formattedIntegerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
    // Соединяем обратно
    return fractionalPart !== undefined ? `${formattedIntegerPart}.${fractionalPart}` : formattedIntegerPart;
+};
+
+//Копирование при клике
+export const handleClick = async (e) => {
+   try {
+      const text = e.target.textContent;
+      await navigator.clipboard.writeText(text);
+      alert(t("message.copyText.success")); // Optional: Give feedback to the user
+   } catch (err) {
+      console.error(err);
+      alert(t("message.copyText.unsuccess"));
+   }
 };

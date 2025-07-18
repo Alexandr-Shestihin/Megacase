@@ -39,8 +39,9 @@
       "fillingCase": "Filling the case",
       "count": " things",
       "improve": "Improve",
-      "take": "Take",
-      "sell": "Sell"
+      "take": "Take skin",
+      "sell": "Sell",
+      "notification": "If the item is out of stock, the item is returned to the site. <br/> You will be able to <span>replace</span> or <span>sell</span> the item."
    },
    "liveLastDrop": {
       "title": " feed of the latest drops",
@@ -60,7 +61,7 @@
             "risk": "Risk",
             "min": "Min",
             "max": "Max",
-            "price":"Price"
+            "price": "Price"
          }
       }
    },
@@ -78,6 +79,12 @@
          "item1": "Cases",
          "item2": "Users",
          "item3": "Improvements"
+      }
+   },
+   "message": {
+      "copyText": {
+         "success": "Text copied to clipboard!",
+         "unsuccess": "Failed to copy text. Please try again."
       }
    }
 }

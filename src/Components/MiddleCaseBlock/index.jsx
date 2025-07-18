@@ -10,12 +10,15 @@ const automat = '/assets/img/cases/automat.png';
 const improveActive = '/assets/icons/improveActive.svg';
 const downloadActive = '/assets/icons/downloadActive.svg';
 const buyActive = '/assets/icons/buyActive.svg';
+const skin = '/assets/img/cases/skin.png';
 
 import {
-   Button, SignProgress, Sign, СaseLargeImg, ScrollingAnimation
+   Button, SignProgress, Sign, СaseLargeImg, ScrollingAnimation, Modal
 } from '../';
 import Image from 'next/image';
 import { prizes } from '@/../public/data/index';
+
+import { handleClick } from '@/utils/index';
 
 const MiddleCaseBlock = ({ data }) => {
 
@@ -27,6 +30,13 @@ const MiddleCaseBlock = ({ data }) => {
    const isScrollingAnimationEnd = useCaseStore(state => state.isScrollingAnimationEnd);
    const setDisappearance = useCaseStore(state => state.setDisappearance);
    const setError = useCaseStore(state => state.setError);
+
+   const [modalActive, setModalActive] = useState(false);
+
+   const handleTake = () => {
+      closeCase();
+      setModalActive(!modalActive);
+   }
 
    return (
       <div className={s.middle}>
@@ -47,7 +57,8 @@ const MiddleCaseBlock = ({ data }) => {
                   className={`${s.btn} btn-3 btn-text`}
                   activeI={caseI}
                   inactiveI={caseI}
-                  onClick={startOpenAnimation}
+                  /* onClick={startOpenAnimation} */
+                  onClick={handleTake}
                >
                   {t("openCasesBlock.openBtn")}</Button>
                <Button onClick={setError} className={`${s.btnShare} btn-text`} activeI={share} inactiveI={share} >{t("openCasesBlock.shareBtn")}</Button>
@@ -65,10 +76,22 @@ const MiddleCaseBlock = ({ data }) => {
 
             <div className={s.btnRow}>
                <Button onClick={setDisappearance} className={`${s.improve} btn-3 btn-text`} activeI={improveActive} inactiveI={improveActive} >{t("openCasesBlock.improve")}</Button>
-               <Button onClick={closeCase} className={`${s.btnShare} btn-text`} activeI={downloadActive} inactiveI={downloadActive} >{t("openCasesBlock.take")}</Button>
+               <Button onClick={handleTake} className={`${s.btnShare} btn-text`} activeI={downloadActive} inactiveI={downloadActive} >{t("openCasesBlock.take")}</Button>
                <Button onClick={closeCase} className={`${s.btn} btn-3 btn-text`} activeI={buyActive} inactiveI={buyActive} >{t("openCasesBlock.sell")}</Button>
             </div>
          </div>}
+
+         <Modal
+            active={modalActive}
+            setActive={setModalActive}
+            className={s.modalGetSkin}
+         >
+            <div className="pageTitle">Вывод скина <span className="pageSubtitle">История выводов</span> </div>
+            <Image src={skin} alt="" width={332} height={268} />
+            <div onClick={handleClick} className={`mt26 ${s.linkCopy}`}>https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url</div>
+            <Button className={`mt8 ${s.takePopUpSkin} btn-3 btn-text`} activeI={downloadActive} inactiveI={downloadActive} >{t("openCasesBlock.take")}</Button>
+            <div className={`${s.notification}`} dangerouslySetInnerHTML={{__html: t("openCasesBlock.notification")}}></div>
+         </Modal>
 
       </div>
    )

@@ -4,18 +4,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* justify-content: center; */
     padding: 20px;
  }
 
  .sign {
     width: 51%;
-    z-index: 1;
  }
 
  .signProgress {
     width: 22.5%;
-    z-index: 2;
  }
 
  .row {
@@ -30,7 +27,6 @@
     padding: 22px 0;
     display: flex;
     justify-content: center;
-    z-index: 1;
  }
 
  .btnShare {
@@ -41,7 +37,6 @@
     padding: 22px;
     background: #FFFFFF05;
     color: var(--color-1);
-    z-index: 1;
  }
 
  .openCaseCard {
@@ -53,7 +48,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    z-index: 10;
     padding-bottom: 20px;
  }
 
@@ -115,6 +109,47 @@
     justify-content: space-between;
     width: 100%;
     min-height: 100%;
+ }
+
+
+ /* Модал */
+
+ .modalGetSkin {
+    position: relative;
+    width: 440px;
+    height: 561px;
+ }
+
+ .linkCopy {
+    background: var(--bg-1);
+    padding: 17px 16px;
+    color: var(--color-2);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-radius: var(--border-r16);
+    cursor: pointer;
+ }
+
+ .takePopUpSkin {
+    padding: 19px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+ }
+
+ .notification {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% + 20px);
+    background: var(--bg-1);
+    color: var(--color-2);
+    padding: 18px 20px;
+ }
+
+ .notification span {
+    color: var(--color-1);
  }
 
  @media screen and (max-width: 1246px) {

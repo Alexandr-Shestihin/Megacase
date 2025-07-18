@@ -61,7 +61,7 @@ const Footer = (props) => {
                </div>
                <div className={s.count}>18 300</div>
             </div>
-            <div className={`${s.block} ${s.block_max}`}>
+            <div className={`${s.block}`}>
                <div className={`${s.iconRow}`}>
                   <Image src={improveIcon} alt="arrow" width={20} height={20} className={`img ${s.statickIcon}`} />
                   <div>{t("footer.statistics.item3")}</div>

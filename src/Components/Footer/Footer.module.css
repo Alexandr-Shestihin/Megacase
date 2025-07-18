@@ -150,16 +150,22 @@
     }
  }
 
+ @media screen and (max-width: 1070px) {
+    .statistics {
+       min-width: 375px;
+    }
+
+    .block {
+       min-width: 100px;
+    }
+ }
+
  @media screen and (max-width: 1034px) {
     .container {
        flex-wrap: wrap-reverse;
        justify-content: space-between;
        justify-content: center;
        gap: 40px;
-    }
-
-    .statistics {
-       min-width: auto;
     }
  }
 
@@ -169,9 +175,7 @@
        gap: 40px;
     }
 
-    .statistics {
-       min-width: 300px;
-    }
+
  }
 
  @media screen and (max-width: 650px) {

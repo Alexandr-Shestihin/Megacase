@@ -109,13 +109,13 @@ img,
 }
 
 .pageTitle {
-   font-size: 24px;
-   font-weight: 700;
+   font-size: var(--font-size-20);
+   font-weight: var(--font-weight-600);
 }
 
 .pageSubtitle {
-   font-weight: 600;
-   text-transform: uppercase;
+   font-weight: var(--font-weight-400);
+   font-size: var(--font-size-20);
    color: var(--color-2);
 }
 
@@ -145,6 +145,7 @@ img,
 
    /* border-radius */
    --border-r20: 20px;
+   --border-r16: 16px;
    --border-r14: 14px;
 
    /* font-weight */
