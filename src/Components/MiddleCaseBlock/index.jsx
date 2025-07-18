@@ -18,8 +18,6 @@ import {
 import Image from 'next/image';
 import { prizes } from '@/../public/data/index';
 
-import { handleClick } from '@/utils/index';
-
 const MiddleCaseBlock = ({ data }) => {
 
    const { t } = useTranslation();
@@ -37,6 +35,8 @@ const MiddleCaseBlock = ({ data }) => {
       closeCase();
       setModalActive(!modalActive);
    }
+
+   const [modalInput, setModalInput] = useState('https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url');
 
    return (
       <div className={s.middle}>
@@ -87,9 +87,9 @@ const MiddleCaseBlock = ({ data }) => {
          >
             <div className="pageTitle">{t("openCasesBlock.skinOutput")} <span className="pageSubtitle">{t("openCasesBlock.historyConclusions")}</span> </div>
             <Image src={skin} alt="" width={332} height={268} />
-            <div onClick={handleClick} className={`mt26 ${s.linkCopy}`}>https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url</div>
+            <input onChange={(e) => setModalInput(e.target.value)} value={modalInput} className={`mt26 ${s.linkCopy}`} />
             <Button className={`mt8 ${s.takePopUpSkin} btn-3 btn-text`} activeI={downloadActive} inactiveI={downloadActive} >{t("openCasesBlock.take")}</Button>
-            <div className={`${s.notification}`} dangerouslySetInnerHTML={{__html: t("openCasesBlock.notification")}}></div>
+            <div className={`${s.notification}`} dangerouslySetInnerHTML={{ __html: t("openCasesBlock.notification") }}></div>
          </Modal>
 
       </div>

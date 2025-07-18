@@ -121,6 +121,7 @@
  }
 
  .linkCopy {
+    width: 100%;
     background: var(--bg-1);
     padding: 17px 16px;
     color: var(--color-2);
@@ -154,7 +155,7 @@
 
  @media screen and (max-width: 600px) {
     .notification {
-      position: absolute;
+       position: absolute;
        margin-top: 20px;
        width: calc(100% + 20px);
        left: -10px;
