@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './modal.module.css';
+import s from './Modal.module.css';
 
 import Image from 'next/image';
 
