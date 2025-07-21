@@ -11,7 +11,7 @@ import {
    Button, Input, OpenCasesBlockPrice,
    OpenCasesBlockPercent, MenuBtn
 } from '../';
-import { useMenuSelection } from '@/utils';
+import { useMenuSelection } from '@/hooks/useMenuSelection';
 
 const LeftCalcBlock = ({initialValue}) => {
    const [data, setData] = useState(initialValue);

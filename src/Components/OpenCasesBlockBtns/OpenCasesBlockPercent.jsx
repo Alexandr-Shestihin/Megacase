@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect } from 'react';
 import s from './OpenCasesBlockBtns.module.css';
-import {useMenuSelection} from '@/utils';
 
 import {
    Button,
 } from '..';
+import { useMenuSelection } from '@/hooks/useMenuSelection';
 
 const OpenCasesBlockPercent = ({ set, data }) => {
 

@@ -1,8 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import Image from 'next/image';
 import { t } from "i18next";
-
-const arrow = '/assets/icons/arrow.svg';
 
 // Функция для обработки ввода чисел до 100
 export function formatNumericPercentInput(value) {
@@ -51,42 +47,6 @@ export function formatNumericPriceInput(value) {
       return formattedValue; //  Вернуть отформатированное, но невалидное значение (например, "10.")
    }
 }
-
-//хук дебунса
-export function useDebounce(func, delay, cleanUp = false) {
-   const timeoutRef = useRef();
-
-   function clearTimer() {
-      if (timeoutRef.current) {
-         clearTimeout(timeoutRef.current);
-         timeoutRef.current = undefined;
-      }
-   }
-
-   useEffect(() => (cleanUp ? clearTimer : undefined), [cleanUp]);
-
-   return (...args) => {
-      clearTimer();
-      timeoutRef.current = setTimeout(() => func(...args), delay);
-   };
-}
-
-//хук для обработки логики выбора активного элемента в меню
-export const useMenuSelection = (defaultActiveID) => {
-   const [activeID, setActiveID] = useState(defaultActiveID || null);
-
-   const handler = useCallback((e) => {
-      const id = e.target.id;
-      console.log(id)
-      setActiveID(prev => id || prev);
-   }, []);
-
-   const clear = useCallback(() => {
-      setActiveID(null)
-   })
-
-   return { activeID, handler, clear };
-};
 
 /* Логика отрисовки состояния в карточках */
 export const getDegreeWear = (dw, children) => {

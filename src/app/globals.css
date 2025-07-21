@@ -232,8 +232,8 @@ img,
 }
 
 .btn-1:active,
-.btn-1.active, 
-.btn-1.active > * {
+.btn-1.active,
+.btn-1.active>* {
    color: var(--color-1) !important;
 }
 
@@ -278,6 +278,12 @@ img,
 .btn-3:active,
 .btn-3.active {
    background: var(--main-third-active);
+}
+
+.btn-1[disabled],
+.btn-2[disabled],
+.btn-3[disabled] {
+   background: var(--bg-2);
 }
 
 @media screen and (max-width: 720px) {
@@ -401,4 +407,48 @@ img,
    .innerText {
       display: none;
    }
+}
+
+input[type="radio"] {
+   appearance: none;
+   position: relative;
+   width: 24px;
+   height: 24px;
+   background: var(--bg-1);
+   border: none;
+   transition: 500ms;
+   border-radius: 8px;
+}
+
+input[type="radio"]:checked {
+   background: var(--main-third);
+}
+
+input[type="radio"]::after {
+   content: "";
+   position: absolute;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   top: calc(50% - 4px);
+   left: calc(50% - 4px);
+   font-size: 26px;
+   transition: 200ms;
+   overflow: hidden;
+   background: #FFFFFF;
+   opacity: 0;
+   transition: opacity 500ms;
+}
+
+input[type="radio"]:checked::after {
+   opacity: 1;
+}
+
+label {
+   padding-left: 5px;
+   color: var(--color-2)
+}
+
+input[type="radio"]:checked+label {
+   color: var(--color-1)
 }

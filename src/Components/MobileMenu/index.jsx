@@ -5,9 +5,10 @@ import s from './MobileMenu.module.css';
 import {
    MobileMenuItem
 } from '../';
-import { useMenuSelection } from '@/utils';
+import Conclusions from '@/Modals/Conclusions';
 
 import { useTranslation } from "react-i18next";
+import { useMenuSelection } from '@/hooks/useMenuSelection';
 
 const linkActive = '/assets/icons/linkActive.svg';
 const linkUnactive = '/assets/icons/linkUnactive.svg';

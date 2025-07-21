@@ -3,7 +3,8 @@ import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import s from './Input.module.css';
 
 import Image from 'next/image';
-import { formatWithSpaces, useDebounce } from '@/utils';
+import { formatWithSpaces} from '@/utils';
+import { useDebounce } from '@/hooks/useDebounce';
 
 const Input = ({ set, value, max = 100, min = 0, img, className, ...args }) => {
 

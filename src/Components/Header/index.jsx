@@ -9,7 +9,8 @@ import {
    Button,
    BtnBurger,
    MenuMobile,
-   MobileMenu
+   MobileMenu,
+   Modal
 } from '../';
 
 const mainLogo = '../../assets/img/logo/mainLogo.svg';
@@ -24,7 +25,8 @@ const rs = '../../assets/icons/languages/rs.svg';
 const user = '../../assets/icons/user.png';
 
 import { useTranslation } from "react-i18next";
-import { useMenuSelection } from '@/utils';
+import Conclusions from '@/Modals/Conclusions';
+import { useMenuSelection } from '@/hooks/useMenuSelection';
 
 const linkActive = '/assets/icons/linkActive.svg';
 const linkUnactive = '/assets/icons/linkUnactive.svg';
@@ -46,7 +48,7 @@ const Header = (props) => {
 
    const [activeLanguage, setActiveLanguage] = useState(false);
    const [userPhoto, setUserPhoto] = useState(null);
-   const { activeID, handler } = useMenuSelection();
+   const { activeID, handler, clear } = useMenuSelection();
 
    const { t, i18n } = useTranslation(); // t - функция перевода, i18n - объект i18n
 
@@ -72,6 +74,7 @@ const Header = (props) => {
                   activeI={linkActive}
                   inactiveI={linkUnactive}
                ><span className="innerText">Trade URL</span></Button>
+
                <Button
                   id={'historyConclusions'}
                   active={activeID === 'historyConclusions' && true}
@@ -79,6 +82,13 @@ const Header = (props) => {
                   activeI={historyConclusionsActive}
                   inactiveI={historyConclusionsUnactive}
                ><span className="innerText">{t('rightMemu.historyConclusions')}</span></Button>
+               <Modal
+                  active={activeID === 'historyConclusions' && true}
+                  setActive={clear}
+               >
+                 <Conclusions/>
+               </Modal>
+
                <Button
                   id={'historyGames'}
                   active={activeID === 'historyGames' && true}
@@ -192,6 +202,8 @@ const Header = (props) => {
                </div>
             </MenuMobile>
          </div>
+
+
       </div>
    )
 }

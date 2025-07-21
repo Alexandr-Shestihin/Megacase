@@ -10,13 +10,14 @@ const automat = '/assets/img/cases/automat.png';
 const improveActive = '/assets/icons/improveActive.svg';
 const downloadActive = '/assets/icons/downloadActive.svg';
 const buyActive = '/assets/icons/buyActive.svg';
-const skin = '/assets/img/cases/skin.png';
+
 
 import {
    Button, SignProgress, Sign, СaseLargeImg, ScrollingAnimation, Modal
 } from '../';
 import Image from 'next/image';
 import { prizes } from '@/../public/data/index';
+import SkinOutput from '@/Modals/SkinOutput';
 
 const MiddleCaseBlock = ({ data }) => {
 
@@ -36,7 +37,6 @@ const MiddleCaseBlock = ({ data }) => {
       setModalActive(!modalActive);
    }
 
-   const [modalInput, setModalInput] = useState('https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url');
 
    return (
       <div className={s.middle}>
@@ -83,13 +83,8 @@ const MiddleCaseBlock = ({ data }) => {
          <Modal
             active={modalActive}
             setActive={setModalActive}
-            className={s.modalGetSkin}
          >
-            <div className="pageTitle">{t("openCasesBlock.skinOutput")} <span className="pageSubtitle">{t("openCasesBlock.historyConclusions")}</span> </div>
-            <Image src={skin} alt="" width={332} height={268} />
-            <input onChange={(e) => setModalInput(e.target.value)} value={modalInput} className={`mt26 ${s.linkCopy}`} />
-            <Button className={`mt8 ${s.takePopUpSkin} btn-3 btn-text`} activeI={downloadActive} inactiveI={downloadActive} >{t("openCasesBlock.take")}</Button>
-            <div className={`${s.notification}`} dangerouslySetInnerHTML={{ __html: t("openCasesBlock.notification") }}></div>
+            <SkinOutput/>
          </Modal>
 
       </div>

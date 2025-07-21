@@ -84,7 +84,6 @@ const ScrollingAnimation = ({ items }) => {
       const containerWidth = document?.querySelector('.ScrollingAnimation_scrollContainer___vYni')?.offsetWidth;
       const contentWidth = document.querySelector('.ScrollingAnimation_scrollContent__S2pVs').offsetWidth;
       const offset = containerWidth - contentWidth;
-      console.log(`offset (${offset}) = ${containerWidth} - ${contentWidth}`)
       document.documentElement.style.setProperty('--offset', `${offset}px`);
    }, [])
 
