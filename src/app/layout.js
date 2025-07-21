@@ -1,4 +1,4 @@
-// app/layout.js
+// app/layout.js TEST
 import { Roboto_Condensed } from "next/font/google";
 import './globals.css';
 import I18nextProvider from '@/Total/I18nextProvider';
