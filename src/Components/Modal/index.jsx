@@ -8,15 +8,15 @@ const close = '/assets/icons/close.svg';
 const Modal = ({ active, setActive, children, className }) => {
    return (
       <div
-         className={active ? `${s.modal} ${s.active}` : s.modal}
+         className={`${s.modal} ${active ? s.active : ''}`}
          onClick={() => setActive(false)}
       >
          <div
-            className={active ? `${s.modal__content} ${className} ${s.active}` : s.modal__content}
+            className={`${s.modal__content} ${className} ${active ? s.active : ''}`}
             onClick={e => e.stopPropagation()}
 
          >
-             <Image onClick={() => setActive(false)} src={close} alt="" width={14} height={14} className={s.img} />
+            <Image onClick={() => setActive(false)} src={close} alt="" width={14} height={14} className={s.img} />
 
             {children}
 

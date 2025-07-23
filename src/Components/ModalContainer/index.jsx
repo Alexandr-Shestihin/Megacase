@@ -2,33 +2,30 @@
 
 import React from 'react';
 import s from './ModalContainer.module.css';
-import useModal from '@/hooks/useModal';
 import { Modal } from '..';
 import Conclusions from '@/Modals/Conclusions';
+import { useModalContext } from "@/Total/ModalContext"; // Импортируем useModalContext из правильного пути
+import SkinOutput from '@/Modals/SkinOutput';
 
 const ModalContainer = () => {
-   const { activeModal, modalProps, closeModal } = useModal();
-   console.log(activeModal)
-
-   const renderModal = () => {
-      switch (activeModal) {
-         case 'historyConclusions':
-            console.log(1111)
-            return <Modal
-               active={true}
-               setActive={closeModal}
-            >
-               <Conclusions />
-            </Modal>
-
-         default:
-            return null;
-      }
-   };
+   const { activeModal, closeModal } = useModalContext(); // Используем useModalContext
 
    return (
       <>
-         {renderModal()}
+         <Modal
+            active={activeModal === 'historyConclusions'}
+            setActive={closeModal}
+         >
+            <Conclusions />
+         </Modal>
+
+         <Modal
+            active={activeModal === 'skinOutput'}
+            setActive={closeModal}
+         >
+            <SkinOutput />
+         </Modal>
+         
       </>
    );
 };

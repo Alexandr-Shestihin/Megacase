@@ -3,7 +3,6 @@ import React, { useState, useCallback, useMemo } from 'react';
 import s from './LeftCalcBlock.module.css';
 
 import { useTranslation } from 'react-i18next';
-import useCaseStore from '@/../store/store';
 
 const create = '/assets/icons/create.svg';
 

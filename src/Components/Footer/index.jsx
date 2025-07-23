@@ -1,8 +1,10 @@
 "use client"
+
 import React from 'react';
 import s from './Footer.module.css';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
+import useAuthStore from '../../../store/useAuthStore';
 
 const logo = '/assets/img/logo/mainLogoUnactive.svg';
 const tgIcon = '/assets/icons/tg.svg';
@@ -13,7 +15,12 @@ const improveIcon = '/assets/icons/improveUnactive.svg';
 
 const Footer = (props) => {
 
+   const { isAuth } = useAuthStore();
+
    const { t } = useTranslation();
+
+   //Если пользователь не авторизирован, то не показываем этот компонент
+   if (!isAuth) return
 
    return (
       <div className={`${s.container} mt19`}>

@@ -10,7 +10,6 @@ import {
    BtnBurger,
    MenuMobile,
    MobileMenu,
-   Modal
 } from '../';
 
 const mainLogo = '../../assets/img/logo/mainLogo.svg';
@@ -25,8 +24,9 @@ const rs = '../../assets/icons/languages/rs.svg';
 const user = '../../assets/icons/user.png';
 
 import { useTranslation } from "react-i18next";
-import Conclusions from '@/Modals/Conclusions';
 import { useMenuSelection } from '@/hooks/useMenuSelection';
+import { useModalContext } from '@/Total/ModalContext';
+import useAuthStore from '../../../store/useAuthStore';
 
 const linkActive = '/assets/icons/linkActive.svg';
 const linkUnactive = '/assets/icons/linkUnactive.svg';
@@ -46,9 +46,10 @@ const faqUnactive = '/assets/icons/faqUnactive.svg';
 
 const Header = (props) => {
 
+   const { isAuth } = useAuthStore();
+
    const [activeLanguage, setActiveLanguage] = useState(false);
    const [userPhoto, setUserPhoto] = useState(null);
-   const { activeID, handler, clear } = useMenuSelection();
 
    const { t, i18n } = useTranslation(); // t - функция перевода, i18n - объект i18n
 
@@ -62,68 +63,75 @@ const Header = (props) => {
       setIsMenuOpen(!isMenuOpen);
    };
 
+   const { openModal, activeModal } = useModalContext(); // Получаем openModal из контекста
+
+
+   //Если пользователь не авторизирован, то не показываем этот компонент
+   if(!isAuth) return 
+
    return (
       <div className={s.container}>
          <div className={s.leftContainer}>
             <div className={s.imgContainer}><Image src={mainLogo} alt="Logo" width={200} height={100} className="img" /></div>
-            <div onClick={handler} className={s.btnContainer}>
+            <div className={s.btnContainer}>
                <Button
                   id={'URL'}
-                  active={activeID === 'URL' && true}
+                  active={activeModal === 'URL' && true}
                   className={`${s.btn} btn-text`}
                   activeI={linkActive}
                   inactiveI={linkUnactive}
+                  onClick={() => openModal("URL")}
                ><span className="innerText">Trade URL</span></Button>
 
                <Button
                   id={'historyConclusions'}
-                  active={activeID === 'historyConclusions' && true}
+                  active={activeModal === 'historyConclusions' && true}
                   className={`${s.btn} btn-text`}
                   activeI={historyConclusionsActive}
                   inactiveI={historyConclusionsUnactive}
+                  onClick={() => openModal("historyConclusions")}
                ><span className="innerText">{t('rightMemu.historyConclusions')}</span></Button>
-               <Modal
-                  active={activeID === 'historyConclusions' && true}
-                  setActive={clear}
-               >
-                 <Conclusions/>
-               </Modal>
 
                <Button
                   id={'historyGames'}
-                  active={activeID === 'historyGames' && true}
+                  active={activeModal === 'historyGames' && true}
                   className={`${s.btn} btn-text`}
                   activeI={historyGamesActive}
                   inactiveI={historyGamesUnactive}
+                  onClick={() => openModal("historyGames")}
                ><span className="innerText">{t('rightMemu.historyGames')}</span></Button>
                <Button
                   id={'profit'}
-                  active={activeID === 'profit' && true}
+                  active={activeModal === 'profit' && true}
                   className={`${s.btn} btn-text`}
                   activeI={profitsActive}
                   inactiveI={profitsUnactive}
+                  onClick={() => openModal("profit")}
                ><span className="innerText">{t('rightMemu.profit')}</span></Button>
                <Button
                   id={'bonuses'}
-                  active={activeID === 'bonuses' && true}
+                  active={activeModal === 'bonuses' && true}
                   className={`${s.btn} btn-text`}
                   activeI={bonusesActive}
                   inactiveI={bonusesUnactive}
+                  onClick={() => openModal("bonuses")}
                ><span className="innerText">{t('rightMemu.bonuses')}</span></Button>
                <Button
                   id={'accountStatistics'}
-                  active={activeID === 'accountStatistics' && true}
+                  active={activeModal === 'accountStatistics' && true}
                   className={`${s.btn} btn-text`}
                   activeI={accountStatisticsActive}
                   inactiveI={accountStatisticsUnactive}
+                  onClick={() => openModal("accountStatistics")}
                ><span className="innerText">{t('rightMemu.accountStatistics')}</span></Button>
                <Button
                   id={'FAQ'}
-                  active={activeID === 'FAQ' && true}
+                  active={activeModal === 'FAQ' && true}
                   activeI={faqActive}
                   inactiveI={faqUnactive}
                   className={`${s.btn} ${s.btnFAQ} btn-text`}
                   title='FAQ'
+                  onClick={() => openModal("FAQ")}
                ><span className="innerText">FAQ</span></Button>
             </div>
          </div>

@@ -1,14 +1,14 @@
 "use client"
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import s from './ScrollingAnimation.module.css';
-import useCaseStore from '@/../store/store';
+import useAnimationStore from '../../../store/useAnimationStore';
 
 const ScrollingAnimation = ({ items }) => {
    const boxRefs = useRef([]);
    const arrowRef = useRef(null);
    const [intersectingBoxes, setIntersectingBoxes] = useState([]);
    const [isThirdItemFromEndInView, setIsThirdItemFromEndInView] = useState(false);
-   const setIsScrollingAnimationEnd = useCaseStore(state => state.setIsScrollingAnimationEnd);
+   const setIsScrollingAnimationEnd = useAnimationStore(state => state.setIsScrollingAnimationEnd);
 
    // Wrap setIsScrollingAnimationEnd in useCallback
    const handleScrollingAnimationEnd = useCallback(() => {

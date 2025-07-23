@@ -1,8 +1,8 @@
 "use cLient"
-import React, { useState } from 'react';
+import React from 'react';
 import s from './MiddleCaseBlock.module.css';
 import { useTranslation } from 'react-i18next';
-import useCaseStore from '@/../store/store';
+import useAnimationStore from '../../../store/useAnimationStore';
 
 const share = '/assets/icons/share.svg';
 const caseI = '/assets/icons/active.svg';
@@ -17,26 +17,25 @@ import {
 } from '../';
 import Image from 'next/image';
 import { prizes } from '@/../public/data/index';
-import SkinOutput from '@/Modals/SkinOutput';
+import { useModalContext } from '@/Total/ModalContext';
 
 const MiddleCaseBlock = ({ data }) => {
 
    const { t } = useTranslation();
 
-   const startOpenAnimation = useCaseStore(state => state.startOpenAnimation);
-   const closeCase = useCaseStore(state => state.closeCase);
-   const isOpened = useCaseStore(state => state.isOpened);
-   const isScrollingAnimationEnd = useCaseStore(state => state.isScrollingAnimationEnd);
-   const setDisappearance = useCaseStore(state => state.setDisappearance);
-   const setError = useCaseStore(state => state.setError);
-
-   const [modalActive, setModalActive] = useState(false);
+   const startOpenAnimation = useAnimationStore(state => state.startOpenAnimation);
+   const closeCase = useAnimationStore(state => state.closeCase);
+   const isOpened = useAnimationStore(state => state.isOpened);
+   const isScrollingAnimationEnd = useAnimationStore(state => state.isScrollingAnimationEnd);
+   const setDisappearance = useAnimationStore(state => state.setDisappearance);
+   const setError = useAnimationStore(state => state.setError);
 
    const handleTake = () => {
       closeCase();
-      setModalActive(!modalActive);
+      openModal('skinOutput')
    }
 
+   const { openModal } = useModalContext();
 
    return (
       <div className={s.middle}>
@@ -79,13 +78,6 @@ const MiddleCaseBlock = ({ data }) => {
                <Button onClick={closeCase} className={`${s.btn} btn-3 btn-text`} activeI={buyActive} inactiveI={buyActive} >{t("openCasesBlock.sell")}</Button>
             </div>
          </div>}
-
-         <Modal
-            active={modalActive}
-            setActive={setModalActive}
-         >
-            <SkinOutput/>
-         </Modal>
 
       </div>
    )

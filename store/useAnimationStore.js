@@ -1,11 +1,10 @@
-// caseStore.js
 import { create } from 'zustand';
 
-const useCaseStore = create((set, get) => ({
+const useAnimationStore = create((set, get) => ({
    currentAnimation: 'appearance',
-   isOpened: false,
-   isAnimationStart: false,
-   isScrollingAnimationEnd: false,
+   isOpened: false, //Открыт ли кейс
+   isAnimationStart: false, //Запущена ли анимация
+   isScrollingAnimationEnd: false, //Завершился ли скролл слот-машины
    setisAnimationStart: () => set({ isAnimationStart: false }),
    setIsScrollingAnimationEnd: () => set({ isScrollingAnimationEnd: true }),
    setCurrentAnimation: (animation) => set({ currentAnimation: animation }),
@@ -18,15 +17,15 @@ const useCaseStore = create((set, get) => ({
    setError: () => set({ currentAnimation: 'error' }),
    setDisappearance: () => set({ currentAnimation: 'disappearance', isAnimationStart: true, isScrollingAnimationEnd: false, isOpened : false }),
    setHover: () => {
-      if (!get().isOpened && !get().isAnimationStart) { // Добавили проверку
+      if (!get().isOpened && !get().isAnimationStart) { 
          set({ currentAnimation: 'hover' });
       }
    },
    setDefault: () => {
-      if (!get().isOpened && !get().isAnimationStart) { // Добавили проверку
+      if (!get().isOpened && !get().isAnimationStart) {
          set({ currentAnimation: 'default' });
       }
    },
 }));
 
-export default useCaseStore;
+export default useAnimationStore;

@@ -83,6 +83,12 @@
          "item3": "Improvements"
       }
    },
+   "auth": {
+      "title": "Authorization",
+      "subtitle": "Login to your account",
+      "disclaimer": "I confirm that I have read and agree to ",
+      "disclaimerLink": "the terms of the user agreement"
+   },
    "message": {
       "copyText": {
          "success": "Text copied to clipboard!",

@@ -8,9 +8,6 @@ import {
 } from '../';
 import { useTranslation } from 'react-i18next';
 
-/* const inactiveIcon = '/assets/icons/inactive.svg';
-const activeIcon = '/assets/icons/active.svg'; */
-
 const MenuBtn = ({activeID, handler}) => {
 
    const { t } = useTranslation();

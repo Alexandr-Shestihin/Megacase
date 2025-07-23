@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef, useEffect, useState } from 'react';
 import s from './СaseLargeImg.module.css';
-import useCaseStore from '@/../store/store';
+import useAnimationStore from '../../../store/useAnimationStore';
 
 // Пути к видео
 const videoUrls = {
@@ -15,13 +15,13 @@ const videoUrls = {
 };
 
 const СaseLargeImg = ({ className }) => {
-   const currentAnimation = useCaseStore(state => state.currentAnimation);
-   const openCase = useCaseStore(state => state.openCase);
-   const setError = useCaseStore(state => state.setError);
-   const setDisappearance = useCaseStore(state => state.setDisappearance);
-   const setHover = useCaseStore(state => state.setHover);
-   const setDefault = useCaseStore(state => state.setDefault);
-   const setisAnimationStart = useCaseStore(state => state.setisAnimationStart);
+   const currentAnimation = useAnimationStore(state => state.currentAnimation);
+   const openCase = useAnimationStore(state => state.openCase);
+   const setError = useAnimationStore(state => state.setError);
+   const setDisappearance = useAnimationStore(state => state.setDisappearance);
+   const setHover = useAnimationStore(state => state.setHover);
+   const setDefault = useAnimationStore(state => state.setDefault);
+   const setisAnimationStart = useAnimationStore(state => state.setisAnimationStart);
    const videoRefs = useRef({});
    const [videoLoaded, setVideoLoaded] = useState(false); // Отслеживать загрузку видео
 
