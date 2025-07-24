@@ -13,11 +13,6 @@ const AuthProvider = ({ children }) => {
    const router = useRouter();
 
    useEffect(() => {
-      isAuthRef.current = isAuth;
-      console.log('useEffect')
-   }, [isAuth])
-
-   useEffect(() => {
       const fetchUserData = async () => {
          setLoading(true);
          try {
@@ -51,6 +46,11 @@ const AuthProvider = ({ children }) => {
    if (loading) {
       return <div>Loading...</div>; // Отображаем индикатор загрузки
    }
+   
+   useEffect(() => {
+      isAuthRef.current = isAuth;
+      console.log('useEffect')
+   }, [isAuth])
 
    console.log('AuthProvider isAuth', isAuth);
    console.log('AuthProvider isAuthRef.current', isAuthRef.current);
