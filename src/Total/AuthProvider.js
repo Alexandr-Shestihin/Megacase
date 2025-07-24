@@ -14,6 +14,7 @@ const AuthProvider = ({ children }) => {
 
    useEffect(() => {
       isAuthRef.current = isAuth;
+      console.log('useEffect')
    }, [isAuth])
 
    useEffect(() => {
