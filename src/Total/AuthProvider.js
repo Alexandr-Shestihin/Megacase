@@ -24,7 +24,6 @@ const AuthProvider = ({ children }) => {
             /* const data = await response.json(); */
             /* console.log('data', data) */
             if (response.user) {
-               console.log('response', response)
                setUser(response.user);
                setIsAuth(true);
                isAuthRef.current = true;
@@ -40,10 +39,11 @@ const AuthProvider = ({ children }) => {
                return;
             }
          }
-         debugger;
       };
 
       fetchUserData();
+
+      console.log('isAuth', isAuth)
 
       // Если уже не авторизованы, сразу редиректим
       /* if (!isAuth) {
