@@ -29,6 +29,7 @@ import { useMenuSelection } from '@/hooks/useMenuSelection';
 import { useModalContext } from '@/Total/ModalContext';
 import useAuthStore from '../../../store/useAuthStore';
 import API from '@/API';
+import { handleClick } from '@/utils';
 
 const linkActive = '/assets/icons/linkActive.svg';
 const linkUnactive = '/assets/icons/linkUnactive.svg';
