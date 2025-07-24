@@ -12,10 +12,12 @@ const AuthProvider = ({ children }) => {
    const [loading, setLoading] = useState(true);
    const router = useRouter();
 
-   useEffect(() => {
+   isAuthRef.current = isAuth;
+
+   /* useEffect(() => {
       isAuthRef.current = isAuth;
       console.log('useEffect isAuth', isAuth)
-   }, [isAuth])
+   }, [isAuth]) */
 
    useEffect(() => {
       const fetchUserData = async () => {
