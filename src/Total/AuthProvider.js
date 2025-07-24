@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
                return;
             }
             const data = await response.json();
-            console.log('data.user', data.user)
+            console.log('data', data)
             if (data.user) {
                console.log('data', data)
                setUser(data.user);
