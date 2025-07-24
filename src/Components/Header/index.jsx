@@ -22,6 +22,7 @@ const logOut = '../../assets/icons/logOut.svg';
 const usa = '../../assets/icons/languages/usa.svg';
 const rs = '../../assets/icons/languages/rs.svg';
 const user = '../../assets/icons/user.png';
+import { useRouter } from 'next/navigation';
 
 import { useTranslation } from "react-i18next";
 import { useMenuSelection } from '@/hooks/useMenuSelection';
@@ -47,6 +48,8 @@ const faqUnactive = '/assets/icons/faqUnactive.svg';
 
 const Header = (props) => {
 
+   const router = useRouter();
+
    const { isAuth, setIsAuth } = useAuthStore();
 
    const [activeLanguage, setActiveLanguage] = useState(false);
@@ -69,6 +72,7 @@ const Header = (props) => {
    const handleLogOut = () => {
       API.logOut();
       setIsAuth(false);
+      router.push('/login');
    }
 
    //Если пользователь не авторизирован, то не показываем этот компонент
