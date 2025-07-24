@@ -54,14 +54,14 @@ const Conclusions = (props) => {
                title='Error'
             >Ошибка</Button>
          </div>
-         {/* {data.map(el => <ConclusionsItem
+         {data.map(el => <ConclusionsItem
             key={el?.id}
             name={el?.itemName}
             price={el?.price}
             updatedAt={el?.updatedAt}
             status={el?.displayStatus}
             image={el?.image}
-         />)} */}
+         />)}
       </div>
    )
 }
