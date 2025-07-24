@@ -47,6 +47,9 @@ const AuthProvider = ({ children }) => {
       return <div>Loading...</div>; // Отображаем индикатор загрузки
    }
 
+   console.log('AuthProvider isAuth', isAuth);
+   console.log('AuthProvider isAuthRef.current', isAuthRef.current);
+
    //Если пользователь не авторизирован, то не показываем этот компонент
    if (!isAuthRef.current) return
 
