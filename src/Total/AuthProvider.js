@@ -13,6 +13,10 @@ const AuthProvider = ({ children }) => {
    const router = useRouter();
 
    useEffect(() => {
+      isAuthRef.current = isAuth;
+   }, [isAuth])
+
+   useEffect(() => {
       const fetchUserData = async () => {
          setLoading(true);
          try {
