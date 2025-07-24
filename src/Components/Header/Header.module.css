@@ -101,15 +101,19 @@
    padding: 10px;
 }
 
-.userInfo.userInfoMobile *{
+.userInfo.userInfoMobile * {
    color: var(--color-2) !important;
 }
 
-.userAvatar img {
+.userAvatar {
    width: 30px;
-   height: 30px;
    border-radius: 12px;
    overflow: hidden;
+}
+
+.userAvatar img {
+   width: 100%;
+   height: 100%;
 }
 
 .userInfo .logOut {
