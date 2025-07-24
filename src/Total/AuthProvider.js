@@ -17,6 +17,7 @@ const AuthProvider = ({ children }) => {
          setLoading(true);
          try {
             const response = await API.getCurrentUser();
+            console.log('response', response)
             if (!response.ok) {
                console.error('Failed to fetch user data');
                return;
