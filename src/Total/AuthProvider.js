@@ -28,6 +28,7 @@ const AuthProvider = ({ children }) => {
                setIsAuth(true);
                isAuthRef.current = true;
             } else {
+               isAuthRef.current = false;
             }
          } catch (error) {
             console.error('Error fetching user data:', error);
@@ -44,7 +45,7 @@ const AuthProvider = ({ children }) => {
 
       fetchUserData();
 
-      
+
 
    }, [isAuth]);
 
