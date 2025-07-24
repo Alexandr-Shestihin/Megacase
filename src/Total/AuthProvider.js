@@ -8,6 +8,7 @@ import API from '@/API';
 
 const AuthProvider = ({ children }) => {
    const { setUser, setIsAuth, isAuth } = useAuthStore();
+   const isAuthRef = useRef(() => isAuth)
    const [loading, setLoading] = useState(true);
    const router = useRouter();
 
@@ -25,13 +26,14 @@ const AuthProvider = ({ children }) => {
                console.log('data', data)
                setUser(data.user);
                setIsAuth(true);
+               isAuthRef.current = true;
             } else {
             }
          } catch (error) {
             console.error('Error fetching user data:', error);
          } finally {
             setLoading(false);
-            if (!isAuth) {
+            if (!isAuthRef.current) {
                router.push('/login');
                setLoading(false); // Чтобы не показывать загрузку бесконечно
                return;
