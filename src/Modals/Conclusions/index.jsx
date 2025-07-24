@@ -11,14 +11,14 @@ const Conclusions = (props) => {
    const { t } = useTranslation();
    const { activeID, handler } = useMenuSelection('URL');
 
-   /* const getData = () => {
+   const getData = () => {
       API.getHistorySkins()
          .then(data => console.log(data))
    }
 
    useEffect(() => {
       getData()
-   }, []) */
+   }, [])
 
    return (
       <div className={s.container} onClick={handler}>
@@ -29,7 +29,7 @@ const Conclusions = (props) => {
                active={activeID === 'URL' && true}
                className={`${s.btn} btn-text`}
                title='Trade URL'
-               /* onClick={getData} */
+               onClick={getData}
             >Trade URL</Button>
             <Button
                id={'accepted'}
