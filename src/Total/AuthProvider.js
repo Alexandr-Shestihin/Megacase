@@ -17,12 +17,6 @@ const AuthProvider = ({ children }) => {
          setLoading(true);
          try {
             const response = await API.getCurrentUser();
-            /* if (!response.success) {
-               console.error('Failed to fetch user data');
-               return;
-            } */
-            /* const data = await response.json(); */
-            /* console.log('data', data) */
             if (response.success && response.user?.id) {
                setUser(response.user);
                setIsAuth(true);
@@ -47,16 +41,11 @@ const AuthProvider = ({ children }) => {
 
       fetchUserData();
 
-
-
-   }, [isAuth]);
+   }, []);
 
    if (loading) {
       return <div>Loading...</div>; // Отображаем индикатор загрузки
    }
-
-   console.log('AuthProvider isAuth', isAuth);
-   console.log('AuthProvider isAuthRef.current', isAuthRef.current);
 
    //Если пользователь не авторизирован, то не показываем этот компонент
    if (!isAuthRef.current) return
