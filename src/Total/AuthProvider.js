@@ -17,12 +17,12 @@ const AuthProvider = ({ children }) => {
          setLoading(true);
          try {
             const response = await API.getCurrentUser();
-            console.log('response', response)
             if (!response.success) {
                console.error('Failed to fetch user data');
                return;
             }
             const data = await response.json();
+            console.log('data.user', data.user)
             if (data.user) {
                console.log('data', data)
                setUser(data.user);
@@ -40,6 +40,7 @@ const AuthProvider = ({ children }) => {
                return;
             }
          }
+         debugger;
       };
 
       fetchUserData();
