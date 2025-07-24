@@ -8,7 +8,7 @@ import API from '@/API';
 
 const AuthProvider = ({ children }) => {
    const { setUser, setIsAuth, isAuth } = useAuthStore();
-   const isAuthRef = useRef(() => isAuth)
+   const isAuthRef = useRef(isAuth)
    const [loading, setLoading] = useState(true);
    const router = useRouter();
 
