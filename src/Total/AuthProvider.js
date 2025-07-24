@@ -1,63 +1,62 @@
-// src/components/AuthProvider.js
 "use client";
 
 import React, { useEffect, useState } from 'react';
+
 import { useRouter } from 'next/navigation';
 import useAuthStore from '@/../store/useAuthStore';
 import API from '@/API';
 
 const AuthProvider = ({ children }) => {
-    const { setUser, setIsAuth, isAuth } = useAuthStore();
-    const [isLoading, setIsLoading] = useState(true); // Состояние загрузки
-    const router = useRouter();
+   const { setUser, setIsAuth, isAuth } = useAuthStore();
+   const [loading, setLoading] = useState(true);
+   const router = useRouter();
 
-    useEffect(() => {
-        const fetchData = async () => {
+   useEffect(() => {
+      const fetchUserData = async () => {
+         setLoading(true);
+         try {
+            const response = await API.getCurrentUser();
+            if (!response.ok) {
+               console.error('Failed to fetch user data');
+               return;
+            }
+            const data = await response.json();
+            if (data.user) {
+               console.log('data', data)
+               setUser(data.user);
+               setIsAuth(true);
+            } else {
+            }
+         } catch (error) {
+            console.error('Error fetching user data:', error);
+         } finally {
+            setLoading(false);
             if (!isAuth) {
-                router.push('/login');
-                setIsLoading(false); // Прекращаем загрузку
-                return;
+               router.push('/login');
+               setLoading(false); // Чтобы не показывать загрузку бесконечно
+               return;
             }
+         }
+      };
 
-            try {
-                const response = await API.getCurrentUser();
-                if (!response.ok) {
-                    console.error('Failed to fetch user data');
-                    // Добавьте обработку ошибки, если необходимо (например, разлогиниться)
-                    return;
-                }
+      fetchUserData();
 
-                const data = await response.json();
-                if (data.user) {
-                    setUser(data.user);
-                    setIsAuth(true);
-                } else {
-                    // Обработка случая, когда нет данных пользователя
-                    console.error('No user data received');
-                    // Возможно, стоит разлогинить пользователя
-                }
-            } catch (error) {
-                console.error('Error fetching user data:', error);
-                // Обработка ошибки
-            } finally {
-                setIsLoading(false);
-            }
-        };
+      // Если уже не авторизованы, сразу редиректим
+      /* if (!isAuth) {
+         router.push('/login');
+         setLoading(false); // Чтобы не показывать загрузку бесконечно
+         return;
+      } */
+   }, [isAuth]);
 
-        fetchData();
-    }, [isAuth, router, setUser, setIsAuth]);
+   if (loading) {
+      return <div>Loading...</div>; // Отображаем индикатор загрузки
+   }
 
-    if (isLoading) {
-        return <div>Loading...</div>; // Индикатор загрузки
-    }
+   //Если пользователь не авторизирован, то не показываем этот компонент
+   if (!isAuth) return
 
-    // Если не авторизованы, ничего не рендерим (можно и нужно перенаправлять)
-    //  if(!isAuth) {
-    //     router.push('/login')
-    //     return null
-    //  }
-
-    return <>{children}</>; // Рендерим контент
+   return <>{children}</>; // Рендерим контент, когда загрузка завершена
 };
 
 export default AuthProvider;
