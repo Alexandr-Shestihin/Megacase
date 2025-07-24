@@ -11,14 +11,14 @@ const Conclusions = (props) => {
    const { t } = useTranslation();
    const { activeID, handler } = useMenuSelection('URL');
 
-   const getData = () => {
+   /* const getData = () => {
       API.getHistorySkins()
          .then(data => console.log(data))
    }
 
    useEffect(() => {
       getData()
-   }, [])
+   }, []) */
 
    return (
       <div className={s.container} onClick={handler}>
