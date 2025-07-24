@@ -56,7 +56,7 @@ const AuthProvider = ({ children }) => {
    }
 
    //Если пользователь не авторизирован, то не показываем этот компонент
-   if (!isAuthRef.current) return
+   /* if (!isAuthRef.current) return */
 
    return <>{children}</>; // Рендерим контент, когда загрузка завершена
 };
