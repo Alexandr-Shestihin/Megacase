@@ -176,7 +176,7 @@ const Header = (props) => {
             </Button>
 
             <Button className={`${s.userAvatar} `} >
-               <img src={user?.photo || userIcon} alt="" />
+               <img src={null || userIcon} alt="" />
             </Button>
 
             <BtnBurger isActive={isMenuOpen} setIsActive={setIsMenuOpen} />
