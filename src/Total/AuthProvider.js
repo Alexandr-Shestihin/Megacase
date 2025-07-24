@@ -29,6 +29,7 @@ const AuthProvider = ({ children }) => {
             }
             const data = await response.json();
             if (data.user) {
+               console.log('data', data)
                setUser(data.user);
                setIsAuth(true);
             } else {
