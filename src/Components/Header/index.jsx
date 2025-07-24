@@ -175,10 +175,8 @@ const Header = (props) => {
                <span>1000 000$</span>
             </Button>
 
-            <Button className={`${s.userInfo} `} >
-               <div className={s.userAvatar}>
-                  <img src={user?.photo || userIcon} alt="" />
-               </div>
+            <Button className={`${s.userAvatar} `} >
+               <img src={user?.photo || userIcon} alt="" />
             </Button>
 
             <BtnBurger isActive={isMenuOpen} setIsActive={setIsMenuOpen} />
