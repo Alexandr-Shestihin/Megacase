@@ -50,7 +50,7 @@ const Header = (props) => {
 
    const router = useRouter();
 
-   const { isAuth, setIsAuth } = useAuthStore();
+   const { isAuth, setIsAuth, user } = useAuthStore();
 
    const [activeLanguage, setActiveLanguage] = useState(false);
    const [userPhoto, setUserPhoto] = useState(null);
@@ -177,7 +177,7 @@ const Header = (props) => {
 
             <Button className={`${s.userInfo} `} >
                <div className={s.userAvatar}>
-                  <img src={userPhoto || userIcon} alt="" />
+                  <img src={user?.photo || userIcon} alt="" />
                </div>
             </Button>
 
