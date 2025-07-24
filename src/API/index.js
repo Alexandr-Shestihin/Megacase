@@ -17,6 +17,14 @@ const API = {
             throw error;
          })
    },
+   logOut: async () => {
+      return instance.get(`/logout`)
+         .then(response => response.data)
+         .catch((error) => {
+            console.error('Error fetching profile:', error);
+            throw error;
+         })
+   },
    getHistorySkins: async () => {
       return instance.get(`/history/skins`)
          .then(response => response.data)

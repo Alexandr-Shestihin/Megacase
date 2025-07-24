@@ -43,8 +43,6 @@ const AuthProvider = ({ children }) => {
 
       fetchUserData();
 
-      console.log('isAuth', isAuth)
-
       // Если уже не авторизованы, сразу редиректим
       /* if (!isAuth) {
          router.push('/login');

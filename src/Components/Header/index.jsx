@@ -27,6 +27,7 @@ import { useTranslation } from "react-i18next";
 import { useMenuSelection } from '@/hooks/useMenuSelection';
 import { useModalContext } from '@/Total/ModalContext';
 import useAuthStore from '../../../store/useAuthStore';
+import API from '@/API';
 
 const linkActive = '/assets/icons/linkActive.svg';
 const linkUnactive = '/assets/icons/linkUnactive.svg';
@@ -67,7 +68,7 @@ const Header = (props) => {
 
 
    //Если пользователь не авторизирован, то не показываем этот компонент
-   if(!isAuth) return 
+   if (!isAuth) return
 
    return (
       <div className={s.container}>
@@ -155,7 +156,7 @@ const Header = (props) => {
                </div>
             </Button>
 
-            <Button className={`${s.btnMini}`}>
+            <Button onClick={() => API.logOut()} className={`${s.btnMini}`}>
                <Image src={logOut} alt="log Out" width={200} height={100} className={s.logOut} />
             </Button>
 
