@@ -17,18 +17,20 @@ const AuthProvider = ({ children }) => {
          setLoading(true);
          try {
             const response = await API.getCurrentUser();
-            if (!response.success) {
+            /* if (!response.success) {
                console.error('Failed to fetch user data');
                return;
-            }
+            } */
             /* const data = await response.json(); */
             /* console.log('data', data) */
-            if (response.user) {
+            if (response.success && response.user?.id) {
                setUser(response.user);
                setIsAuth(true);
                isAuthRef.current = true;
             } else {
                isAuthRef.current = false;
+               console.error('Failed to fetch user data');
+               return;
             }
          } catch (error) {
             console.error('Error fetching user data:', error);
