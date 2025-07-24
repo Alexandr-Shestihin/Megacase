@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
    
    useEffect(() => {
       isAuthRef.current = isAuth;
-      console.log('useEffect')
+      console.log('useEffect isAuth', isAuth)
    }, [isAuth])
 
    console.log('AuthProvider isAuth', isAuth);
