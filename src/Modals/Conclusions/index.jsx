@@ -1,24 +1,28 @@
+"use client"
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import s from './Conclusions.module.css';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/Components';
 import { useMenuSelection } from '@/hooks/useMenuSelection';
 import API from '@/API';
+import ConclusionsItem from './ConclusionsItem';
 
 const Conclusions = (props) => {
 
    const { t } = useTranslation();
    const { activeID, handler } = useMenuSelection('URL');
+   const [data, setData] = useState(null);
 
    const getData = () => {
       API.getHistorySkins()
-         .then(data => console.log(data))
+         .then(response => setData(response.data))
    }
 
    useEffect(() => {
       getData()
    }, [])
+   console.log('data', data)
 
    return (
       <div className={s.container} onClick={handler}>
@@ -50,6 +54,14 @@ const Conclusions = (props) => {
                title='Error'
             >Ошибка</Button>
          </div>
+         {/* {data.map(el => <ConclusionsItem
+            key={el?.id}
+            name={el?.itemName}
+            price={el?.price}
+            updatedAt={el?.updatedAt}
+            status={el?.displayStatus}
+            image={el?.image}
+         />)} */}
       </div>
    )
 }
