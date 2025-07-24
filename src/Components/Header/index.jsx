@@ -70,7 +70,7 @@ const Header = (props) => {
    const { openModal, activeModal } = useModalContext(); // Получаем openModal из контекста
 
    const handleLogOut = async () => {
-      const response = await API.logOut()
+      const response = await API.logOut();
       if (response?.success) {
          setIsAuth(false);
          router.push('/login');
@@ -175,7 +175,7 @@ const Header = (props) => {
                <span>1000 000$</span>
             </Button>
 
-            <Button className={`${s.userAvatar} `} >
+            <Button onClick={handleClick} className={`${s.userAvatar} `} >
                <img src={user?.photo || userIcon} alt="" />
             </Button>
 
