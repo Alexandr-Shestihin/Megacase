@@ -14,11 +14,6 @@ const AuthProvider = ({ children }) => {
 
    isAuthRef.current = isAuth;
 
-   /* useEffect(() => {
-      isAuthRef.current = isAuth;
-      console.log('useEffect isAuth', isAuth)
-   }, [isAuth]) */
-
    useEffect(() => {
       const fetchUserData = async () => {
          setLoading(true);

@@ -69,10 +69,12 @@ const Header = (props) => {
 
    const { openModal, activeModal } = useModalContext(); // Получаем openModal из контекста
 
-   const handleLogOut = () => {
-      API.logOut();
-      setIsAuth(false);
-      router.push('/login');
+   const handleLogOut = async () => {
+      const response = await API.logOut()
+      if (response?.success) {
+         setIsAuth(false);
+         router.push('/login');
+      }
    }
 
    //Если пользователь не авторизирован, то не показываем этот компонент
