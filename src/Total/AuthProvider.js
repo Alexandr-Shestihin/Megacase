@@ -21,11 +21,11 @@ const AuthProvider = ({ children }) => {
                console.error('Failed to fetch user data');
                return;
             }
-            const data = await response.json();
-            console.log('data', data)
-            if (data.user) {
-               console.log('data', data)
-               setUser(data.user);
+            /* const data = await response.json(); */
+            /* console.log('data', data) */
+            if (response.user) {
+               console.log('response', response)
+               setUser(response.user);
                setIsAuth(true);
                isAuthRef.current = true;
             } else {
