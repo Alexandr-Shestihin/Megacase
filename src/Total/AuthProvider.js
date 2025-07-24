@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 import useAuthStore from '@/../store/useAuthStore';
+import API from '@/API';
 
 const AuthProvider = ({ children }) => {
    const { setUser, setIsAuth, isAuth } = useAuthStore();
@@ -21,10 +22,9 @@ const AuthProvider = ({ children }) => {
       const fetchUserData = async () => {
          setLoading(true);
          try {
-            const response = await fetch('https://dev.megacase.ai/api/profile'); // getCurrentUser
+            const response = await API.getCurrentUser(); // getCurrentUser
             if (!response.ok) {
                console.error('Failed to fetch user data');
-               router.push('/login');
                return;
             }
             const data = await response.json();
@@ -32,18 +32,16 @@ const AuthProvider = ({ children }) => {
                setUser(data.user);
                setIsAuth(true); // data.isAuthenticated || true
             } else {
-               router.push('/login');
             }
          } catch (error) {
             console.error('Error fetching user data:', error);
-            router.push('/login');
          } finally {
             setLoading(false);
          }
       };
 
       fetchUserData();
-   }, [router, setUser, setIsAuth, isAuth]);
+   }, [isAuth]);
 
    if (loading) {
       return <div>Loading...</div>; // Отображаем индикатор загрузки
