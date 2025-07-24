@@ -1,57 +1,63 @@
+// src/components/AuthProvider.js
 "use client";
 
 import React, { useEffect, useState } from 'react';
-
 import { useRouter } from 'next/navigation';
 import useAuthStore from '@/../store/useAuthStore';
 import API from '@/API';
 
 const AuthProvider = ({ children }) => {
-   const { setUser, setIsAuth, isAuth } = useAuthStore();
-   const [loading, setLoading] = useState(true);
-   const router = useRouter();
+    const { setUser, setIsAuth, isAuth } = useAuthStore();
+    const [isLoading, setIsLoading] = useState(true); // Состояние загрузки
+    const router = useRouter();
 
-   useEffect(() => {
-      const fetchUserData = async () => {
-         setLoading(true);
-         try {
-            const response = await API.getCurrentUser();
-            if (!response.ok) {
-               console.error('Failed to fetch user data');
-               return;
+    useEffect(() => {
+        const fetchData = async () => {
+            if (!isAuth) {
+                router.push('/login');
+                setIsLoading(false); // Прекращаем загрузку
+                return;
             }
-            const data = await response.json();
-            if (data.user) {
-               console.log('data', data)
-               setUser(data.user);
-               setIsAuth(true);
-            } else {
+
+            try {
+                const response = await API.getCurrentUser();
+                if (!response.ok) {
+                    console.error('Failed to fetch user data');
+                    // Добавьте обработку ошибки, если необходимо (например, разлогиниться)
+                    return;
+                }
+
+                const data = await response.json();
+                if (data.user) {
+                    setUser(data.user);
+                    setIsAuth(true);
+                } else {
+                    // Обработка случая, когда нет данных пользователя
+                    console.error('No user data received');
+                    // Возможно, стоит разлогинить пользователя
+                }
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                // Обработка ошибки
+            } finally {
+                setIsLoading(false);
             }
-         } catch (error) {
-            console.error('Error fetching user data:', error);
-         } finally {
-            setLoading(false);
-         }
-      };
+        };
 
-      fetchUserData();
+        fetchData();
+    }, [isAuth, router, setUser, setIsAuth]);
 
-      // Если уже не авторизованы, сразу редиректим
-      if (!isAuth) {
-         router.push('/login');
-         setLoading(false); // Чтобы не показывать загрузку бесконечно
-         return;
-      }
-   }, [isAuth]);
+    if (isLoading) {
+        return <div>Loading...</div>; // Индикатор загрузки
+    }
 
-   if (loading) {
-      return <div>Loading...</div>; // Отображаем индикатор загрузки
-   }
+    // Если не авторизованы, ничего не рендерим (можно и нужно перенаправлять)
+    //  if(!isAuth) {
+    //     router.push('/login')
+    //     return null
+    //  }
 
-   //Если пользователь не авторизирован, то не показываем этот компонент
-   if (!isAuth) return
-
-   return <>{children}</>; // Рендерим контент, когда загрузка завершена
+    return <>{children}</>; // Рендерим контент
 };
 
 export default AuthProvider;
