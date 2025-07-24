@@ -47,7 +47,7 @@ const faqUnactive = '/assets/icons/faqUnactive.svg';
 
 const Header = (props) => {
 
-   const { isAuth } = useAuthStore();
+   const { isAuth, setIsAuth } = useAuthStore();
 
    const [activeLanguage, setActiveLanguage] = useState(false);
    const [userPhoto, setUserPhoto] = useState(null);
@@ -66,6 +66,10 @@ const Header = (props) => {
 
    const { openModal, activeModal } = useModalContext(); // Получаем openModal из контекста
 
+   const handleLogOut = () => {
+      API.logOut();
+      setIsAuth(false);
+   }
 
    //Если пользователь не авторизирован, то не показываем этот компонент
    if (!isAuth) return
@@ -156,7 +160,7 @@ const Header = (props) => {
                </div>
             </Button>
 
-            <Button onClick={() => API.logOut()} className={`${s.btnMini}`}>
+            <Button onClick={handleLogOut} className={`${s.btnMini}`}>
                <Image src={logOut} alt="log Out" width={200} height={100} className={s.logOut} />
             </Button>
 

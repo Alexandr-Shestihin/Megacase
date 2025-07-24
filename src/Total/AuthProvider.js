@@ -33,6 +33,7 @@ const AuthProvider = ({ children }) => {
             console.error('Error fetching user data:', error);
          } finally {
             setLoading(false);
+            // Если уже не авторизованы, сразу редиректим
             if (!isAuthRef.current) {
                router.push('/login');
                setLoading(false); // Чтобы не показывать загрузку бесконечно
@@ -43,17 +44,16 @@ const AuthProvider = ({ children }) => {
 
       fetchUserData();
 
-      // Если уже не авторизованы, сразу редиректим
-      /* if (!isAuth) {
-         router.push('/login');
-         setLoading(false); // Чтобы не показывать загрузку бесконечно
-         return;
-      } */
+      
+
    }, [isAuth]);
 
    if (loading) {
       return <div>Loading...</div>; // Отображаем индикатор загрузки
    }
+
+   console.log('AuthProvider isAuth', isAuth);
+   console.log('AuthProvider isAuthRef.current', isAuthRef.current);
 
    //Если пользователь не авторизирован, то не показываем этот компонент
    if (!isAuthRef.current) return
