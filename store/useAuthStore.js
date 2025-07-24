@@ -3,7 +3,7 @@ import API from '@/API';
 import { create } from 'zustand';
 
 const useAuthStore = create((set, get) => ({
-   isAuth: true,
+   isAuth: false,
    user: null,
    isLoading: false,
    error: null,

@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
       const fetchUserData = async () => {
          setLoading(true);
          try {
-            const response = await API.getCurrentUser(); // getCurrentUser
+            const response = await API.getCurrentUser();
             if (!response.ok) {
                console.error('Failed to fetch user data');
                return;
@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
             const data = await response.json();
             if (data.user) {
                setUser(data.user);
-               setIsAuth(true); // data.isAuthenticated || true
+               setIsAuth(true);
             } else {
             }
          } catch (error) {
