@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 import useAuthStore from '@/../store/useAuthStore';
@@ -56,7 +56,7 @@ const AuthProvider = ({ children }) => {
    }
 
    //Если пользователь не авторизирован, то не показываем этот компонент
-   /* if (!isAuthRef.current) return */
+   if (!isAuthRef.current) return
 
    return <>{children}</>; // Рендерим контент, когда загрузка завершена
 };
