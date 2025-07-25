@@ -27,9 +27,7 @@ const Conclusions = (props) => {
          API.getHistorySkins(1, 10, value)
             .then(response => {
                setData(response.data);
-               setLoadStatus(prev => (
-                  { ...prev, isLoad: false }
-               ));
+               setLoadStatus({ message: '', isLoad: false });
             })
             .catch((e) => {
                setLoadStatus({ message: e.message, isLoad: false });
