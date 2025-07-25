@@ -1,19 +1,14 @@
 
 import React from 'react';
 import s from './ConclusionsItem.module.css';
-import Image from 'next/image';
 import { formatDate } from '@/utils';
 
 const linkActive = '/assets/img/plugs/pistol.png';
 
 const ConclusionsItem = ({ name, price, updatedAt, status, image }) => {
-
-   console.log('image', image)
-
    return (
       <div className={`row ${s.container}`}>
          <div className={s.imgContainer}>
-            {/* <Image src={image || linkActive} alt="image" width={38} height={38} className="img" /> */}
             <img src={image || linkActive} alt="image" />
          </div>
          <div className={s.name}>{name}</div>
