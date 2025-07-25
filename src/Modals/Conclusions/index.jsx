@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import s from './Conclusions.module.css';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/Components';
@@ -11,39 +11,38 @@ import ConclusionsItem from './ConclusionsItem';
 const Conclusions = (props) => {
 
    const { t } = useTranslation();
-   const { activeID, handler } = useMenuSelection('URL');
+   const { activeID, handler } = useMenuSelection('all');
    const [data, setData] = useState(null);
 
-   const getData = () => {
-      API.getHistorySkins()
+   const getData = useCallback((value) => {
+      API.getHistorySkins(1, 10, value)
          .then(response => setData(response.data))
-   }
+   }, [])
 
    useEffect(() => {
-      getData()
-   }, [])
-   console.log('data', data)
+      getData(activeID)
+   }, [activeID])
 
    return (
       <div className={s.container}>
          <div className="pageTitle">История выводов <span className="pageSubtitle">Скины</span> </div>
          <div className="row mt16" onClick={handler}>
             <Button
-               id={'URL'}
-               active={activeID === 'URL' && true}
+               id={'all'}
+               active={activeID === 'all' && true}
                className={`${s.btn} btn-text`}
                title='Trade URL'
                onClick={getData}
             >Все</Button>
             <Button
-               id={'accepted'}
-               active={activeID === 'accepted' && true}
+               id={'received'}
+               active={activeID === 'received' && true}
                className={`${s.btn} btn-text`}
                title='Accepted'
             >Получен</Button>
             <Button
-               id={'sented'}
-               active={activeID === 'sented' && true}
+               id={'sent'}
+               active={activeID === 'sent' && true}
                className={`${s.btn} btn-text`}
                title='Sented'
             >Отправлен</Button>

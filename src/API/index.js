@@ -25,8 +25,8 @@ const API = {
             throw error;
          })
    },
-   getHistorySkins: async (page = 1, limit = 10) => {
-      return instance.get(`/history/skins?page=${page}&limit=${limit}`)
+   getHistorySkins: async (page = 1, limit = 10, filter = 'all') => {
+      return instance.get(`/history/skins?page=${page}&limit=${limit}&filter=${filter}`)
          .then(response => response.data)
          .catch((error) => {
             console.error('Error fetching history skins:', error);
