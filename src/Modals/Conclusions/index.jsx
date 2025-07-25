@@ -30,7 +30,7 @@ const Conclusions = (props) => {
 
          API.getHistorySkins(page, count, value)
             .then(response => {
-               setData(response.data);
+               setData(prev => [...prev, ...response.data]);
                setLoadStatus({ message: '', isLoad: false });
             })
             .catch((e) => {
