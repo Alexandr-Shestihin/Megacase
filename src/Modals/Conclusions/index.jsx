@@ -91,7 +91,7 @@ const Conclusions = (props) => {
                      price={el?.price}
                      updatedAt={el?.updatedAt}
                      status={el?.displayStatus}
-                     image={el?.image}
+                     image={el?.image+".png"}
                   />
                ))
             ) : (
