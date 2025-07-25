@@ -26,7 +26,7 @@ const Conclusions = (props) => {
       getData(activeID);
    }, [activeID])
 
-   console.log('activeID', activeID)
+
 
    return (
       <div className={s.container}>
@@ -66,7 +66,7 @@ const Conclusions = (props) => {
                updatedAt={el?.updatedAt}
                status={el?.displayStatus}
                image={el?.image}
-            />)}
+            />) || 'not found data'}
          </div>
       </div>
    )
