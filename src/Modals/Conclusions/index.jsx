@@ -15,12 +15,15 @@ const Conclusions = (props) => {
    const [data, setData] = useState(null);
 
    const getData = useCallback((value) => {
-      API.getHistorySkins(1, 10, value)
-         .then(response => setData(response.data))
+      if (typeof value === 'string') {
+         API.getHistorySkins(1, 10, value)
+            .then(response => setData(response.data))
+      }
+
    }, [])
 
    useEffect(() => {
-      getData(activeID)
+      getData(activeID);
    }, [activeID])
 
    console.log('activeID', activeID)
