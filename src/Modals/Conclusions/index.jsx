@@ -25,9 +25,9 @@ const Conclusions = (props) => {
    console.log('data', data)
 
    return (
-      <div className={s.container} onClick={handler}>
+      <div className={s.container}>
          <div className="pageTitle">История выводов <span className="pageSubtitle">Скины</span> </div>
-         <div className="row mt16">
+         <div className="row mt16" onClick={handler}>
             <Button
                id={'URL'}
                active={activeID === 'URL' && true}

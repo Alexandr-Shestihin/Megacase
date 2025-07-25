@@ -1,3 +1,8 @@
+.container>* {
+   color: var(--color-2);
+
+}
+
 .imgContainer {
    width: 38px;
    height: 38px;
@@ -7,4 +12,11 @@
    width: 100%;
    height: 100%;
    border: 1px solid red;
+}
+
+.name {
+   width: 131px;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
 }

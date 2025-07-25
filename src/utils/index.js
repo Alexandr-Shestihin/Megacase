@@ -130,3 +130,26 @@ export const handleClick = async (e) => {
       alert(t("message.copyText.unsuccess"));
    }
 };
+
+//Преобразование форматы даты из 2025-07-24T18:09:49.447Z в 16:30 12.12
+export function formatDate(dateString) {
+   try {
+      const date = new Date(dateString);
+
+      if (isNaN(date.getTime())) {
+         return "Invalid Date"; // или null, или любое другое значение по умолчанию
+      }
+
+      const hours = String(date.getHours()).padStart(2, '0');
+      const minutes = String(date.getMinutes()).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, '0'); // Месяцы в JavaScript начинаются с 0
+      const timeFormat = `${hours}:${minutes}`;
+      const dateFormat = `${day}.${month}`;
+
+      return `${timeFormat} ${dateFormat}`;
+   } catch (error) {
+      console.error("Error formatting date:", error);
+      return "Invalid Date"; // или null, или любое другое значение по умолчанию
+   }
+}
