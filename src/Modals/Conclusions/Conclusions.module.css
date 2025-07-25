@@ -1,7 +1,7 @@
  .container {
     width: 600px;
     height: 588px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
  }
 
  .btn {
@@ -17,6 +17,7 @@
     align-items: center;
     flex-direction: column;
     gap: 8px;
+    overflow-y: scroll;
  }
 
  .loader {

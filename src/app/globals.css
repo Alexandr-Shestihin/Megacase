@@ -453,19 +453,21 @@ input[type="radio"]:checked+label {
    color: var(--color-1)
 }
 
-body::-webkit-scrollbar-track {
-   background: red !important;
-   box-shadow: 0px 0px 3px #060606 inset;
+*::-webkit-scrollbar {
+    width: 4px; /* Ширина скроллбара */
+    margin-left: 40px;
 }
 
-body::-webkit-scrollbar-thumb {
-   background: #EF5236 !important;
-   border-radius: 10px;
-   border: 4px solid #444444;
+*::-webkit-scrollbar-track { 
+    background: var(--bg-1); /* Цвет фона трека */
+    border-radius: 10px;
 }
 
-body::-webkit-scrollbar-thumb:hover {
-   background: red !important;
-   border-radius: 10px;
-   border: 4px solid #444444;
+*::-webkit-scrollbar-thumb { 
+    background: var(--color-2); /* Цвет ползунка */
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover { 
+    background: var(--main-third); /* Цвет ползунка при наведении */
 }
