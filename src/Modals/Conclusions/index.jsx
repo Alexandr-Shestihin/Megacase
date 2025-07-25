@@ -54,7 +54,7 @@ const Conclusions = (props) => {
 
    return (
       <div className={s.container}>
-         <div className="pageTitle">История выводов <span className="pageSubtitle">Скины</span> </div>
+         <div className="pageTitle">{t("total.historyConclusions")} <span className="pageSubtitle">{t("total.skins")}</span> </div>
          <div className="row mt16" onClick={handler}>
             <Button
                id={'all'}

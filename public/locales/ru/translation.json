@@ -87,7 +87,9 @@
       "all": "Все",
       "received": "Получен",
       "sent": "Отправлен",
-      "error": "Ошибка"
+      "error": "Ошибка",
+      "historyConclusions": "История выводов",
+      "skins": "Скины"
    },
    "auth": {
       "title": "Авторизация",

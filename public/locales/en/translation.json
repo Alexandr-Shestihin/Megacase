@@ -93,8 +93,11 @@
       "all": "All",
       "received": "Received",
       "sent": "Sent",
-      "error": "Error"
+      "error": "Error",
+      "historyConclusions": "History of conclusions",
+      "skins": "Skins"
    },
+   
    "message": {
       "copyText": {
          "success": "Text copied to clipboard!",
