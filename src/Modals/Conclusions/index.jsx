@@ -81,7 +81,7 @@ const Conclusions = (props) => {
                title='Error'
             >{t("total.error")}</Button>
          </div>
-         <div ref={elementRef} className={`mt12 ${s.itemContainer}`}>
+         <div className={`mt12 ${s.itemContainer}`}>
             {data?.length > 0 ? (
                data.map(el => (
                   <ConclusionsItem
@@ -96,7 +96,7 @@ const Conclusions = (props) => {
             ) : (
                loadStatus?.message
             )}
-            {loadStatus.isLoad && <Image src={loader} alt="log Out" width={200} height={100} className={s.loader} />}
+            <div ref={elementRef}>{loadStatus.isLoad && <Image src={loader} alt="log Out" width={200} height={100} className={s.loader} />}</div>
          </div>
       </div>
    )
