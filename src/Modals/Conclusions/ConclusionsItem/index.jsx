@@ -11,6 +11,10 @@ const ConclusionsItem = ({ name, price, updatedAt, status, image }) => {
          <div className={s.imgContainer}>
             <Image src={image || linkActive} alt="image" width={38} height={38} className="img" />
          </div>
+         <div className={s.text}>{name}</div>
+         <div className={s.text}>{price}</div>
+         <div className={s.text}>{updatedAt}</div>
+         <div className={s.status}>{status}</div>
       </div>
    )
 }
