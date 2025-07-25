@@ -54,14 +54,16 @@ const Conclusions = (props) => {
                title='Error'
             >Ошибка</Button>
          </div>
-         {data?.map(el => <ConclusionsItem
-            key={el?.id}
-            name={el?.itemName}
-            price={el?.price}
-            updatedAt={el?.updatedAt}
-            status={el?.displayStatus}
-            image={el?.image}
-         />)}
+         <div className={`mt12 ${s.itemContainer}`}>
+            {data?.map(el => <ConclusionsItem
+               key={el?.id}
+               name={el?.itemName}
+               price={el?.price}
+               updatedAt={el?.updatedAt}
+               status={el?.displayStatus}
+               image={el?.image}
+            />)}
+         </div>
       </div>
    )
 }

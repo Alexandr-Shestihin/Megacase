@@ -4,10 +4,14 @@
  }
 
  .btn {
-   display: flex;
-   justify-content: center;
+    display: flex;
+    justify-content: center;
     padding: 15px 0;
     width: 134px;
+ }
+
+ .itemContainer {
+    gap: 8px;
  }
 
  @media screen and (max-width: 600px) {
