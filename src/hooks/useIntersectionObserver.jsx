@@ -43,6 +43,7 @@ const useIntersectionObserver = (callback, options = {}) => {
          callback(currentPage);
          setCurrentPage(prev => prev + 1)
          setIsIntersecting(false);
+         debugger
       }
    }, [isIntersecting, callback, currentPage]);
 
