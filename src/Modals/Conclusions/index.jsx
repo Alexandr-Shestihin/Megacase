@@ -23,7 +23,7 @@ const Conclusions = (props) => {
    const [data, setData] = useState(null);
 
    const getData = useCallback((value, count = 10, page = 1) => {
-      
+
       if (typeof value === 'string') {
 
          setLoadStatus(prev => ({ ...prev, isLoad: true }))
@@ -83,91 +83,6 @@ const Conclusions = (props) => {
             >{t("total.error")}</Button>
          </div>
          <div className={`mt12 ${s.itemContainer}`}>
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
-            11 <br />
             {data?.length > 0 ? (
                data.map(el => (
                   <ConclusionsItem
