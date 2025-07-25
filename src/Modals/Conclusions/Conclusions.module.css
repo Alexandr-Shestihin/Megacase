@@ -1,7 +1,6 @@
  .container {
     width: 600px;
     height: 588px;
-    /* overflow-y: scroll; */
  }
 
  .btn {
@@ -13,6 +12,7 @@
 
  .itemContainer {
     width: 100%;
+    height: 500px;
     display: flex;
     align-items: center;
     flex-direction: column;
