@@ -22,12 +22,13 @@ const Conclusions = (props) => {
    const { activeID, handler } = useMenuSelection('all');
    const [data, setData] = useState(null);
 
-   const getData = useCallback((value) => {
+   const getData = useCallback((value, count = 10, page = 1) => {
+      
       if (typeof value === 'string') {
 
          setLoadStatus(prev => ({ ...prev, isLoad: true }))
 
-         API.getHistorySkins(1, 10, value)
+         API.getHistorySkins(page, count, value)
             .then(response => {
                setData(response.data);
                setLoadStatus({ message: '', isLoad: false });
@@ -41,7 +42,7 @@ const Conclusions = (props) => {
    }, [])
 
    const { elementRef } = useIntersectionObserver(
-      (page) => getData(10, page),
+      (page) => getData(activeID, 10, page),
       {
          threshold: 0.1,
       }
@@ -82,6 +83,91 @@ const Conclusions = (props) => {
             >{t("total.error")}</Button>
          </div>
          <div className={`mt12 ${s.itemContainer}`}>
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
+            11 <br />
             {data?.length > 0 ? (
                data.map(el => (
                   <ConclusionsItem
