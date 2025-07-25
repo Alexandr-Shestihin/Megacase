@@ -1,6 +1,7 @@
 .container {
    background: var(--bg-2);
    padding: 9px 14px;
+   border-radius: var(--border-r20);
 }
 
 .container>* {
