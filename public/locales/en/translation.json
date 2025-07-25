@@ -89,6 +89,12 @@
       "disclaimer": "I confirm that I have read and agree to ",
       "disclaimerLink": "the terms of the user agreement"
    },
+   "total": {
+      "all": "Все",
+      "received": "Received",
+      "sent": "Sent",
+      "error": "Error"
+   },
    "message": {
       "copyText": {
          "success": "Text copied to clipboard!",

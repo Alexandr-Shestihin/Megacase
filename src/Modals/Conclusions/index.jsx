@@ -61,25 +61,25 @@ const Conclusions = (props) => {
                className={`${s.btn} btn-text`}
                title='Trade URL'
                onClick={getData}
-            >Все</Button>
+            >{t("total.all")}</Button>
             <Button
                id={'received'}
                active={activeID === 'received' && true}
                className={`${s.btn} btn-text`}
                title='Accepted'
-            >Получен</Button>
+            >{t("total.received")}</Button>
             <Button
                id={'sent'}
                active={activeID === 'sent' && true}
                className={`${s.btn} btn-text`}
                title='Sented'
-            >Отправлен</Button>
+            >{t("total.sent")}</Button>
             <Button
                id={'err'}
                active={activeID === 'err' && true}
                className={`${s.btn} btn-text`}
                title='Error'
-            >Ошибка</Button>
+            >{t("total.error")}</Button>
          </div>
          <div ref={elementRef} className={`mt12 ${s.itemContainer}`}>
             {data?.length > 0 ? (
