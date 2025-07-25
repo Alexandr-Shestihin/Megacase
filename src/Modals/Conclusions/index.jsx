@@ -20,7 +20,7 @@ const Conclusions = (props) => {
 
    const { t } = useTranslation();
    const { activeID, handler } = useMenuSelection('all');
-   const [data, setData] = useState(null);
+   const [data, setData] = useState([]);
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
