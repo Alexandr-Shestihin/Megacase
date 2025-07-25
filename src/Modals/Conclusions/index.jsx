@@ -34,7 +34,7 @@ const Conclusions = (props) => {
                className={`${s.btn} btn-text`}
                title='Trade URL'
                onClick={getData}
-            >Trade URL</Button>
+            >Все</Button>
             <Button
                id={'accepted'}
                active={activeID === 'accepted' && true}
