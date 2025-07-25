@@ -96,7 +96,7 @@ const Conclusions = (props) => {
             ) : (
                loadStatus?.message
             )}
-            <div ref={elementRef}>{loadStatus.isLoad && <Image src={loader} alt="log Out" width={200} height={100} className={s.loader} />}</div>
+            <div ref={elementRef} style={{ height: '1px', width: '100%' }}>{loadStatus.isLoad && <Image src={loader} alt="log Out" width={200} height={100} className={s.loader} />}</div>
          </div>
       </div>
    )
