@@ -8,6 +8,8 @@ const linkActive = '/assets/img/plugs/pistol.png';
 
 const ConclusionsItem = ({ name, price, updatedAt, status, image }) => {
 
+   console.log('image', image)
+
    return (
       <div className={`row ${s.container}`}>
          <div className={s.imgContainer}>
