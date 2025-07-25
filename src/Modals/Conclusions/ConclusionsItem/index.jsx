@@ -14,7 +14,7 @@ const ConclusionsItem = ({ name, price, updatedAt, status, image }) => {
       <div className={`row ${s.container}`}>
          <div className={s.imgContainer}>
             {/* <Image src={image || linkActive} alt="image" width={38} height={38} className="img" /> */}
-            <Image src={'https://steamcommunity-a.akamaihd.net/economy/image/class/730/321491134/325fx325f.png'} alt="image" width={38} height={38} className="img" />
+            <img src={image || linkActive} alt="image" />
          </div>
          <div className={s.name}>{name}</div>
          <div className={s.text}>{price}$</div>
