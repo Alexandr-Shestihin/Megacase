@@ -59,14 +59,20 @@ const Conclusions = (props) => {
             >Ошибка</Button>
          </div>
          <div className={`mt12 ${s.itemContainer}`}>
-            {data?.map(el => <ConclusionsItem
-               key={el?.id}
-               name={el?.itemName}
-               price={el?.price}
-               updatedAt={el?.updatedAt}
-               status={el?.displayStatus}
-               image={el?.image}
-            />) || 'not found data'}
+            {data?.length > 0 ? (
+               data.map(el => (
+                  <ConclusionsItem
+                     key={el?.id}
+                     name={el?.itemName}
+                     price={el?.price}
+                     updatedAt={el?.updatedAt}
+                     status={el?.displayStatus}
+                     image={el?.image}
+                  />
+               ))
+            ) : (
+               'Not found data'
+            )}
          </div>
       </div>
    )
