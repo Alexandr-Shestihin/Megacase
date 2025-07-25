@@ -23,6 +23,8 @@ const Conclusions = (props) => {
       getData(activeID)
    }, [activeID])
 
+   console.log('activeID', activeID)
+
    return (
       <div className={s.container}>
          <div className="pageTitle">История выводов <span className="pageSubtitle">Скины</span> </div>
