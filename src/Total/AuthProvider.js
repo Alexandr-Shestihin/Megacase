@@ -13,8 +13,13 @@ const AuthProvider = ({ children }) => {
    const router = useRouter();
 
    const isLocal = window.location.href === "http://localhost:3000/";
+   //Потом убрать эту строчку
+
+   /* isAuthRef.current = isAuth; */
+   //Раскомментировать строчку
 
    isAuthRef.current = isLocal ? true : isAuth;
+   //Потом убрать эту строчку
 
    useEffect(() => {
       const fetchUserData = async () => {
@@ -42,7 +47,11 @@ const AuthProvider = ({ children }) => {
          }
       };
 
+      /* fetchUserData() */
+      //Раскомментировать строчку
+
       isLocal ? (setIsAuth(true), setLoading(false)) : fetchUserData();
+      //Потом убрать эту строчку
 
    }, []);
 
