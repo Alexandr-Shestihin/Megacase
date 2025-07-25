@@ -7,8 +7,15 @@ import { Button } from '@/Components';
 import { useMenuSelection } from '@/hooks/useMenuSelection';
 import API from '@/API';
 import ConclusionsItem from './ConclusionsItem';
+import loader from '@/../public/assets/loader.gif';
+import Image from 'next/image';
 
 const Conclusions = (props) => {
+
+   const [loadStatus, setLoadStatus] = useState({
+      isLoad: false,
+      message: ''
+   });
 
    const { t } = useTranslation();
    const { activeID, handler } = useMenuSelection('all');
@@ -16,8 +23,17 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value) => {
       if (typeof value === 'string') {
+         setLoadStatus(prev => ({ ...prev, isLoad: true }))
          API.getHistorySkins(1, 10, value)
-            .then(response => setData(response.data))
+            .then(response => {
+               setData(response.data);
+               setLoadStatus(prev => (
+                  { ...prev, isLoad: false }
+               ));
+            })
+            .catch((e) => {
+               setLoadStatus({ message: e.message, isLoad: false });
+            })
       }
 
    }, [])
@@ -25,8 +41,6 @@ const Conclusions = (props) => {
    useEffect(() => {
       getData(activeID);
    }, [activeID])
-
-
 
    return (
       <div className={s.container}>
@@ -71,8 +85,9 @@ const Conclusions = (props) => {
                   />
                ))
             ) : (
-               'Not found data'
+               loadStatus?.message
             )}
+            {loadStatus.isLoad && <Image src={loader} alt="log Out" width={200} height={100} className={s.loader} />}
          </div>
       </div>
    )
