@@ -30,6 +30,7 @@ const Conclusions = (props) => {
                setLoadStatus({ message: '', isLoad: false });
             })
             .catch((e) => {
+               console.error(e.message);
                setLoadStatus({ message: e.message, isLoad: false });
             })
       }
