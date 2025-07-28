@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import s from './Conclusions.module.css';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/Components';
@@ -26,7 +26,7 @@ const Conclusions = (props) => {
    console.log('data length', data.length)
    console.log('data', data)
 
-   let maxPages = 0;
+   let [maxPages, setMaxPages] = useState(0);
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
@@ -36,7 +36,7 @@ const Conclusions = (props) => {
 
          API.getHistorySkins(page, count, value)
             .then(response => {
-               maxPages = Math.ceil(response.pagination.totalItems / count)
+               setMaxPages(Math.ceil(response.pagination.totalItems / count))
                setData((prev) => {
                   const newData = [...prev, ...response.data];
                   // Фильтруем, чтобы удалить дубликаты (если они вдруг появились)
@@ -62,7 +62,7 @@ const Conclusions = (props) => {
    );
 
    useEffect(() => {
-      maxPages = 0;
+      setMaxPages(0);
       getData(activeID);
    }, [activeID])
 
