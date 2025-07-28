@@ -26,10 +26,6 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('----------------------')
-      console.log('maxPages', maxPages)
-      console.log('page', page)
-
       if (typeof value === 'string' && maxPages < page) {
 
          setLoadStatus(prev => ({ ...prev, isLoad: true }))
