@@ -26,7 +26,12 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('ok123456')
+      console.log('ok1234567')
+
+      console.log('---------')
+      console.log('activeID', activeID);
+      console.log('data', data);
+      console.log('maxPages', maxPages);
 
       console.log('typeof value === string', typeof value === 'string');
       console.log('maxPages >= page', maxPages >= page);
@@ -66,10 +71,6 @@ const Conclusions = (props) => {
    );
 
    useEffect(() => {
-      console.log('---------')
-      console.log('activeID', activeID);
-      console.log('data', data);
-      console.log('maxPages', maxPages);
       setData([])
       setMaxPages(2);
       getData(activeID);
