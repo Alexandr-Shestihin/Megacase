@@ -23,10 +23,11 @@ const Conclusions = (props) => {
    const [data, setData] = useState([]);
 
    let [maxPages, setMaxPages] = useState(2);
+   const isInitialLoad = useRef(true);
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('--------кккккк-----------')
+      console.log('--------кккккк1-----------')
       console.log('maxPages', maxPages)
       console.log('page', page)
 
@@ -63,10 +64,13 @@ const Conclusions = (props) => {
    );
 
    useEffect(() => {
-      /* setData([]) */
+       /* setData([]) */
       /* setMaxPages(0) */;
-      getData(activeID);
-   }, [activeID])
+      if (isInitialLoad.current) {
+         isInitialLoad.current = false;
+         getData(activeID);
+      }
+   }, [activeID, getData]);
 
    return (
       <div className={s.container}>
