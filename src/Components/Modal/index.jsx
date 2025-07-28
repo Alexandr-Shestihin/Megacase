@@ -18,7 +18,7 @@ const Modal = ({ active, setActive, children, className }) => {
          >
             <Image onClick={() => setActive(false)} src={close} alt="" width={14} height={14} className={s.img} />
 
-            {children}
+            {active && children}
 
          </div>
       </div>
