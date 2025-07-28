@@ -63,7 +63,7 @@ const Conclusions = (props) => {
       setData([])
       setMaxPages(2);
       getData(activeID);
-   }, [activeID])
+   }, [activeID, getData])
 
    return (
       <div className={s.container}>
