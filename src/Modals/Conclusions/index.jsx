@@ -26,7 +26,7 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('ok1')
+      console.log('ok12')
 
       if (typeof value === 'string' && maxPages >= page) {
 
@@ -67,7 +67,7 @@ const Conclusions = (props) => {
       setData([])
       setMaxPages(2);
       getData(activeID);
-   }, [activeID, getData])
+   }, [activeID])
 
    return (
       <div className={s.container}>
