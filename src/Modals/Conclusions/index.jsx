@@ -26,9 +26,7 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('maxPages', maxPages)
-      console.log('page', page)
-      console.log('point')
+      console.log('ok')
 
       if (typeof value === 'string' && maxPages > page) {
 
@@ -37,7 +35,6 @@ const Conclusions = (props) => {
          API.getHistorySkins(page, count, value)
             .then(response => {
                setMaxPages(Math.ceil(response.pagination.totalItems / count));
-               console.log('Math.ceil(response.pagination.totalItems / count): ', Math.ceil(response.pagination.totalItems / count));
                setData((prev) => {
                   const newData = [...prev, ...response.data];
                   // Фильтруем, чтобы удалить дубликаты (если они вдруг появились)
@@ -63,8 +60,8 @@ const Conclusions = (props) => {
    );
 
    useEffect(() => {
-      /* setData([]) */
-      /* setMaxPages(0); */
+      setData([])
+      setMaxPages(0);
       getData(activeID);
    }, [activeID])
 
