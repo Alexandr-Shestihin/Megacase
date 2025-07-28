@@ -34,6 +34,7 @@ const Conclusions = (props) => {
             .then(response => {
                setMaxPages(Math.ceil(response.pagination.totalItems / count));
                console.log('Math.ceil(response.pagination.totalItems / count): ', Math.ceil(response.pagination.totalItems / count));
+               console.log('new')
                setData((prev) => {
                   const newData = [...prev, ...response.data];
                   // Фильтруем, чтобы удалить дубликаты (если они вдруг появились)
@@ -61,7 +62,7 @@ const Conclusions = (props) => {
    useEffect(() => {
       setMaxPages(0);
       getData(activeID);
-   }, [activeID, getData])
+   }, [activeID])
 
    return (
       <div className={s.container}>
