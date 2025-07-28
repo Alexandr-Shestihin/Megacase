@@ -22,13 +22,17 @@ const Conclusions = (props) => {
    const { activeID, handler } = useMenuSelection('all');
    const [data, setData] = useState([]);
 
-   console.log('----------------------')
+   /* console.log('----------------------')
    console.log('data length', data.length)
-   console.log('data', data)
+   console.log('data', data) */
 
    let [maxPages, setMaxPages] = useState(0);
 
    const getData = useCallback((value, count = 10, page = 1) => {
+
+      console.log('----------------------')
+      console.log('maxPages', maxPages)
+      console.log('page', page)
 
       if (typeof value === 'string' && maxPages < page) {
 
@@ -90,7 +94,7 @@ const Conclusions = (props) => {
             >{t("total.sent")}</Button>
             <Button
                id={'error'}
-               active={activeID === 'err' && true}
+               active={activeID === 'error' && true}
                className={`${s.btn} btn-text`}
                title='Error'
             >{t("total.error")}</Button>
