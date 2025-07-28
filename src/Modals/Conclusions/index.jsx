@@ -27,37 +27,40 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('--------новое условие-----------')
+      console.log('--------кккккк1-----------')
       console.log('maxPages', maxPages)
-      console.log('page', page)
+      console.log('page', page);
 
-      if (maxPages === 0 || page < maxPages) {
+      if (typeof value === 'string' && (maxPages === 0 || page < maxPages)) {
 
-         setLoadStatus(prev => ({ ...prev, isLoad: true }))
+            setLoadStatus(prev => ({ ...prev, isLoad: true }))
 
-         API.getHistorySkins(page, count, value)
-            .then(response => {
-               setMaxPages(Math.ceil(response.pagination.totalItems / count));
-               console.log('Math.ceil(response.pagination.totalItems / count): ', Math.ceil(response.pagination.totalItems / count));
-               setData((prev) => {
-                  const newData = [...prev, ...response.data];
-                  // Фильтруем, чтобы удалить дубликаты (если они вдруг появились)
-                  const uniqueData = newData.filter((item, index) =>
-                     newData.findIndex(i => i.id === item.id) === index
-                  );
-                  return uniqueData;
-               });
-               setLoadStatus({ message: '', isLoad: false });
-            })
-            .catch((e) => {
-               console.error(e.message);
-               setLoadStatus({ message: e.message, isLoad: false });
-            })
-      }
-   }, [maxPages, setMaxPages])
+            API.getHistorySkins(page, count, value)
+               .then(response => {
+                  setMaxPages(Math.ceil(response.pagination.totalItems / count));
+                  console.log('Math.ceil(response.pagination.totalItems / count): ', Math.ceil(response.pagination.totalItems / count));
+                  setData((prev) => {
+                     const newData = [...prev, ...response.data];
+                     // Фильтруем, чтобы удалить дубликаты (если они вдруг появились)
+                     const uniqueData = newData.filter((item, index) =>
+                        newData.findIndex(i => i.id === item.id) === index
+                     );
+                     return uniqueData;
+                  });
+                  setLoadStatus({ message: '', isLoad: false });
+               })
+               .catch((e) => {
+                  console.error(e.message);
+                  setLoadStatus({ message: e.message, isLoad: false });
+               })
+         }
+      }, [maxPages, setMaxPages]);
 
    const { elementRef } = useIntersectionObserver(
-      (page) => getData(activeID, 10, page),
+      (page) => {
+         console.log('useIntersectionObserver callback called with page:', page);
+         getData(activeID, 10, page);
+      },
       {
          threshold: 0.1,
       }
