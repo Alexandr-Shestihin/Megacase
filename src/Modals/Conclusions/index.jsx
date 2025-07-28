@@ -51,6 +51,7 @@ const Conclusions = (props) => {
    );
 
    useEffect(() => {
+      maxPages = 0;
       getData(activeID);
    }, [activeID])
 
