@@ -22,7 +22,7 @@ const Conclusions = (props) => {
    const { activeID, handler } = useMenuSelection('all');
    const [data, setData] = useState([]);
 
-   let [maxPages, setMaxPages] = useState(2);
+   let [maxPages, setMaxPages] = useState(0);
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
@@ -37,7 +37,8 @@ const Conclusions = (props) => {
       console.log('typeof value === string', typeof value === 'string');
       console.log('maxPages >= page', maxPages >= page);
 
-      if (typeof value === 'string' && maxPages >= page) {
+      /* if (typeof value === 'string' && maxPages >= page) { */
+      if (typeof value === 'string' && (maxPages === 0 || page <= maxPages)) {
 
          console.log('inner')
 
@@ -72,11 +73,9 @@ const Conclusions = (props) => {
    );
 
    useEffect(() => {
-      setData([])
-      setMaxPages(() => {
-         getData(activeID); // Вызываем getData внутри коллбэка setMaxPages
-         return 2;
-     });
+      setData([]);
+      getData(activeID);
+      setMaxPages(0);
       /* getData(activeID); */
    }, [activeID])
 
