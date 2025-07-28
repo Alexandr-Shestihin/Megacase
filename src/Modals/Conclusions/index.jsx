@@ -67,6 +67,7 @@ const Conclusions = (props) => {
        /* setData([]) */
       /* setMaxPages(0) */;
       if (isInitialLoad.current) {
+         console.log('useEffect')
          isInitialLoad.current = false;
          getData(activeID);
       }
