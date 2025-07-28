@@ -26,7 +26,7 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('-------------------')
+      console.log('---------12121----------')
       console.log('maxPages', maxPages)
       console.log('page', page)
 
@@ -36,6 +36,8 @@ const Conclusions = (props) => {
 
          API.getHistorySkins(page, count, value)
             .then(response => {
+
+               console.log("Before setMaxPages. page:", page, "maxPages:", maxPages, "response.pagination.totalItems:", response.pagination.totalItems, "count:", count);
                setMaxPages(Math.ceil(response.pagination.totalItems / count));
                console.log('Math.ceil(response.pagination.totalItems / count): ', Math.ceil(response.pagination.totalItems / count));
                setData((prev) => {
@@ -52,6 +54,8 @@ const Conclusions = (props) => {
                console.error(e.message);
                setLoadStatus({ message: e.message, isLoad: false });
             })
+      } else {
+         console.log("Condition NOT met. page:", page, "maxPages:", maxPages);
       }
    }, [maxPages, setMaxPages])
 
