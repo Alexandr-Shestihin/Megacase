@@ -29,9 +29,8 @@ const Conclusions = (props) => {
       console.log('-------------------')
       console.log('maxPages', maxPages)
       console.log('page', page)
-      console.log('page new')
 
-      if (typeof value === 'string' && maxPages > page) {
+      if (typeof value === 'string' && maxPages >= page) {
 
          setLoadStatus(prev => ({ ...prev, isLoad: true }))
 
