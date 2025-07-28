@@ -26,7 +26,7 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('ok1234')
+      console.log('ok12345')
 
       if (typeof value === 'string' && maxPages >= page) {
 
@@ -109,7 +109,7 @@ const Conclusions = (props) => {
             ) : (
                loadStatus?.message
             )}
-            <div ref={elementRef} style={{ height: '1px', width: '100%' }} className={s.point}>{loadStatus.isLoad && <Image src={loader} alt="log Out" width={200} height={100} className={s.loader} />}</div>
+            <div ref={elementRef} style={{ height: '3px', width: '100%' }} className={s.point}>{loadStatus.isLoad && <Image src={loader} alt="log Out" width={200} height={100} className={s.loader} />}</div>
          </div>
       </div>
    )
