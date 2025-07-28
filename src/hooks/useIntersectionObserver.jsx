@@ -39,8 +39,6 @@ const useIntersectionObserver = (callback, maxPages, options = {}) => {
    }, [handleIntersection, root, rootMargin, threshold]);
 
    useEffect(() => {
-      console.log('maxPages', maxPages)
-      console.log('currentPage', currentPage)
       if (isIntersecting && maxPages >= currentPage) {
          callback(currentPage);
          setCurrentPage(prev => prev + 1)
