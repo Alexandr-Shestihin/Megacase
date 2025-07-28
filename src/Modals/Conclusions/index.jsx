@@ -22,10 +22,6 @@ const Conclusions = (props) => {
    const { activeID, handler } = useMenuSelection('all');
    const [data, setData] = useState([]);
 
-   /* console.log('----------------------')
-   console.log('data length', data.length)
-   console.log('data', data) */
-
    let [maxPages, setMaxPages] = useState(0);
 
    const getData = useCallback((value, count = 10, page = 1) => {
@@ -57,7 +53,7 @@ const Conclusions = (props) => {
                setLoadStatus({ message: e.message, isLoad: false });
             })
       }
-   }, [])
+   }, [maxPages])
 
    const { elementRef } = useIntersectionObserver(
       (page) => getData(activeID, 10, page),
