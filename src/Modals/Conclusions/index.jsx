@@ -89,7 +89,7 @@ const Conclusions = (props) => {
                title='Sented'
             >{t("total.sent")}</Button>
             <Button
-               id={'err'}
+               id={'error'}
                active={activeID === 'err' && true}
                className={`${s.btn} btn-text`}
                title='Error'
