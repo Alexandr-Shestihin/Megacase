@@ -49,7 +49,7 @@ const Conclusions = (props) => {
                setLoadStatus({ message: e.message, isLoad: false });
             })
       }
-   }, [maxPages])
+   }, [maxPages, setMaxPages])
 
    const { elementRef } = useIntersectionObserver(
       (page) => getData(activeID, 10, page),
@@ -61,7 +61,7 @@ const Conclusions = (props) => {
    useEffect(() => {
       setMaxPages(0);
       getData(activeID);
-   }, [activeID])
+   }, [activeID, getData])
 
    return (
       <div className={s.container}>
