@@ -26,7 +26,7 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('ok1234567')
+      console.log('ok12345678')
 
       console.log('---------')
       console.log('activeID', activeID);
@@ -73,8 +73,11 @@ const Conclusions = (props) => {
 
    useEffect(() => {
       setData([])
-      setMaxPages(2);
-      getData(activeID);
+      setMaxPages(() => {
+         getData(activeID); // Вызываем getData внутри коллбэка setMaxPages
+         return 2;
+     });
+      /* getData(activeID); */
    }, [activeID])
 
    return (
