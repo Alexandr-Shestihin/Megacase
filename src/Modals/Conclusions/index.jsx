@@ -61,6 +61,7 @@ const Conclusions = (props) => {
    );
 
    useEffect(() => {
+      console.log('---------')
       console.log('activeID', activeID);
       console.log('maxPages', maxPages);
       console.log('data', data);
