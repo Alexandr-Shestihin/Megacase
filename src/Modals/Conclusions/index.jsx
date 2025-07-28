@@ -26,11 +26,11 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('-------------------')
       console.log('maxPages', maxPages)
       console.log('page', page)
+      console.log('point')
 
-      if (typeof value === 'string' && maxPages >= page) {
+      if (typeof value === 'string' && maxPages > page) {
 
          setLoadStatus(prev => ({ ...prev, isLoad: true }))
 
@@ -64,13 +64,13 @@ const Conclusions = (props) => {
 
    useEffect(() => {
       /* setData([]) */
-      /* setMaxPages(0) */;
+      /* setMaxPages(0); */
       getData(activeID);
    }, [activeID])
 
    return (
       <div className={s.container}>
-         <div className="pageTitle">{t("total.historyConclusions")} <span className="pageSubtitle">{t("total.skins")}</span></div>
+         <div className="pageTitle">{t("total.historyConclusions")} <span className="pageSubtitle">{t("total.skins")}</span> </div>
          <div className="row mt16" onClick={handler}>
             <Button
                id={'all'}
