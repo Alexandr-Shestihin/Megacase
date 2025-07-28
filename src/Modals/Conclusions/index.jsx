@@ -22,7 +22,9 @@ const Conclusions = (props) => {
    const { activeID, handler } = useMenuSelection('all');
    const [data, setData] = useState([]);
 
-   console.log('data', data.length)
+   console.log('----------------------')
+   console.log('data length', data.length)
+   console.log('data', data)
 
    let maxPages = 0;
 
