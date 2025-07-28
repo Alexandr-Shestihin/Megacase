@@ -22,12 +22,12 @@ const Conclusions = (props) => {
    const { activeID, handler } = useMenuSelection('all');
    const [data, setData] = useState([]);
 
-   let [maxPages, setMaxPages] = useState(2);
+   let [maxPages, setMaxPages] = useState(0);
    const isInitialLoad = useRef(true);
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('--------кккккк1-----------')
+      console.log('--------0000-----------')
       console.log('maxPages', maxPages)
       console.log('page', page)
 
