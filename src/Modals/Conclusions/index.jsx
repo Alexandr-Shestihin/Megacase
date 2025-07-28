@@ -32,6 +32,7 @@ const Conclusions = (props) => {
       console.log('activeID', activeID);
       console.log('data', data);
       console.log('maxPages', maxPages);
+      console.log('page', page);
 
       console.log('typeof value === string', typeof value === 'string');
       console.log('maxPages >= page', maxPages >= page);
