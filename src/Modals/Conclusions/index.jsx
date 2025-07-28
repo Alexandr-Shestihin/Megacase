@@ -27,7 +27,7 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('--------new-----------')
+      console.log('--------new12-----------')
       console.log('maxPages', maxPages)
       console.log('page', page);
 
@@ -58,7 +58,7 @@ const Conclusions = (props) => {
 
    const { elementRef } = useIntersectionObserver(
       (page) => {
-         if (isInitialLoad.current) {
+         if (!isInitialLoad.current) {
             getData(activeID, 10, page);
          }
       },
