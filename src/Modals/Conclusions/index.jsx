@@ -20,11 +20,14 @@ const Conclusions = (props) => {
 
    const { t } = useTranslation();
    const { activeID, handler } = useMenuSelection('all');
-   const [data, setData] = useState([]);
+   const [data, DDD] = useState([]);
 
    let [maxPages, setMaxPages] = useState(0);
 
    const getData = useCallback((value, count = 10, page = 1) => {
+
+      console.log('maxPages', maxPages)
+      console.log('page', page)
 
       if (typeof value === 'string' && maxPages < page) {
 
@@ -34,7 +37,6 @@ const Conclusions = (props) => {
             .then(response => {
                setMaxPages(Math.ceil(response.pagination.totalItems / count));
                console.log('Math.ceil(response.pagination.totalItems / count): ', Math.ceil(response.pagination.totalItems / count));
-               console.log('new')
                setData((prev) => {
                   const newData = [...prev, ...response.data];
                   // Фильтруем, чтобы удалить дубликаты (если они вдруг появились)
@@ -60,6 +62,7 @@ const Conclusions = (props) => {
    );
 
    useEffect(() => {
+      /* maxPages([]) */
       setMaxPages(0);
       getData(activeID);
    }, [activeID])
