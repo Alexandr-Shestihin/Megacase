@@ -22,14 +22,17 @@ const Conclusions = (props) => {
    const { activeID, handler } = useMenuSelection('all');
    const [data, setData] = useState([]);
 
+   let maxPages = 0;
+
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      if (typeof value === 'string') {
+      if (typeof value === 'string' && maxPages < page) {
 
          setLoadStatus(prev => ({ ...prev, isLoad: true }))
 
          API.getHistorySkins(page, count, value)
             .then(response => {
+               maxPages = Math.ceil(response.pagination.totalItems / count)
                setData(prev => [...prev, ...response.data]);
                setLoadStatus({ message: '', isLoad: false });
             })
@@ -38,7 +41,6 @@ const Conclusions = (props) => {
                setLoadStatus({ message: e.message, isLoad: false });
             })
       }
-
    }, [])
 
    const { elementRef } = useIntersectionObserver(
