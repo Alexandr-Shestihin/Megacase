@@ -26,7 +26,10 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('ok1234')
+      console.log('ok12345')
+
+      console.log('typeof value === string', typeof value === 'string');
+      console.log('maxPages >= page', maxPages >= page);
 
       if (typeof value === 'string' && maxPages >= page) {
 
