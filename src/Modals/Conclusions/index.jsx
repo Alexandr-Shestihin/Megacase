@@ -19,11 +19,11 @@ const Conclusions = (props) => {
    let [maxPages, setMaxPages] = useState(2);
 
    const getData = useCallback((value, count = 10, page = 1) => {
-      console.log('---------New----------');
+      console.log('---------New1----------');
       console.log('maxPages', maxPages);
       console.log('page', page);
 
-      if (typeof value === 'string' && maxPages > page) { // Использован оператор >
+      if (typeof value === 'string' && maxPages >= page) { // Использован оператор >
          setLoadStatus(prev => ({ ...prev, isLoad: true }));
 
          API.getHistorySkins(page, count, value)
