@@ -22,6 +22,8 @@ const Conclusions = (props) => {
    const { activeID, handler } = useMenuSelection('all');
    const [data, setData] = useState([]);
 
+   console.log('data', data.length)
+
    let maxPages = 0;
 
    const getData = useCallback((value, count = 10, page = 1) => {
