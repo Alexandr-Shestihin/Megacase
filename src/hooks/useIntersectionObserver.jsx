@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-const useIntersectionObserver = (callback, options = {}) => {
-   const [currentPage, setCurrentPage] = useState(1)
+const useIntersectionObserver = (callback, maxPages, options = {}) => {
+   const [currentPage, setCurrentPage] = useState(1);
    const { root, rootMargin = '0px', threshold = 0 } = options;
    const [isIntersecting, setIsIntersecting] = useState(false);
    const observer = useRef(null);
@@ -39,7 +39,7 @@ const useIntersectionObserver = (callback, options = {}) => {
    }, [handleIntersection, root, rootMargin, threshold]);
 
    useEffect(() => {
-      if (isIntersecting) {
+      if (isIntersecting && maxPages <= currentPage) {
          callback(currentPage);
          setCurrentPage(prev => prev + 1)
          setIsIntersecting(false);

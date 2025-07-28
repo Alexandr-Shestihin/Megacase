@@ -26,7 +26,10 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('ok1234567')
+      console.log('ok12345678')
+
+      console.log('page', page)
+      console.log('maxPages', maxPages)
 
       if (typeof value === 'string' && maxPages >= page) {
 
@@ -54,6 +57,7 @@ const Conclusions = (props) => {
 
    const { elementRef } = useIntersectionObserver(
       (page) => getData(activeID, 10, page),
+      maxPages,
       {
          threshold: 0.1,
       }
