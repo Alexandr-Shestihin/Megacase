@@ -40,7 +40,8 @@ const Conclusions = (props) => {
 
          API.getHistorySkins(page, count, value)
             .then(response => {
-               setMaxPages(Math.ceil(response.pagination.totalItems / count))
+               setMaxPages(Math.ceil(response.pagination.totalItems / count));
+               console.log('Math.ceil(response.pagination.totalItems / count', Math.ceil(response.pagination.totalItems / count));
                setData((prev) => {
                   const newData = [...prev, ...response.data];
                   // Фильтруем, чтобы удалить дубликаты (если они вдруг появились)
