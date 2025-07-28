@@ -20,7 +20,7 @@ const Conclusions = (props) => {
 
    const { t } = useTranslation();
    const { activeID, handler } = useMenuSelection('all');
-   const [data, DDD] = useState([]);
+   const [data, setData] = useState([]);
 
    let [maxPages, setMaxPages] = useState(0);
 
@@ -62,7 +62,7 @@ const Conclusions = (props) => {
    );
 
    useEffect(() => {
-      /* maxPages([]) */
+      /* setData([]) */
       setMaxPages(0);
       getData(activeID);
    }, [activeID])
