@@ -64,6 +64,7 @@ const Conclusions = (props) => {
    );
 
    useEffect(() => {
+      console.log('useEffect after')
        /* setData([]) */
       /* setMaxPages(0) */;
       if (isInitialLoad.current) {
