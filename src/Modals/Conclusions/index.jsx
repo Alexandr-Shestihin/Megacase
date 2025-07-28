@@ -37,7 +37,14 @@ const Conclusions = (props) => {
          API.getHistorySkins(page, count, value)
             .then(response => {
                maxPages = Math.ceil(response.pagination.totalItems / count)
-               setData(prev => [...prev, ...response.data]);
+               setData((prev) => {
+                  const newData = [...prev, ...response.data];
+                  // Фильтруем, чтобы удалить дубликаты (если они вдруг появились)
+                  const uniqueData = newData.filter((item, index) =>
+                     newData.findIndex(i => i.id === item.id) === index
+                  );
+                  return uniqueData;
+               });
                setLoadStatus({ message: '', isLoad: false });
             })
             .catch((e) => {
@@ -68,7 +75,6 @@ const Conclusions = (props) => {
                active={activeID === 'all' && true}
                className={`${s.btn} btn-text`}
                title='Trade URL'
-               onClick={getData}
             >{t("total.all")}</Button>
             <Button
                id={'received'}
