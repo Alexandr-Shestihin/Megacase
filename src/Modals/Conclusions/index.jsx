@@ -22,16 +22,16 @@ const Conclusions = (props) => {
    const { activeID, handler } = useMenuSelection('all');
    const [data, setData] = useState([]);
 
-   let [maxPages, setMaxPages] = useState(0);
+   let [maxPages, setMaxPages] = useState(2);
    const isInitialLoad = useRef(true);
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('--------0000-----------')
+      console.log('--------новое условие-----------')
       console.log('maxPages', maxPages)
       console.log('page', page)
 
-      if (typeof value === 'string' && maxPages >= page) {
+      if (maxPages === 0 || page < maxPages) {
 
          setLoadStatus(prev => ({ ...prev, isLoad: true }))
 
