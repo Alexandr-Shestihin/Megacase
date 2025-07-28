@@ -23,15 +23,14 @@ const Conclusions = (props) => {
    const [data, setData] = useState([]);
 
    let [maxPages, setMaxPages] = useState(2);
-   const isInitialLoad = useRef(true);
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
-      console.log('--------new12-----------')
+      console.log('-------------------')
       console.log('maxPages', maxPages)
-      console.log('page', page);
+      console.log('page', page)
 
-      if (typeof value === 'string' && (maxPages === 0 || page < maxPages)) {
+      if (typeof value === 'string' && maxPages >= page) {
 
          setLoadStatus(prev => ({ ...prev, isLoad: true }))
 
@@ -54,29 +53,20 @@ const Conclusions = (props) => {
                setLoadStatus({ message: e.message, isLoad: false });
             })
       }
-   }, [maxPages, setMaxPages]);
+   }, [maxPages, setMaxPages])
 
    const { elementRef } = useIntersectionObserver(
-      (page) => {
-         if (!isInitialLoad.current) {
-            getData(activeID, 10, page);
-         }
-      },
+      (page) => getData(activeID, 10, page),
       {
          threshold: 0.1,
       }
    );
 
    useEffect(() => {
-      console.log('useEffect after')
-       /* setData([]) */
+      /* setData([]) */
       /* setMaxPages(0) */;
-      if (isInitialLoad.current) {
-         console.log('useEffect')
-         isInitialLoad.current = false;
-         getData(activeID);
-      }
-   }, [activeID, getData]);
+      getData(activeID);
+   }, [activeID])
 
    return (
       <div className={s.container}>
