@@ -26,6 +26,7 @@ const Conclusions = (props) => {
 
    const getData = useCallback((value, count = 10, page = 1) => {
 
+      console.log('-------------------')
       console.log('maxPages', maxPages)
       console.log('page', page)
       console.log('page new')
