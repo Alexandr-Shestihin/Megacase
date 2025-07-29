@@ -5,7 +5,7 @@ import I18nextProvider from '@/Total/I18nextProvider';
 import TranslationReady from '@/Total/TranslationReady';
 
 import { ModalProvider } from "@/Total/ModalContext";
-import ModalContainer from "@/Components/ModalContainer";
+import ModalContainer from "@/Modals/ModalContainer";
 
 const robotoCondensed = Roboto_Condensed({
    subsets: ['latin'],

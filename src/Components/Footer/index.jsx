@@ -5,6 +5,7 @@ import s from './Footer.module.css';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import useAuthStore from '../../../store/useAuthStore';
+import { useModalContext } from '@/Total/ModalContext';
 
 const logo = '/assets/img/logo/mainLogoUnactive.svg';
 const tgIcon = '/assets/icons/tg.svg';
@@ -18,6 +19,7 @@ const Footer = (props) => {
    const { isAuth } = useAuthStore();
 
    const { t } = useTranslation();
+   const { openModal, activeModal } = useModalContext(); // Получаем openModal из контекста
 
    //Если пользователь не авторизирован, то не показываем этот компонент
    if (!isAuth) return
@@ -37,7 +39,7 @@ const Footer = (props) => {
             </div>
             <div className={s.column}>
                <a href="#">{t("footer.links.link4")}</a>
-               <a href="#">{t("footer.links.link5")}</a>
+               <div onClick={() => openModal("honestyCheck")}>{t("footer.links.link5")}</div>
                <a href="#">{t("footer.links.link6")}</a>
             </div>
          </div>

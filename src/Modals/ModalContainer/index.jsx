@@ -1,13 +1,13 @@
 "use client"
 
 import React from 'react';
-import s from './ModalContainer.module.css';
-import { Modal } from '..';
 import Conclusions from '@/Modals/Conclusions';
 import { useModalContext } from "@/Total/ModalContext";
 import SkinOutput from '@/Modals/SkinOutput';
 import HistoryGames from '@/Modals/HistoryGames';
 import SteamTadeURL from '@/Modals/SteamTadeURL';
+import HonestyCheck from '@/Modals/HonestyCheck';
+import Modal from '../Modal';
 
 const ModalContainer = () => {
    const { activeModal, closeModal } = useModalContext(); // Используем useModalContext
@@ -40,6 +40,13 @@ const ModalContainer = () => {
             setActive={closeModal}
          >
             <SteamTadeURL />
+         </Modal>
+
+         <Modal
+            active={activeModal === 'honestyCheck'}
+            setActive={closeModal}
+         >
+            <HonestyCheck />
          </Modal>
 
       </>

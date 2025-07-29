@@ -43,17 +43,20 @@
     flex-direction: column;
  }
 
- .column a:not(first-child) {
+ .column>* {
+    cursor: pointer;
+ }
 
+ .column>*:not(first-child) {
     margin-top: 10px;
     white-space: nowrap;
  }
 
- .column a:hover {
+ .column>*:hover {
     color: var(--color-1)
  }
 
- .column a:active {
+ .column>*:active {
     color: var(--main-third);
     font-weight: var(--font-weight-600);
  }

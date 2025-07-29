@@ -111,7 +111,16 @@
       "historyConclusions": "History of conclusions",
       "skins": "Skins",
       "save": "Save",
-      "change": "Change"
+      "change": "Change",
+      "required": "Required",
+      "minLength": "Not enough characters",
+      "alphanumeric": "English letters and numbers only",
+      "numeric": "Only a number"
+   },
+   "honestyCheck": {
+      "title": "Honesty check",
+      "subtitle": "How to check the game?",
+      "result": "Hash result (Calculated)"
    },
    "message": {
       "copyText": {

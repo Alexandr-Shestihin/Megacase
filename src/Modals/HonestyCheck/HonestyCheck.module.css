@@ -1,0 +1,48 @@
+  .modalGetSkin {
+     position: relative;
+     width: 600px;
+     min-height: 150px;
+     transition: min-height .4s ease-in-out;
+  }
+
+  .btnSave {
+     width: 46%;
+     padding: 22px 0;
+     display: flex;
+     justify-content: center;
+     color: var(--color-1);
+  }
+
+  .btnChange {
+     background: var(--bg-2);
+  }
+
+  @media screen and (max-width: 705px) {
+     .btnSave {
+        padding: 10px;
+     }
+  }
+
+  @media screen and (max-width: 645px) {
+
+     .notification {
+        position: absolute;
+        margin-top: 20px;
+        width: calc(100% + 20px);
+        left: -10px;
+        bottom: 0;
+     }
+
+     .modalGetSkin {
+        width: 100%;
+        height: 100%;
+     }
+  }
+
+  @media screen and (max-width: 425px) {
+     .title {
+        display: flex;
+        flex-direction: column;
+        line-height: 25px;
+     }
+  }
