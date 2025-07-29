@@ -76,28 +76,28 @@ const HistoryGames = (props) => {
                active={activeID === 'all' && true}
                className={`${s.btn} btn-text`}
                title='Trade URL'
-            >{t("total.all")}</Button>
+            >{t("historyGames.all")}</Button>
             <Button
                id={'received'}
                active={activeID === 'received' && true}
                className={`${s.btn} btn-text`}
                title='Accepted'
-            >{t("total.received")}</Button>
+            >{t("historyGames.received")}</Button>
             <Button
                id={'sent'}
                active={activeID === 'sent' && true}
                className={`${s.btn} btn-text`}
                title='Sented'
-            >{t("total.sent")}</Button>
+            >{t("historyGames.sent")}</Button>
             <Button
                id={'error'}
                active={activeID === 'error' && true}
                className={`${s.btn} btn-text`}
                title='Error'
-            >{t("total.error")}</Button>
+            >{t("historyGames.error")}</Button>
          </div>
 
-         <div className={s.rowContainer}>
+         <div className={`mt8 ${s.rowContainer}`}>
             <div>{t("historyGames.type")}</div>
             <div>{t("historyGames.bet")}</div>
             <div>{t("historyGames.chance")}</div>
