@@ -19,7 +19,7 @@ const HistoryGames = (props) => {
    });
 
    const { t } = useTranslation();
-   const { activeID, handler } = useMenuSelection('all');
+   const { activeID, handler } = useMenuSelection('historyGamesAll');
    const [data, setData] = useState([]);
 
    let [maxPages, setMaxPages] = useState(0);
