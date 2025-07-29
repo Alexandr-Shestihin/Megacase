@@ -93,6 +93,10 @@
       "prize": "Prize",
       "date": "Date"
    },
+   "steamTadeURL": {
+      "title": "Steam Tade URL",
+      "subtitle": "Where can I find the link?"
+   },
    "auth": {
       "title": "Authorization",
       "subtitle": "Login to your account",
@@ -105,7 +109,9 @@
       "sent": "Sent",
       "error": "Error",
       "historyConclusions": "History of conclusions",
-      "skins": "Skins"
+      "skins": "Skins",
+      "save": "Save",
+      "change": "Change"
    },
    "message": {
       "copyText": {

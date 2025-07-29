@@ -87,12 +87,12 @@ const Header = (props) => {
             <div className={s.imgContainer}><Image src={mainLogo} alt="Logo" width={200} height={100} className="img" /></div>
             <div className={s.btnContainer}>
                <Button
-                  id={'URL'}
-                  active={activeModal === 'URL' && true}
+                  id={'steamTadeURL'}
+                  active={activeModal === 'steamTadeURL' && true}
                   className={`${s.btn} btn-text`}
                   activeI={linkActive}
                   inactiveI={linkUnactive}
-                  onClick={() => openModal("URL")}
+                  onClick={() => openModal("steamTadeURL")}
                ><span className="innerText">Trade URL</span></Button>
 
                <Button

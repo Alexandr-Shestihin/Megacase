@@ -9,18 +9,6 @@
      min-height: 635px;
   }
 
-  .linkCopy {
-     width: 100%;
-     background: var(--bg-1);
-     padding: 17px 16px;
-     color: var(--color-2);
-     white-space: nowrap;
-     text-overflow: ellipsis;
-     overflow: hidden;
-     border-radius: var(--border-r16);
-     cursor: pointer;
-  }
-
   .takePopUpSkin {
      padding: 19px 0;
      width: 100%;
@@ -47,7 +35,7 @@
      align-items: center;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 645px) {
      .notification {
         position: absolute;
         margin-top: 20px;

@@ -89,7 +89,9 @@
       "sent": "Отправлен",
       "error": "Ошибка",
       "historyConclusions": "История выводов",
-      "skins": "Скины"
+      "skins": "Скины",
+      "save": "Сохранить",
+      "change": "Изменить"
    },
    "historyGames": {
       "all": "Все игры",
@@ -100,6 +102,10 @@
       "chance": "Шанс",
       "prize": "Приз",
       "date": "Дата"
+   },
+   "steamTadeURL": {
+      "title": "Steam Tade URL",
+      "subtitle": "Где найти ссылку?"
    },
    "auth": {
       "title": "Авторизация",

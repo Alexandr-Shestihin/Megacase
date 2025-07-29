@@ -409,6 +409,19 @@ img,
    }
 }
 
+/* input со ссылкой */
+.linkCopy {
+   width: 100%;
+   background: var(--bg-1);
+   padding: 17px 16px;
+   color: var(--color-2);
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   border-radius: var(--border-r16);
+   cursor: pointer;
+}
+
 input[type="radio"] {
    appearance: none;
    position: relative;

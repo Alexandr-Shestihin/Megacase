@@ -40,7 +40,7 @@ const SkinOutput = (props) => {
             <div> </div>
          </div>}
 
-         <input onChange={(e) => setModalInput(e.target.value)} value={modalInput} className={`mt26 ${s.linkCopy}`} />
+         <input onChange={(e) => setModalInput(e.target.value)} value={modalInput} className={`mt26 linkCopy`} />
          {isActive || <Button onClick={() => setIsActive(true)} className={`mt8 ${s.takePopUpSkin} btn-3 btn-text`} activeI={downloadActive} inactiveI={downloadActive} >{t("openCasesBlock.take")}</Button>}
          {isActive && <Button className={`mt8 ${s.takePopUpSkin} btn-3 btn-text`} activeI={downloadActive} inactiveI={downloadActive} disabled={!isChecked} >{t("openCasesBlock.take")}</Button>}
          <div className={`${s.notification}`} dangerouslySetInnerHTML={{ __html: t("openCasesBlock.notification") }}></div>

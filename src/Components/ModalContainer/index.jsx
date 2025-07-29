@@ -7,6 +7,7 @@ import Conclusions from '@/Modals/Conclusions';
 import { useModalContext } from "@/Total/ModalContext";
 import SkinOutput from '@/Modals/SkinOutput';
 import HistoryGames from '@/Modals/HistoryGames';
+import SteamTadeURL from '@/Modals/SteamTadeURL';
 
 const ModalContainer = () => {
    const { activeModal, closeModal } = useModalContext(); // Используем useModalContext
@@ -32,6 +33,13 @@ const ModalContainer = () => {
             setActive={closeModal}
          >
             <HistoryGames />
+         </Modal>
+
+         <Modal
+            active={activeModal === 'steamTadeURL'}
+            setActive={closeModal}
+         >
+            <SteamTadeURL />
          </Modal>
 
       </>
