@@ -72,29 +72,23 @@ const HistoryGames = (props) => {
          <div className="pageTitle">{t("rightMemu.historyGames")}</div>
          <div className="row mt16" onClick={handler}>
             <Button
-               id={'all'}
-               active={activeID === 'all' && true}
+               id={'historyGamesAll'}
+               active={activeID === 'historyGamesAll' && true}
                className={`${s.btn} btn-text`}
                title='Trade URL'
             >{t("historyGames.all")}</Button>
             <Button
-               id={'received'}
-               active={activeID === 'received' && true}
+               id={'historyGamesCases'}
+               active={activeID === 'historyGamesCases' && true}
                className={`${s.btn} btn-text`}
                title='Accepted'
-            >{t("historyGames.received")}</Button>
+            >{t("historyGames.cases")}</Button>
             <Button
-               id={'sent'}
-               active={activeID === 'sent' && true}
+               id={'historyGamesSent'}
+               active={activeID === 'historyGamesSent' && true}
                className={`${s.btn} btn-text`}
                title='Sented'
-            >{t("historyGames.sent")}</Button>
-            <Button
-               id={'error'}
-               active={activeID === 'error' && true}
-               className={`${s.btn} btn-text`}
-               title='Error'
-            >{t("historyGames.error")}</Button>
+            >{t("historyGames.upgrade")}</Button>
          </div>
 
          <div className={`mt8 ${s.rowContainer}`}>
