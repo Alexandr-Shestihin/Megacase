@@ -91,6 +91,16 @@
       "historyConclusions": "История выводов",
       "skins": "Скины"
    },
+   "historyGames": {
+      "all": "Все игры",
+      "cases": "Кейсы",
+      "upgrade": "Апрейды",
+      "type": "Тип игры",
+      "bet": "Ставка",
+      "chance": "Шанс",
+      "prize": "Приз",
+      "date": "Дата"
+   },
    "auth": {
       "title": "Авторизация",
       "subtitle": "Вход в аккаунт",

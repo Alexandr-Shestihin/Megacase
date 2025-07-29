@@ -83,6 +83,16 @@
          "item3": "Improvements"
       }
    },
+   "historyGames": {
+      "all": "All games",
+      "cases": "Cases",
+      "upgrade": "Upgrades",
+      "type": "Game type",
+      "bet": "Bid",
+      "chance": "Chance",
+      "prize": "Prize",
+      "date": "Date"
+   },
    "auth": {
       "title": "Authorization",
       "subtitle": "Login to your account",
@@ -97,7 +107,6 @@
       "historyConclusions": "History of conclusions",
       "skins": "Skins"
    },
-   
    "message": {
       "copyText": {
          "success": "Text copied to clipboard!",

@@ -4,8 +4,9 @@ import React from 'react';
 import s from './ModalContainer.module.css';
 import { Modal } from '..';
 import Conclusions from '@/Modals/Conclusions';
-import { useModalContext } from "@/Total/ModalContext"; // Импортируем useModalContext из правильного пути
+import { useModalContext } from "@/Total/ModalContext";
 import SkinOutput from '@/Modals/SkinOutput';
+import HistoryGames from '@/Modals/HistoryGames';
 
 const ModalContainer = () => {
    const { activeModal, closeModal } = useModalContext(); // Используем useModalContext
@@ -25,7 +26,14 @@ const ModalContainer = () => {
          >
             <SkinOutput />
          </Modal>
-         
+
+         <Modal
+            active={activeModal === 'historyGames'}
+            setActive={closeModal}
+         >
+            <HistoryGames />
+         </Modal>
+
       </>
    );
 };

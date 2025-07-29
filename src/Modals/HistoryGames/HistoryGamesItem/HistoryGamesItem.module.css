@@ -1,0 +1,29 @@
+.container {
+   background: var(--bg-2);
+   padding: 9px 22px;
+   border-radius: var(--border-r20);
+   justify-content: space-between;
+   align-items: center;
+}
+
+.container>* {
+   color: var(--color-2);
+}
+
+.imgContainer {
+   width: 38px;
+   height: 38px;
+}
+
+.imgContainer Image {
+   width: 100%;
+   height: 100%;
+   border: 1px solid red;
+}
+
+.name {
+   width: 131px;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}

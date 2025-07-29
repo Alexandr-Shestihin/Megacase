@@ -1,17 +1,17 @@
 "use client"
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import s from './Conclusions.module.css';
+import s from './HistoryGames.module.css';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/Components';
 import { useMenuSelection } from '@/hooks/useMenuSelection';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import API from '@/API';
-import ConclusionsItem from './ConclusionsItem';
+import HistoryGamesItem from './HistoryGamesItem';
 import loader from '@/../public/assets/loader.gif';
 import Image from 'next/image';
 
-const Conclusions = (props) => {
+const HistoryGames = (props) => {
 
    const [loadStatus, setLoadStatus] = useState({
       isLoad: false,
@@ -69,7 +69,7 @@ const Conclusions = (props) => {
 
    return (
       <div className={s.container}>
-         <div className="pageTitle">{t("total.historyConclusions")} <span className="pageSubtitle">{t("total.skins")}</span> </div>
+         <div className="pageTitle">{t("rightMemu.historyGames")}</div>
          <div className="row mt16" onClick={handler}>
             <Button
                id={'all'}
@@ -96,10 +96,19 @@ const Conclusions = (props) => {
                title='Error'
             >{t("total.error")}</Button>
          </div>
+
+         <div className={s.rowContainer}>
+            <div>{t("historyGames.type")}</div>
+            <div>{t("historyGames.bet")}</div>
+            <div>{t("historyGames.chance")}</div>
+            <div>{t("historyGames.prize")}</div>
+            <div>{t("historyGames.date")}</div>
+         </div>
+
          <div className={`mt12 ${s.itemContainer}`}>
             {data?.length > 0 ? (
                data.map(el => (
-                  <ConclusionsItem
+                  <HistoryGamesItem
                      key={el?.id}
                      name={el?.itemName}
                      price={el?.price}
@@ -117,4 +126,4 @@ const Conclusions = (props) => {
    )
 }
 
-export default Conclusions;
+export default HistoryGames;
