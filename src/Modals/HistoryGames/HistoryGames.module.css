@@ -32,6 +32,7 @@
 
  .rowContainer {
     display: flex;
+    justify-content: space-between;
     gap: 60px;
     padding: 5px 35px;
     background: var(--bg-2);
