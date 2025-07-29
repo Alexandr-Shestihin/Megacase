@@ -5,22 +5,29 @@
      transition: min-height .4s ease-in-out;
   }
 
-  .btnSave {
-     width: 46%;
-     padding: 22px 0;
-     display: flex;
-     justify-content: center;
-     color: var(--color-1);
-  }
-
   .btnChange {
      background: var(--bg-2);
   }
 
-  @media screen and (max-width: 705px) {
-     .btnSave {
-        padding: 10px;
-     }
+  .resultBlock {
+     margin-top: 40px;
+     position: relative;
+     padding: 17px;
+     border-radius: var(--border-r16);
+     background: var(--bg-2);
+  }
+
+  .label {
+     position: absolute;
+     top: -20px;
+  }
+
+  .resultBlock .img {
+     position: absolute;
+     top: 17px;
+     right: 17px;
+     width: 20px;
+     height: 20px;
   }
 
   @media screen and (max-width: 645px) {

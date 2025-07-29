@@ -153,12 +153,6 @@ img,
    --font-weight-500: 500px;
    --font-weight-400: 400px;
 
-   /* line-height */
-   /* --line-height-32: 32px;
-   --line-height-24: 24px;
-   --line-height-20: 20px;
-   --line-height-16: 16px; */
-
    /* font-size */
    --font-size-28: 28px;
    --font-size-22: 22px;
@@ -468,6 +462,7 @@ input[type="radio"]:checked+label {
 
 *::-webkit-scrollbar {
     width: 4px; /* Ширина скроллбара */
+    height: 4px;
     margin-left: 40px;
 }
 

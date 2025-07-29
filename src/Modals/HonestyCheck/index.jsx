@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import s from './HonestyCheck.module.css';
+import Image from 'next/image';
 
 import { useTranslation } from 'react-i18next';
 
@@ -8,10 +9,11 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-import {
-   Button,
-} from '@/Components/index';
 import Input from '@/Total/FormElements/Input';
+import { handleClick } from '@/utils';
+import { useDebounce } from '@/hooks/useDebounce';
+
+const copyUnactive = '/assets/icons/copyUnactive.svg';
 
 const HonestyCheck = (props) => {
 
@@ -40,26 +42,43 @@ const HonestyCheck = (props) => {
 
    const { t } = useTranslation();
 
-   const { register, handleSubmit, formState: { errors }, getValues, setValue, reset} = useForm({
+   const { register, handleSubmit, formState: { errors }, getValues, setValue, reset, trigger } = useForm({
       resolver: yupResolver(schema),
       defaultValues: {
          clientSeed: '',
          serverSeed: '',
          salt: '',
          publicHash: ''
-      }
+      },
+      mode: 'onBlur',
    });
 
-   const onSubmit = (data) => {
-      console.log("Form data:", data);
+   const onSubmit = () => {
       console.log("getValues()", getValues()); // Проверьте значения здесь
       console.log("hookformErr", errors);
-      reset();
+      /* reset(); */
       // Здесь вы можете отправить данные формы
    };
 
    window.getValues = getValues
    window.hookformErr = errors
+
+   // Debounced function to get Hash result (Calculated)
+   const debouncedValidate = useDebounce(async () => {
+      const isValid = await trigger(); // Запускаем валидацию и получаем результат
+      if (isValid) { // Проверяем, прошла ли валидация успешно
+         // Здесь выполняется логика, когда все поля валидны
+         console.log("Form is valid! Performing logic...");
+         // Пример логики: вызов функции для расчета результата
+         const result = calculateResult(getValues());
+         setCalculationResult(result); // Сохраняем результат в состояние
+         console.log("Calculation Result:", result);
+         // Здесь можно вызвать функцию для отправки данных на сервер
+      } else {
+         console.log("Form has errors. Validation failed.");
+         setCalculationResult(null); // Сбрасываем результат, если есть ошибки
+      }
+   }, 400);
 
    return (
       <div className={`${s.modalGetSkin}`}>
@@ -72,7 +91,8 @@ const HonestyCheck = (props) => {
             register={register}
             /* label={'Client Seed'} */
             placeholder={'Client Seed'}
-            className={'mt26 linkCopy'}
+            className={'mt22 linkCopy'}
+            onBlur={debouncedValidate}
          />
 
          <Input
@@ -81,7 +101,8 @@ const HonestyCheck = (props) => {
             errors={errors}
             register={register}
             placeholder={'Server Seed'}
-            className={'mt26 linkCopy'}
+            className={'mt22 linkCopy'}
+            onBlur={debouncedValidate}
          />
 
          <Input
@@ -90,7 +111,8 @@ const HonestyCheck = (props) => {
             errors={errors}
             register={register}
             placeholder={'Salt'}
-            className={'mt26 linkCopy'}
+            className={'mt22 linkCopy'}
+            onBlur={debouncedValidate}
          />
 
          <Input
@@ -99,12 +121,16 @@ const HonestyCheck = (props) => {
             errors={errors}
             register={register}
             placeholder={'Public Hash'}
-            className={'mt26 linkCopy'}
+            className={'mt22 linkCopy'}
+            onBlur={debouncedValidate}
          />
 
-         <Button onClick={handleSubmit(onSubmit)} className={`${s.btnSave} btn-3 btn-text mt19`}>
-            Submit
-         </Button>
+         <div onClick={handleClick} className={`${s.resultBlock}`}>
+            <div className={s.label}>{t("honestyCheck.result")} </div>
+            e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+            <Image src={copyUnactive} alt="arrow" width={170} height={29} className={`img ${s.img}`} />
+         </div>
+
       </div>
    )
 }
