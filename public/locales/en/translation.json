@@ -122,6 +122,14 @@
       "subtitle": "How to check the game?",
       "result": "Hash result (Calculated)"
    },
+   "FAQ": {
+      "title": "FAQ",
+      "subtitle": "Frequently asked questions and answers"
+   },
+   "userAgreement": {
+      "title": "User Agreement",
+      "subtitle": ""
+   },
    "message": {
       "copyText": {
          "success": "Text copied to clipboard!",

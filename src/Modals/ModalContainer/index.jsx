@@ -7,8 +7,9 @@ import SkinOutput from '@/Modals/SkinOutput';
 import HistoryGames from '@/Modals/HistoryGames';
 import SteamTadeURL from '@/Modals/SteamTadeURL';
 import HonestyCheck from '@/Modals/HonestyCheck';
-import Modal from '../Modal';
-import FAQ from '../FAQ';
+import Modal from '@/Modals/Modal';
+import FAQ from '@/Modals/FAQ';
+import UserAgreement from '@/Modals/UserAgreement';
 
 const ModalContainer = () => {
    const { activeModal, closeModal } = useModalContext(); // Используем useModalContext
@@ -49,12 +50,19 @@ const ModalContainer = () => {
          >
             <HonestyCheck />
          </Modal>
-         
+
          <Modal
             active={activeModal === 'FAQ'}
             setActive={closeModal}
          >
             <FAQ />
+         </Modal>
+
+         <Modal
+            active={activeModal === 'userAgreement'}
+            setActive={closeModal}
+         >
+            <UserAgreement />
          </Modal>
 
       </>

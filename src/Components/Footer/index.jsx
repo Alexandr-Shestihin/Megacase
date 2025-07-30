@@ -33,7 +33,7 @@ const Footer = (props) => {
 
          <div className={s.links}>
             <div className={s.column}>
-               <a href="#">{t("footer.links.link1")}</a>
+               <div onClick={() => openModal("userAgreement")}>{t("footer.links.link1")}</div>
                <a href="#">{t("footer.links.link2")}</a>
                <a href="#">{t("footer.links.link3")}</a>
             </div>

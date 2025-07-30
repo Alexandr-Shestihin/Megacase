@@ -1,14 +1,19 @@
 import React from 'react';
 import s from './login.module.css';
+import { ModalProvider } from '@/Total/ModalContext';
+import ModalContainer from '@/Modals/ModalContainer';
 
 export const metadata = {
-    title: 'Authentication',
+   title: 'Authentication',
 };
 
 export default function LoginLayout({ children }) {
-    return (
-        <div className={s.wrapper}>
+   return (
+      <div className={s.wrapper}>
+         <ModalProvider>
             {children}
-        </div>
-    );
+            <ModalContainer />
+         </ModalProvider>
+      </div>
+   );
 }

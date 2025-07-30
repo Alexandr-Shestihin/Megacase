@@ -10,6 +10,7 @@ import {
    Button,
 } from '../../Components';
 import { useMenuSelection } from '@/hooks/useMenuSelection';
+import { useModalContext } from '@/Total/ModalContext';
 
 const tgActive = '../../assets/icons/tgActive.svg';
 const tgUnactive = '../../assets/icons/tgUnactive.svg';
@@ -49,6 +50,8 @@ export default function LoginPage() {
       }
    }, [isAuth, router]);
 
+   const { openModal, activeModal } = useModalContext(); // Получаем openModal из контекста
+
    return (
       <div className={s.container}>
          <h1 className='pageTitle'>{t("auth.title")} <span className="pageSubtitle">{t("auth.subtitle")}</span> </h1>
@@ -85,6 +88,8 @@ export default function LoginPage() {
                handleSteamLogin();
             }}
          >Steam</Button>
+
+         <div onClick={() => openModal("userAgreement")}>{t("footer.links.link1")}</div>
       </div>
    );
 }
