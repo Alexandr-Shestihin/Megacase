@@ -1,0 +1,46 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background: var(--bg-2);
+   border-radius: var(--border-r16);
+   padding: 20px 16px;
+   cursor: pointer;
+}
+
+.btn {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+}
+
+.spoilerCollapse {
+   height: 0;
+   overflow: hidden;
+   transition: height 1s;
+}
+
+.btn img {
+   width: 11px;
+   height: 11px;
+   transform: rotate(46deg);
+}
+
+.btn img.rotate {
+   transform: rotate(0deg);
+}
+
+@media screen and (max-width: 745px) {
+   .btn {
+      padding: 5px;
+   }
+
+   .btn span {
+      display: none;
+   }
+
+   .spoilerItemHead {
+      font-size: 16px;
+      line-height: 20px;
+   }
+}

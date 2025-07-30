@@ -8,6 +8,7 @@ import HistoryGames from '@/Modals/HistoryGames';
 import SteamTadeURL from '@/Modals/SteamTadeURL';
 import HonestyCheck from '@/Modals/HonestyCheck';
 import Modal from '../Modal';
+import FAQ from '../FAQ';
 
 const ModalContainer = () => {
    const { activeModal, closeModal } = useModalContext(); // Используем useModalContext
@@ -47,6 +48,13 @@ const ModalContainer = () => {
             setActive={closeModal}
          >
             <HonestyCheck />
+         </Modal>
+         
+         <Modal
+            active={activeModal === 'FAQ'}
+            setActive={closeModal}
+         >
+            <FAQ />
          </Modal>
 
       </>

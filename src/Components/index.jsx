@@ -25,3 +25,4 @@ export {default as BtnBurger} from './BtnBurger';
 export {default as MenuMobile} from './MenuMobile';
 export {default as MobileMenuItem} from './MobileMenuItem';
 export {default as MobileMenu} from './MobileMenu';
+export {default as SpoilerItem} from './SpoilerItem';
