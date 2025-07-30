@@ -12,7 +12,8 @@ const Input = ({
    label,
    placeholder,
    className,
-   onChange
+   onChange,
+   ...restProps
 }) => {
 
    const { t } = useTranslation();
@@ -27,12 +28,14 @@ const Input = ({
             className={`${className} ${errors && (errors[name] && s.err)}`}
             {...register(name)}
             onChange={onChange}
+            {...restProps }
          /> : <input
             type={type}
             id={name}
             placeholder={placeholder}
             className={`${className}`}
             onChange={onChange}
+            {...restProps}
          />}
          {errors[name] && <div className={s.messageErr}>{t(errors[name].message) || 'Error!'}</div>}
       </div>
