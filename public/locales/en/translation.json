@@ -130,6 +130,20 @@
       "title": "User Agreement",
       "subtitle": ""
    },
+   "cookie":  {
+      "title": "Usage policy",
+      "subtitle": "files Сookie"
+   },
+   "cookieAgreement": {
+      "notificationFirstPart": "I confirm that I have read and agree to the ",
+      "notificationLinkPart": "cookie policy",
+      "notificationLasttPart": "megacase.com website"
+   },
+   "partnership": {
+      "title": "Cooperation",
+      "subtitle": "Affiliate program",
+      "btn": "Become a partner"
+   },
    "message": {
       "copyText": {
          "success": "Text copied to clipboard!",

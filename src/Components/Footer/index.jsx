@@ -34,13 +34,13 @@ const Footer = (props) => {
          <div className={s.links}>
             <div className={s.column}>
                <div onClick={() => openModal("userAgreement")}>{t("footer.links.link1")}</div>
-               <a href="#">{t("footer.links.link2")}</a>
+               <div onClick={() => openModal("cookieAgreement")}>{t("footer.links.link2")}</div>
                <a href="#">{t("footer.links.link3")}</a>
             </div>
             <div className={s.column}>
                <a href="#">{t("footer.links.link4")}</a>
                <div onClick={() => openModal("honestyCheck")}>{t("footer.links.link5")}</div>
-               <a href="#">{t("footer.links.link6")}</a>
+               <div onClick={() => openModal("partnership")}>{t("footer.links.link6")}</div>
             </div>
          </div>
 

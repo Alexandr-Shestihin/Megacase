@@ -416,22 +416,26 @@ img,
    cursor: pointer;
 }
 
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
    appearance: none;
    position: relative;
    width: 24px;
    height: 24px;
+   min-width: 24px;
    background: var(--bg-1);
    border: none;
    transition: 500ms;
    border-radius: 8px;
 }
 
-input[type="radio"]:checked {
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
    background: var(--main-third);
 }
 
-input[type="radio"]::after {
+input[type="radio"]::after,
+input[type="checkbox"]::after {
    content: "";
    position: absolute;
    width: 8px;
@@ -447,7 +451,8 @@ input[type="radio"]::after {
    transition: opacity 500ms;
 }
 
-input[type="radio"]:checked::after {
+input[type="radio"]:checked::after,
+input[type="checkbox"]:checked::after {
    opacity: 1;
 }
 
@@ -456,26 +461,31 @@ label {
    color: var(--color-2)
 }
 
-input[type="radio"]:checked+label {
+input[type="radio"]:checked+label,
+input[type="checkbox"]:checked+label {
    color: var(--color-1)
 }
 
 *::-webkit-scrollbar {
-    width: 4px; /* Ширина скроллбара */
-    height: 4px;
-    margin-left: 40px;
+   width: 4px;
+   /* Ширина скроллбара */
+   height: 4px;
+   margin-left: 40px;
 }
 
-*::-webkit-scrollbar-track { 
-    background: var(--bg-1); /* Цвет фона трека */
-    border-radius: 10px;
+*::-webkit-scrollbar-track {
+   background: var(--bg-1);
+   /* Цвет фона трека */
+   border-radius: 10px;
 }
 
-*::-webkit-scrollbar-thumb { 
-    background: var(--color-2); /* Цвет ползунка */
-    border-radius: 10px;
+*::-webkit-scrollbar-thumb {
+   background: var(--color-2);
+   /* Цвет ползунка */
+   border-radius: 10px;
 }
 
-*::-webkit-scrollbar-thumb:hover { 
-    background: var(--main-third); /* Цвет ползунка при наведении */
+*::-webkit-scrollbar-thumb:hover {
+   background: var(--main-third);
+   /* Цвет ползунка при наведении */
 }

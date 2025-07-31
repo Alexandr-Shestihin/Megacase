@@ -130,6 +130,20 @@
       "title": "Пользовательское соглашение",
       "subtitle": ""
    },
+   "cookie": {
+      "title": "Политика использования",
+      "subtitle": "файлы Сookie"
+   },
+   "cookieAgreement": {
+      "notificationFirstPart": "Я подтверждаю, что ознакомлен и соглашаюсь с ",
+      "notificationLinkPart": "условиями политики использования файлов cookie",
+      "notificationLasttPart": "сайтом megacase.com"
+   },
+   "partnership": {
+      "title": "Сотрудничество",
+      "subtitle": "Партнерская программа",
+      "btn": "Стать партнером"
+   },
    "message": {
       "copyText": {
          "success": "Текст скопирован в буфер обмена!",

@@ -10,6 +10,9 @@ import HonestyCheck from '@/Modals/HonestyCheck';
 import Modal from '@/Modals/Modal';
 import FAQ from '@/Modals/FAQ';
 import UserAgreement from '@/Modals/UserAgreement';
+import Сookie from '@/Modals/Сookie';
+import СookieAgreement from '@/Modals/СookieAgreement';
+import Partnership from '@/Modals/Partnership';
 
 const ModalContainer = () => {
    const { activeModal, closeModal } = useModalContext(); // Используем useModalContext
@@ -63,6 +66,23 @@ const ModalContainer = () => {
             setActive={closeModal}
          >
             <UserAgreement />
+         </Modal>
+
+         <Modal
+            active={activeModal === 'cookie'}
+            setActive={closeModal}
+         >
+            <Сookie />
+         </Modal>
+
+         {/* Принять политику  cookie*/}
+         <СookieAgreement />
+
+         <Modal
+            active={activeModal === 'partnership'}
+            setActive={closeModal}
+         >
+            <Partnership />
          </Modal>
 
       </>
