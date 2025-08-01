@@ -118,7 +118,7 @@ const Header = (props) => {
                   className={`${s.btn} btn-text`}
                   activeI={profitsActive}
                   inactiveI={profitsUnactive}
-                  onClick={() => openModal("profit")}
+                  onClick={() => openModal("сashback")}
                ><span className="innerText">{t('rightMemu.profit')}</span></Button>
                <Button
                   id={'bonuses'}
@@ -134,7 +134,7 @@ const Header = (props) => {
                   className={`${s.btn} btn-text`}
                   activeI={accountStatisticsActive}
                   inactiveI={accountStatisticsUnactive}
-                  onClick={() => openModal("accountStatistics")}
+                  onClick={() => openModal("statistics")}
                ><span className="innerText">{t('rightMemu.accountStatistics')}</span></Button>
                <Button
                   id={'FAQ'}

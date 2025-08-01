@@ -13,6 +13,8 @@ import UserAgreement from '@/Modals/UserAgreement';
 import Сookie from '@/Modals/Сookie';
 import СookieAgreement from '@/Modals/СookieAgreement';
 import Partnership from '@/Modals/Partnership';
+import Cashback from '@/Modals/Cashback';
+import Statistics from '@/Modals/Statistics';
 
 const ModalContainer = () => {
    const { activeModal, closeModal } = useModalContext(); // Используем useModalContext
@@ -83,6 +85,20 @@ const ModalContainer = () => {
             setActive={closeModal}
          >
             <Partnership />
+         </Modal>
+         
+         <Modal
+            active={activeModal === 'сashback'}
+            setActive={closeModal}
+         >
+            <Cashback />
+         </Modal>
+ 
+         <Modal
+            active={activeModal === 'statistics'}
+            setActive={closeModal}
+         >
+            <Statistics />
          </Modal>
 
       </>

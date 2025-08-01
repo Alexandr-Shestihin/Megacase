@@ -144,6 +144,15 @@
       "subtitle": "Affiliate program",
       "btn": "Become a partner"
    },
+   "сashback": {
+      "title": "Cashback",
+      "subtitle": "My profit",
+      "btn": "Get"
+   },
+   "statistics": {
+      "title": "Statistics",
+      "subtitle": "My account"
+   },
    "message": {
       "copyText": {
          "success": "Text copied to clipboard!",
