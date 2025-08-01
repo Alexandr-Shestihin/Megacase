@@ -12,7 +12,7 @@ import {
    Button
 } from '@/Components';
 
-/* const frameCashback = '/assets/img/frameCashback.png'; */
+/* const bgOrange = '/assets/img/bgOrange.png'; */
 const addMoney = '../../assets/icons/addMoney.svg';
 /* import Image from 'next/image'; */
 
@@ -25,15 +25,18 @@ const Cashback = (props) => {
          <div className={`pageTitle ${s.title}`}>{t("сashback.title")} <span className="pageSubtitle">{t("сashback.subtitle")}</span> </div>
 
          {/* <Image src={frameCashback} alt="arrow" width={560} height={121} className={`mt12 img ${s.img}`} /> */}
-         <div className={s.statisticsBlock}>
-            <div className={s.percent}>
+         <div className={`mt12 ${s.statisticsBlock}`}>
+            <div className={`${s.block}`}>
                <div className={s.statisticsTitle}>Мой процент</div>
+               <div className={s.statisticsSubtitle}>1%</div>
             </div>
-            <div className={s.profit}>
+            <div className={`${s.block}`}>
                <div className={s.statisticsTitle}>Мой доход</div>
+               <div className={s.statisticsSubtitle}>123 345$</div>
             </div>
-            <div className={s.balance}>
+            <div className={`${s.block}`}>
                <div className={s.statisticsTitle}>Доступно средств</div>
+               <div className={s.statisticsSubtitle}>12$</div>
             </div>
          </div>
 

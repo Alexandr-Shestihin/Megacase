@@ -7,10 +7,13 @@
 
   .statisticsBlock {
      width: 100%;
+     height: 121px;
      display: flex;
      justify-content: space-between;
+     align-items: center;
      padding: 19px;
      background: url('../../../public//assets/img/frameCashback.png') 0 0/cover no-repeat;
+     border-radius: var(--border-r20);
   }
 
   .scrollContainer {
@@ -18,6 +21,19 @@
      overflow: auto;
   }
 
+  .block {
+     width: 27%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+  }
+
+  .statisticsSubtitle {
+     margin-top: 8px;
+     font-size: var(--font-size-20);
+  }
+
+  .statisticsTitle,
   .textInner,
   .textInner * {
      color: var(--color-2);
